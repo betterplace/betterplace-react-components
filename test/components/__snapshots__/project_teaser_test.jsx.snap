@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectTeaser does not render the description by default 1`] = `
+<styled.a
+  href="bp.org/p123"
+  onClick={[Function]}
+  target="_parent"
+>
+  <styled.div />
+  <styled.h2
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <div>
+        <span>
+          ,
+        </span>
+         
+      </div>
+      <div>
+        <span />
+         
+        Spenden
+      </div>
+      <div>
+        <span>
+          NaN
+        </span>
+         
+        fehlen noch
+      </div>
+    </styled.div>
+    <styled.img />
+  </styled.div>
+  <styled.div>
+    <div
+      className="bar"
+    />
+  </styled.div>
+</styled.a>
+`;
+
+exports[`ProjectTeaser does render the description if showDescription is true 1`] = `
+<styled.a
+  href="bp.org/p123"
+  onClick={[Function]}
+  target="_parent"
+>
+  <styled.div />
+  <styled.h2
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <styled.div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "this is amazing",
+      }
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <div>
+        <span>
+          ,
+        </span>
+         
+      </div>
+      <div>
+        <span />
+         
+        Spenden
+      </div>
+      <div>
+        <span>
+          NaN
+        </span>
+         
+        fehlen noch
+      </div>
+    </styled.div>
+    <styled.img />
+  </styled.div>
+  <styled.div>
+    <div
+      className="bar"
+    />
+  </styled.div>
+</styled.a>
+`;
+
+exports[`ProjectTeaser renders 1`] = `
+<styled.a
+  href="bp.org/p123"
+  onClick={[Function]}
+  target="_parent"
+>
+  <styled.div />
+  <styled.h2
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <div>
+        <span>
+          ,
+        </span>
+         
+      </div>
+      <div>
+        <span />
+         
+        Spenden
+      </div>
+      <div>
+        <span>
+          NaN
+        </span>
+         
+        fehlen noch
+      </div>
+    </styled.div>
+    <styled.img />
+  </styled.div>
+  <styled.div>
+    <div
+      className="bar"
+    />
+  </styled.div>
+</styled.a>
+`;
+
+exports[`ProjectTeaser uses a custom href if given 1`] = `
+<styled.a
+  href="coupons.org/p123"
+  onClick={[Function]}
+  target="_parent"
+>
+  <styled.div />
+  <styled.h2
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <div>
+        <span>
+          ,
+        </span>
+         
+      </div>
+      <div>
+        <span />
+         
+        Spenden
+      </div>
+      <div>
+        <span>
+          NaN
+        </span>
+         
+        fehlen noch
+      </div>
+    </styled.div>
+    <styled.img />
+  </styled.div>
+  <styled.div>
+    <div
+      className="bar"
+    />
+  </styled.div>
+</styled.a>
+`;
