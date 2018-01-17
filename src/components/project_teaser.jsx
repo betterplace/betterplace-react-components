@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { formatAmount } from '../helpers/format_amount'
 
@@ -52,6 +53,15 @@ export class ProjectTeaser extends React.Component {
       </Wrapper>
     )
   }
+}
+
+ProjectTeaser.propTypes = {
+  className:        PropTypes.string,
+  href:             PropTypes.string,
+  onClick:          PropTypes.func,
+  progressbarColor: PropTypes.string,
+  project:          PropTypes.object.isRequired,
+  showDescription:  PropTypes.bool
 }
 
 const Wrapper = styled.a`
