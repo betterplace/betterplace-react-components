@@ -89,7 +89,7 @@ const Title = styled.h2`
   margin: 10px;
   font-size: 17px;
   line-height: 20px;
-  height: 40px;
+  height: 41px;
   color: #3f3f3f;
   font-weight: bold;
   overflow: hidden;
@@ -97,13 +97,12 @@ const Title = styled.h2`
 
 const Description = styled.div`
   position: relative;
-  height: 70px;
+  height: 71px;
   overflow: hidden;
   padding: 0 13px;
   font-size: 14px;
   line-height: 18px;
   color: #6a6a6a;
-  height: calc(18px * 4);
 
   &:after {
     content: '';
