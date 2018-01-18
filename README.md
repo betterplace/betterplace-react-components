@@ -35,7 +35,7 @@ Texts and localizations can be overridden via the globally exposed `I18n` object
 E.g.
 
 ```js
-I18n.translations = I18n.extend(I18n.translations || {}), {
+I18n.translations = I18n.extend((I18n.translations || {}), {
   de: {
     bp_project_teaser: {
       values_donor_count: 'Homies'
