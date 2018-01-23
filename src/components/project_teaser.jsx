@@ -77,6 +77,10 @@ const Wrapper = styled.a`
   box-sizing: border-box;
   transition: 0.15s box-shadow ease-out;
 
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
   &:hover,
   &:focus {
     text-decoration: none;
