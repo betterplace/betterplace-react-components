@@ -84,6 +84,7 @@ const Wrapper = styled.a`
   &:focus {
     text-decoration: none;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    color: #636b70;
   }
 `
 
