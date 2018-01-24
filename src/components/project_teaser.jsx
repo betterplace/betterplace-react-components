@@ -72,8 +72,7 @@ const Wrapper = styled.a`
   display: block;
   color: #636b70;
   font-weight: 300;
-  width: 290px;
-  height: ${ props => props.showDescription ? '406px' : '320px' };
+  height: ${ props => props.showDescription ? '406px' : '319px' };
   box-sizing: border-box;
   transition: 0.15s box-shadow ease-out;
 
