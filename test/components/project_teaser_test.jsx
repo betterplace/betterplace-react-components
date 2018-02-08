@@ -2,7 +2,9 @@ import { ProjectTeaser } from '../../src'
 
 const project = {
   id: 1,
+  title: 'Skateistan Afghanistan',
   carrier: {
+    name: 'Skateistan',
     picture: {
       links: []
     }

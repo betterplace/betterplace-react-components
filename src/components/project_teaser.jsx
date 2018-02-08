@@ -33,7 +33,7 @@ export class ProjectTeaser extends React.Component {
       <Wrapper title={ project.title } onClick={ this.handleClick } className={ this.props.className } href={ this.href } target='_parent'>
         { this.props.children /* mount point, e.g. for injecting VisibilitySensor */ }
 
-        <ProfilePicture src={ this.projectImageUrl } />
+        <ProfilePicture src={ this.projectImageUrl } alt={ project.title } />
 
         <Title dangerouslySetInnerHTML={ { __html: project.title } } />
         { this.props.showDescription && <Description dangerouslySetInnerHTML={ { __html: project.description } } /> }
@@ -44,7 +44,7 @@ export class ProjectTeaser extends React.Component {
            <div><span>{ project.donations_count }</span> { I18n.t('bp_project_teaser.values_donor_count') }</div>
            <div><span>{ this.openAmount }</span> { I18n.t('bp_project_teaser.values_open_amount_in_cents') }</div>
          </FactList>
-         <CarrierLogo src={ this.orgaImageUrl } />
+         <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
         </Divider>
 
         <Progress color={ this.props.progressbarColor } value={ project.progress_percentage }>
