@@ -30,7 +30,15 @@ export class ProjectTeaser extends React.Component {
     const project = this.props.project
 
     return (
-      <Wrapper title={ project.title } onClick={ this.handleClick } className={ this.props.className } href={ this.href } target='_parent'>
+      <Wrapper
+        title={project.title}
+        onClick={this.handleClick}
+        className={this.props.className}
+        href={this.href}
+        target='_parent'
+        font={this.props.font}
+        showDescription={this.props.showDescription}
+      >
         { this.props.children /* mount point, e.g. for injecting VisibilitySensor */ }
 
         <ProfilePicture src={ this.projectImageUrl } alt={ project.title } />
