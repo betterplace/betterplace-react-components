@@ -57,6 +57,7 @@ export class ProjectTeaser extends React.Component {
 
 ProjectTeaser.propTypes = {
   className:        PropTypes.string,
+  font:             PropTypes.string,
   href:             PropTypes.string,
   onClick:          PropTypes.func,
   progressbarColor: PropTypes.string,
@@ -66,7 +67,7 @@ ProjectTeaser.propTypes = {
 
 const Wrapper = styled.a`
   cursor: pointer;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: ${ props => props.font ? props.font : '"Open Sans", Arial, sans-serif' };
   border: 1px solid #ccc;
   border-radius: 4px;
   display: block;
