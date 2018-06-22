@@ -54,6 +54,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
 <styled.a
   href="bp.org/p123"
   onClick={[Function]}
+  showDescription={true}
   target="_parent"
   title="Skateistan Afghanistan"
 >
