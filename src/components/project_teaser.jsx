@@ -66,7 +66,7 @@ export class ProjectTeaser extends React.Component {
 ProjectTeaser.propTypes = {
   className:        PropTypes.string,
   font:             PropTypes.string,
-  color:            PropTypes.string,
+  textColor:        PropTypes.string,
   href:             PropTypes.string,
   onClick:          PropTypes.func,
   progressbarColor: PropTypes.string,
@@ -80,7 +80,7 @@ const Wrapper = styled.a`
   border: 1px solid #ccc;
   border-radius: 4px;
   display: block;
-  color: ${ props => props.color ? props.color : '#636b70' };
+  textColor: ${ props => props.textColor ? props.textColor : '#636b70' };
   font-weight: 300;
   height: ${ props => props.showDescription ? '406px' : '319px' };
   box-sizing: border-box;
