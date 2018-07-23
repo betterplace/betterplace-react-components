@@ -37,6 +37,7 @@ export class ProjectTeaser extends React.Component {
         href={this.href}
         target='_parent'
         font={this.props.font}
+        textColor={this.props.textColor}
         showDescription={this.props.showDescription}
       >
         { this.props.children /* mount point, e.g. for injecting VisibilitySensor */ }
