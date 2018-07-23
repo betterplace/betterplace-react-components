@@ -80,7 +80,7 @@ const Wrapper = styled.a`
   border: 1px solid #ccc;
   border-radius: 4px;
   display: block;
-  textColor: ${ props => props.textColor ? props.textColor : '#636b70' };
+  color: ${ props => props.textColor ? props.textColor : '#636b70' };
   font-weight: 300;
   height: ${ props => props.showDescription ? '406px' : '319px' };
   box-sizing: border-box;
