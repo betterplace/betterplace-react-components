@@ -26,13 +26,15 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
          
       </div>
       <div>
-        <span />
+        <span>
+          1.337
+        </span>
          
         Spenden
       </div>
       <div>
         <span>
-          NaN
+          42 €
         </span>
          
         fehlen noch
@@ -42,7 +44,9 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
       alt="Skateistan"
     />
   </styled.div>
-  <styled.div>
+  <styled.div
+    color="#bad304"
+  >
     <div
       className="bar"
     />
@@ -84,13 +88,15 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
          
       </div>
       <div>
-        <span />
+        <span>
+          1.337
+        </span>
          
         Spenden
       </div>
       <div>
         <span>
-          NaN
+          42 €
         </span>
          
         fehlen noch
@@ -100,7 +106,63 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
       alt="Skateistan"
     />
   </styled.div>
+  <styled.div
+    color="#bad304"
+  >
+    <div
+      className="bar"
+    />
+  </styled.div>
+</styled.a>
+`;
+
+exports[`ProjectTeaser is possible to force the locale 1`] = `
+<styled.a
+  href="coupons.org/p123"
+  onClick={[Function]}
+  target="_parent"
+  title="Skateistan Afghanistan"
+>
+  <styled.div
+    alt="Skateistan Afghanistan"
+  />
+  <styled.h2
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Skateistan Afghanistan",
+      }
+    }
+  />
   <styled.div>
+    <styled.div>
+      <div>
+        <span>
+          ,
+        </span>
+         
+      </div>
+      <div>
+        <span>
+          1,337
+        </span>
+         
+        donations
+      </div>
+      <div>
+        <span>
+          €42
+        </span>
+         
+        still needed
+      </div>
+    </styled.div>
+    <styled.img
+      alt="Skateistan"
+    />
+  </styled.div>
+  <styled.div
+    color="#bad304"
+  >
     <div
       className="bar"
     />
@@ -134,13 +196,15 @@ exports[`ProjectTeaser renders 1`] = `
          
       </div>
       <div>
-        <span />
+        <span>
+          1.337
+        </span>
          
         Spenden
       </div>
       <div>
         <span>
-          NaN
+          42 €
         </span>
          
         fehlen noch
@@ -150,7 +214,9 @@ exports[`ProjectTeaser renders 1`] = `
       alt="Skateistan"
     />
   </styled.div>
-  <styled.div>
+  <styled.div
+    color="#bad304"
+  >
     <div
       className="bar"
     />
@@ -184,13 +250,15 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
          
       </div>
       <div>
-        <span />
+        <span>
+          1.337
+        </span>
          
         Spenden
       </div>
       <div>
         <span>
-          NaN
+          42 €
         </span>
          
         fehlen noch
@@ -200,7 +268,9 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
       alt="Skateistan"
     />
   </styled.div>
-  <styled.div>
+  <styled.div
+    color="#bad304"
+  >
     <div
       className="bar"
     />

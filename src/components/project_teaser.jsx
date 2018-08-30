@@ -22,12 +22,13 @@ export class ProjectTeaser extends React.Component {
     return link && link.href
   }
 
-  get openAmount() {
-    return formatAmount({cents: this.props.project.open_amount_in_cents})
-  }
-
   render() {
     const project = this.props.project
+    const locale = this.props.locale || document.documentElement.lang || 'de-DE'
+    const openAmount = formatAmount({cents: this.props.project.open_amount_in_cents, locale: locale})
+    const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
+    const openAmountCaption = locale == 'de-DE' ? 'fehlen noch' : 'still needed'
+    const donationsCountCaption = locale == 'de-DE' ? 'Spenden' : 'donations'
 
     return (
       <Wrapper
@@ -50,13 +51,13 @@ export class ProjectTeaser extends React.Component {
         <Divider>
          <FactList>
            <div><span>{ project.city },</span> { project.country }</div>
-           <div><span>{ project.donations_count }</span> { I18n.t('bp_project_teaser.values_donor_count') }</div>
-           <div><span>{ this.openAmount }</span> { I18n.t('bp_project_teaser.values_open_amount_in_cents') }</div>
+           <div><span>{ donationsCount }</span> {donationsCountCaption}</div>
+           <div><span>{ openAmount }</span> {openAmountCaption}</div>
          </FactList>
          <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
         </Divider>
 
-        <Progress color={ this.props.progressbarColor } value={ project.progress_percentage }>
+        <Progress color={ this.props.progressbarColor || '#bad304' } value={ project.progress_percentage }>
           <div className='bar'></div>
         </Progress>
       </Wrapper>
@@ -77,11 +78,11 @@ ProjectTeaser.propTypes = {
 
 const Wrapper = styled.a`
   cursor: pointer;
-  font-family: ${ props => props.font ? props.font : '"Open Sans", Arial, sans-serif' };
+  font-family: ${ props => props.font ? props.font : '"Fira Sans", Arial, sans-serif' };
   border: 1px solid #ccc;
   border-radius: 4px;
   display: block;
-  color: ${ props => props.textColor ? props.textColor : '#636b70' };
+  color: ${ props => props.textColor ? props.textColor : '#000000' };
   font-weight: 300;
   height: ${ props => props.showDescription ? '406px' : '319px' };
   box-sizing: border-box;

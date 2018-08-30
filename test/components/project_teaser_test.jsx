@@ -10,6 +10,8 @@ const project = {
     }
   },
   description: 'this is amazing',
+  donations_count: 1337,
+  open_amount_in_cents: 4200,
   profile_picture: {
     links: []
   },
@@ -39,6 +41,11 @@ describe('ProjectTeaser', () => {
 
   it('uses a custom href if given', () => {
     const element = shallow(<ProjectTeaser project={ project } href='coupons.org/p123' />)
+    expect(element).toMatchSnapshot()
+  })
+
+  it('is possible to force the locale', () => {
+    const element = shallow(<ProjectTeaser locale='en-GB' project={ project } href='coupons.org/p123' />)
     expect(element).toMatchSnapshot()
   })
 })

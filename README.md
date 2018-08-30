@@ -30,29 +30,10 @@ There is no theming support yet. Some styles can be set via props, e.g.
 <ProjectTeaser progressbarColor='#0000ff' />
 ```
 
-Texts and localizations can be overridden via the globally exposed `I18n` object.
+The captions for donations count and open amount can be set via props if needed:
 
-E.g.
-
-```js
-I18n.translations = I18n.extend((I18n.translations || {}), {
-  de: {
-    bp_project_teaser: {
-      values_donor_count: 'Homies'
-    }
-  },
-  en: {
-    bp_project_teaser: {
-      values_donor_count: 'homies'
-    }
-  }
-})
 ```
-
-Or even like this:
-
-```js
-I18n.translations.de.bp_project_teaser.values_donor_count = 'Homies'
+<ProjectTeaser donationsCountCaption='donaciones' openAmountCaption='faltar' {...otherProps} />
 ```
 
 ## Development

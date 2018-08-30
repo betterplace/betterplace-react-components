@@ -1,8 +1,6 @@
-function formatAmount({cents}) {
+function formatAmount({cents, locale}) {
   return new Intl.NumberFormat(
-    (I18n && I18n.locale) ||             // use same locale as set for i18n-js
-    (navigator && navigator.language) || // fall back to browser locale
-    'de-DE',                             // fall back to German
+    locale,
     {
       style: 'currency',
       currency: 'EUR',
