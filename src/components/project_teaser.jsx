@@ -96,17 +96,19 @@ const Wrapper = styled.a`
   &:focus {
     text-decoration: none;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-    color: #636b70;
+
+    h2 {
+      text-decoration: underline;
+    }
   }
 `
 
 const Title = styled.h2`
   display: block;
   margin: 10px;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 22px;
   height: 41px;
-  color: #3f3f3f;
   font-weight: bold;
   overflow: hidden;
 `
