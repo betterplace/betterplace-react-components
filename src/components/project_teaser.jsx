@@ -50,7 +50,7 @@ export class ProjectTeaser extends React.Component {
 
         <Divider>
          <FactList>
-           <div><span>{ project.city },</span> { project.country }</div>
+           <div>{project.city && <span>{ project.city }, </span>}{project.country}</div>
            <div><span>{ donationsCount }</span> {donationsCountCaption}</div>
            <div><span>{ openAmount }</span> {openAmountCaption}</div>
          </FactList>
