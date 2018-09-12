@@ -24,11 +24,11 @@ export class ProjectTeaser extends React.Component {
 
   render() {
     const project = this.props.project
-    const locale = this.props.locale || document.documentElement.lang || 'de-DE'
+    const locale = this.props.locale || document.documentElement.lang || 'de'
     const openAmount = formatAmount({cents: this.props.project.open_amount_in_cents, locale: locale})
     const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
-    const openAmountCaption = locale == 'de-DE' ? 'fehlen noch' : 'still needed'
-    const donationsCountCaption = locale == 'de-DE' ? 'Spenden' : 'donations'
+    const openAmountCaption = locale == 'de' ? 'fehlen noch' : 'still needed'
+    const donationsCountCaption = locale == 'de' ? 'Spenden' : 'donations'
 
     return (
       <Wrapper
