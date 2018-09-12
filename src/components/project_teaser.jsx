@@ -101,7 +101,6 @@ const Wrapper = styled.a`
 
     h2 {
       text-decoration: underline;
-      padding-bottom: 2px;
     }
   }
 `
@@ -138,10 +137,9 @@ const Description = styled.div`
 
 const Divider = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   flex-grow: 1;
-  margin-top: 30px;
   margin-bottom: 10px;
 `
 
@@ -165,6 +163,7 @@ const CarrierLogo = styled.img`
   width: 65px;
   height: 65px;
   margin-right: 13px;
+  overflow: hidden;
 `
 
 const Progress = styled.div`
