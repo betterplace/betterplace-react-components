@@ -101,6 +101,7 @@ const Wrapper = styled.a`
 
     h2 {
       text-decoration: underline;
+      padding-bottom: 2px;
     }
   }
 `
