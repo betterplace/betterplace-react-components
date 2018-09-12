@@ -81,7 +81,8 @@ const Wrapper = styled.a`
   font-family: ${ props => props.font ? props.font : '"Fira Sans", Arial, sans-serif' };
   border: 1px solid #ccc;
   border-radius: 4px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: ${ props => props.textColor ? props.textColor : '#000000' };
   font-weight: 300;
   height: ${ props => props.showDescription ? '406px' : '319px' };
@@ -138,6 +139,7 @@ const Divider = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-grow: 1;
   margin-top: 30px;
   margin-bottom: 10px;
 `
