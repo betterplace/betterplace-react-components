@@ -23,6 +23,8 @@ const project = {
   ]
 }
 
+beforeEach(() => document.documentElement.lang = 'de')
+
 describe('ProjectTeaser', () => {
   it('renders', () => {
     const element = shallow(<ProjectTeaser project={ project } />)
