@@ -19,12 +19,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
   />
   <styled.div>
     <styled.div>
-      <div>
-        <span>
-          ,
-        </span>
-         
-      </div>
+      <div />
       <div>
         <span>
           1.337
@@ -81,12 +76,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
   />
   <styled.div>
     <styled.div>
-      <div>
-        <span>
-          ,
-        </span>
-         
-      </div>
+      <div />
       <div>
         <span>
           1.337
@@ -135,12 +125,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
   />
   <styled.div>
     <styled.div>
-      <div>
-        <span>
-          ,
-        </span>
-         
-      </div>
+      <div />
       <div>
         <span>
           1,337
@@ -189,12 +174,7 @@ exports[`ProjectTeaser renders 1`] = `
   />
   <styled.div>
     <styled.div>
-      <div>
-        <span>
-          ,
-        </span>
-         
-      </div>
+      <div />
       <div>
         <span>
           1.337
@@ -243,12 +223,7 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
   />
   <styled.div>
     <styled.div>
-      <div>
-        <span>
-          ,
-        </span>
-         
-      </div>
+      <div />
       <div>
         <span>
           1.337
