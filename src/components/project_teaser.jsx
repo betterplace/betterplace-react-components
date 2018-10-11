@@ -78,6 +78,7 @@ ProjectTeaser.propTypes = {
 
 const Wrapper = styled.a`
   cursor: pointer;
+  background: white;
   font-family: ${ props => props.font ? props.font : '"Fira Sans", Arial, sans-serif' };
   border: 1px solid #ccc;
   border-radius: 4px;
