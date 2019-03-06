@@ -1,4 +1,4 @@
-import { formatAmount } from '../../src'
+import { formatAmount } from '../../src/helpers/format_amount'
 
 describe('formatAmount', () => {
   it('formats cent amounts with rounding', () => {
