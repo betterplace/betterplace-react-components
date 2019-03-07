@@ -4,7 +4,7 @@
   "description": "betterplace React components",
   "main": "dist/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build": "babel src --out-dir dist",
     "prepublish": "npm run build",
     "test": "NODE_PATH='./node_modules:src' jest",
