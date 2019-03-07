@@ -1,4 +1,4 @@
-import { ProjectTeaser } from '../../src'
+import { ProjectTeaser } from '../../src/components/project_teaser'
 
 const project = {
   id: 1,
