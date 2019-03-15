@@ -22,17 +22,17 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
       <div />
       <div>
         <span>
-          1.337
+          1,337
         </span>
          
-        Spenden
+        donations
       </div>
       <div>
         <span>
-          42 €
+          €42
         </span>
          
-        fehlen noch
+        still needed
       </div>
     </styled.div>
     <styled.img
@@ -79,17 +79,17 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
       <div />
       <div>
         <span>
-          1.337
+          1,337
         </span>
          
-        Spenden
+        donations
       </div>
       <div>
         <span>
-          42 €
+          €42
         </span>
          
-        fehlen noch
+        still needed
       </div>
     </styled.div>
     <styled.img
@@ -177,17 +177,17 @@ exports[`ProjectTeaser renders 1`] = `
       <div />
       <div>
         <span>
-          1.337
+          1,337
         </span>
          
-        Spenden
+        donations
       </div>
       <div>
         <span>
-          42 €
+          €42
         </span>
          
-        fehlen noch
+        still needed
       </div>
     </styled.div>
     <styled.img
@@ -226,17 +226,17 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
       <div />
       <div>
         <span>
-          1.337
+          1,337
         </span>
          
-        Spenden
+        donations
       </div>
       <div>
         <span>
-          42 €
+          €42
         </span>
          
-        fehlen noch
+        still needed
       </div>
     </styled.div>
     <styled.img
