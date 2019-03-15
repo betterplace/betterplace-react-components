@@ -23,7 +23,7 @@ const project = {
   ]
 }
 
-beforeEach(() => document.documentElement.lang = 'de')
+beforeEach(() => document.documentElement.lang = 'en')
 
 describe('ProjectTeaser', () => {
   it('renders', () => {
