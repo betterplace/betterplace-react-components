@@ -23,7 +23,7 @@ const project = {
   ]
 }
 
-beforeEach(() => document.documentElement.lang = 'en')
+beforeEach(() => document.documentElement.lang = 'de')
 
 describe('ProjectTeaser', () => {
   it('renders', () => {
@@ -47,7 +47,7 @@ describe('ProjectTeaser', () => {
   })
 
   it('is possible to force the locale', () => {
-    const element = shallow(<ProjectTeaser locale='en-GB' project={ project } href='coupons.org/p123' />)
+    const element = shallow(<ProjectTeaser locale='de' project={ project } href='coupons.org/p123' />)
     expect(element).toMatchSnapshot()
   })
 })
