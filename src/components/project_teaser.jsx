@@ -36,7 +36,7 @@ export class ProjectTeaser extends React.Component {
         onClick={this.handleClick}
         className={this.props.className}
         href={this.href}
-        target='_parent'
+        target={this.props.openInTab ? '_blank': '_parent'}
         font={this.props.font}
         textColor={this.props.textColor}
         showDescription={this.props.showDescription}
