@@ -26,27 +26,27 @@ const project = {
 describe('ProjectTeaser', () => {
   it('renders', () => {
     // languageGetter.mockReturnValue('en')
-    const element = shallow(<ProjectTeaser project={project} locale='de' />)
+    const element = shallow(<ProjectTeaser project={project} locale='en' />)
     expect(element).toMatchSnapshot()
   })
 
   it('does not render the description by default', () => {
-    const element = shallow(<ProjectTeaser project={project} locale='de' />)
+    const element = shallow(<ProjectTeaser project={project} locale='en' />)
     expect(element).toMatchSnapshot()
   })
 
   it('does render the description if showDescription is true', () => {
-    const element = shallow(<ProjectTeaser project={project} showDescription={true} locale='de' />)
+    const element = shallow(<ProjectTeaser project={project} showDescription={true} locale='en' />)
     expect(element).toMatchSnapshot()
   })
 
   it('uses a custom href if given', () => {
-    const element = shallow(<ProjectTeaser project={project} href='coupons.org/p123' locale='de' />)
+    const element = shallow(<ProjectTeaser project={project} href='coupons.org/p123' locale='en' />)
     expect(element).toMatchSnapshot()
   })
 
   it('is possible to force the locale', () => {
-    const element = shallow(<ProjectTeaser locale='de' project={project} href='coupons.org/p123' locale='de' />)
+    const element = shallow(<ProjectTeaser project={project} href='coupons.org/p123' locale='en' />)
     expect(element).toMatchSnapshot()
   })
 })
