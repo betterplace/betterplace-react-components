@@ -23,31 +23,30 @@ const project = {
   ]
 }
 
-beforeEach(() => document.documentElement.lang = 'de')
-
 describe('ProjectTeaser', () => {
   it('renders', () => {
-    const element = shallow(<ProjectTeaser project={ project } />)
+    // languageGetter.mockReturnValue('en')
+    const element = shallow(<ProjectTeaser project={project} locale='de' />)
     expect(element).toMatchSnapshot()
   })
 
   it('does not render the description by default', () => {
-    const element = shallow(<ProjectTeaser project={ project } />)
+    const element = shallow(<ProjectTeaser project={project} locale='de' />)
     expect(element).toMatchSnapshot()
   })
 
   it('does render the description if showDescription is true', () => {
-    const element = shallow(<ProjectTeaser project={ project } showDescription={ true } />)
+    const element = shallow(<ProjectTeaser project={project} showDescription={true} locale='de' />)
     expect(element).toMatchSnapshot()
   })
 
   it('uses a custom href if given', () => {
-    const element = shallow(<ProjectTeaser project={ project } href='coupons.org/p123' />)
+    const element = shallow(<ProjectTeaser project={project} href='coupons.org/p123' locale='de' />)
     expect(element).toMatchSnapshot()
   })
 
   it('is possible to force the locale', () => {
-    const element = shallow(<ProjectTeaser locale='de' project={ project } href='coupons.org/p123' />)
+    const element = shallow(<ProjectTeaser locale='de' project={project} href='coupons.org/p123' locale='de' />)
     expect(element).toMatchSnapshot()
   })
 })
