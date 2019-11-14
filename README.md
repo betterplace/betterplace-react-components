@@ -42,6 +42,10 @@ Install development / testing dependencies:
 
 `yarn`
 
+Run hot-reloading preview:
+
+`yarn start`
+
 Run tests:
 
 `yarn test`

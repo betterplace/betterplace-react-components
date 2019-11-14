@@ -4,7 +4,7 @@
   "description": "betterplace React components",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "react-scripts start",
     "build": "babel src --out-dir dist",
     "prepublish": "npm run build",
     "test": "NODE_PATH='./node_modules:src' jest",
@@ -48,21 +48,34 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "jest": "^24.1.0",
+    "jest": "^24.9.0",
     "jest-enzyme": "^7.0.1",
     "jest-fetch-mock": "^2.1.1",
     "npm": "^6.8.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-hot-loader": "^4.7.2",
-    "webpack": "^4.29.0",
+    "react-scripts": "^3.2.0",
+    "webpack": "4.41.0",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "styled-components": "4.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

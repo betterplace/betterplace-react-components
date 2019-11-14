@@ -9,16 +9,16 @@ export class ProjectTeaser extends React.Component {
   }
 
   get href() {
-    return this.props.href || this.props.project.links.find(link => link.rel == 'platform').href
+    return this.props.href || this.props.project.links.find(link => link.rel === 'platform').href
   }
 
   get projectImageUrl() {
-    const link = this.props.project.profile_picture.links.find(link => link.rel == 'fill_410x214')
+    const link = this.props.project.profile_picture.links.find(link => link.rel === 'fill_410x214')
     return link && link.href
   }
 
   get orgaImageUrl() {
-    const link = this.props.project.carrier.picture.links.find(link => link.rel == 'fill_100x100')
+    const link = this.props.project.carrier.picture.links.find(link => link.rel === 'fill_100x100')
     return link && link.href
   }
 
@@ -27,8 +27,8 @@ export class ProjectTeaser extends React.Component {
     const locale = this.props.locale || document.documentElement.lang || 'de'
     const openAmount = formatAmount({cents: this.props.project.open_amount_in_cents, locale: locale})
     const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
-    const openAmountCaption = locale == 'de' ? 'fehlen noch' : 'still needed'
-    const donationsCountCaption = locale == 'de' ? 'Spenden' : 'donations'
+    const openAmountCaption = locale === 'de' ? 'fehlen noch' : 'still needed'
+    const donationsCountCaption = locale === 'de' ? 'Spenden' : 'donations'
 
     return (
       <Wrapper
