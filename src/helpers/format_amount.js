@@ -1,5 +1,5 @@
-function formatAmount({cents, locale, showCents}) {
-  return new Intl.NumberFormat(
+export const formatAmount = ({cents, locale, showCents = false}) =>
+  new Intl.NumberFormat(
     locale,
     {
       style: 'currency',
@@ -8,6 +8,3 @@ function formatAmount({cents, locale, showCents}) {
       maximumFractionDigits: showCents ? 2 : 0
     }
   ).format(cents / 100)
-}
-
-export { formatAmount }
