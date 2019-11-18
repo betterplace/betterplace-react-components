@@ -1,6 +1,0 @@
-export * from './facebook_button'
-export * from './twitter_button'
-export * from './telegram_button'
-export * from './facebook_messenger_button'
-export * from './whatsapp_button'
-export * from './email_button'
