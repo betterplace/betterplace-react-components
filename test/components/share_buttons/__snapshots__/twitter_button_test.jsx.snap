@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TwitterButton adds a beforeClick function for the click handler 1`] = `
+<styled.a
+  activeColor="#2082bd"
+  color="#48AAE5"
+  hoverColor="#3496d1"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <TwitterIcon />
+</styled.a>
+`;
+
+exports[`TwitterButton does render if boxShadow is true 1`] = `
+<styled.a
+  activeColor="#2082bd"
+  boxShadow={true}
+  color="#48AAE5"
+  hoverColor="#3496d1"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <TwitterIcon />
+</styled.a>
+`;
+
+exports[`TwitterButton does render if utmParams are provided 1`] = `
+<styled.a
+  activeColor="#2082bd"
+  color="#48AAE5"
+  hoverColor="#3496d1"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <TwitterIcon />
+</styled.a>
+`;
+
+exports[`TwitterButton renders a round button 1`] = `
+<styled.a
+  activeColor="#2082bd"
+  color="#48AAE5"
+  hoverColor="#3496d1"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <TwitterIcon />
+</styled.a>
+`;

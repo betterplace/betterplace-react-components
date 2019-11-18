@@ -1,3 +1,6 @@
 export * from './components/project_teaser'
+export * from './components/share_buttons'
+export * from './helpers/color_helper'
 export * from './helpers/format_amount'
+export * from './helpers/sharing_helper'
 export * from './preview'

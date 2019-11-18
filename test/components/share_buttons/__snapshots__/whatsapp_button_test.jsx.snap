@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WhatsappButton adds a beforeClick function for the click handler 1`] = `
+<styled.a
+  activeColor="#00be4f"
+  color="#01E677"
+  hoverColor="#00d263"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <WhatsappIcon />
+</styled.a>
+`;
+
+exports[`WhatsappButton does render if boxShadow is true 1`] = `
+<styled.a
+  activeColor="#00be4f"
+  boxShadow={true}
+  color="#01E677"
+  hoverColor="#00d263"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <WhatsappIcon />
+</styled.a>
+`;
+
+exports[`WhatsappButton does render if teaser are provided 1`] = `
+<styled.a
+  activeColor="#00be4f"
+  color="#01E677"
+  hoverColor="#00d263"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <WhatsappIcon />
+</styled.a>
+`;
+
+exports[`WhatsappButton does render if utmParams are provided 1`] = `
+<styled.a
+  activeColor="#00be4f"
+  color="#01E677"
+  hoverColor="#00d263"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <WhatsappIcon />
+</styled.a>
+`;
+
+exports[`WhatsappButton renders a round button 1`] = `
+<styled.a
+  activeColor="#00be4f"
+  color="#01E677"
+  hoverColor="#00d263"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <WhatsappIcon />
+</styled.a>
+`;
