@@ -11,6 +11,10 @@
     "testc": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --coverage",
     "testw": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --watch"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "jest": {
     "roots": [
       "src",
