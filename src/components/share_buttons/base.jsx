@@ -33,7 +33,7 @@ export const buildShareButtonComponent = ({action, color, icon}) => {
     )
   }
 
-  ShareButton.propTypes = shareButtonPropTypes
+  ShareButton.propTypes = Object.assign({}, shareButtonPropTypes)
 
   return ShareButton
 }
@@ -44,17 +44,15 @@ const shareButtonPropTypes = {
   boxShadow:           PropTypes.bool,
   content:             (props, key, klass) => {
     // ignore this prop for button shapes that don't use it
-    if (props.shape === 'minimal' || props.shape === 'round') return
+    if (props.shape === 'square' || props.shape === 'round') return
 
     // require it for other shapes
     if (typeof props[key] !== 'string' || props[key] === '') return new Error(
       `prop ${key} must be non-empty string for ${klass} of shape ${props.shape}`
     )
   },
-  facebookAppId:       PropTypes.string,
   shape:               PropTypes.oneOf(['full', 'minimal', 'round', 'square']).isRequired,
   shareUrl:            PropTypes.string.isRequired,
-  subject:             PropTypes.string,
   teaser:              PropTypes.string,
   title:               PropTypes.string,
   utmParams:           PropTypes.object,

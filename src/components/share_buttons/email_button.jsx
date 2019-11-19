@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { encodedShareURL } from '../../helpers/sharing_helper'
 import { EmailIcon } from '../../assets/icons'
 import { buildShareButtonComponent } from './base'
@@ -12,4 +13,8 @@ export const EmailButton = buildShareButtonComponent({
   action: emailShareAction,
   color:  '#BAC5CC',
   icon:   EmailIcon,
+})
+
+EmailButton.propTypes = Object.assign(EmailButton.propTypes, {
+  subject: PropTypes.string,
 })

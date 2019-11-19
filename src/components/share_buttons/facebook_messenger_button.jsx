@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { encodedShareURL, openPopup } from '../../helpers/sharing_helper'
 import { FacebookMessengerIcon } from '../../assets/icons'
 import { buildShareButtonComponent } from './base'
@@ -11,4 +12,8 @@ export const FacebookMessengerButton = buildShareButtonComponent({
   action: facebookMessengerShareAction,
   color:  '#0084FF',
   icon:   FacebookMessengerIcon,
+})
+
+FacebookMessengerButton.propTypes = Object.assign(FacebookMessengerButton.propTypes, {
+  facebookAppId: PropTypes.string,
 })
