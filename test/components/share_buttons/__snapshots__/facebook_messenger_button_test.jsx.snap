@@ -3,6 +3,7 @@
 exports[`FacebookMessengerButton adds a beforeClick function for the click handler 1`] = `
 <styled.a
   activeColor="#005cd7"
+  aria-label="Facebook Messenger"
   color="#0084FF"
   hoverColor="#0070eb"
   onClick={[Function]}
@@ -16,6 +17,7 @@ exports[`FacebookMessengerButton adds a beforeClick function for the click handl
 exports[`FacebookMessengerButton does render if boxShadow is true 1`] = `
 <styled.a
   activeColor="#005cd7"
+  aria-label="Facebook Messenger"
   boxShadow={true}
   color="#0084FF"
   hoverColor="#0070eb"
@@ -30,6 +32,7 @@ exports[`FacebookMessengerButton does render if boxShadow is true 1`] = `
 exports[`FacebookMessengerButton does render if teaser are provided 1`] = `
 <styled.a
   activeColor="#005cd7"
+  aria-label="Facebook Messenger"
   color="#0084FF"
   hoverColor="#0070eb"
   onClick={[Function]}
@@ -43,6 +46,7 @@ exports[`FacebookMessengerButton does render if teaser are provided 1`] = `
 exports[`FacebookMessengerButton does render if utmParams are provided 1`] = `
 <styled.a
   activeColor="#005cd7"
+  aria-label="Facebook Messenger"
   color="#0084FF"
   hoverColor="#0070eb"
   onClick={[Function]}
@@ -56,6 +60,7 @@ exports[`FacebookMessengerButton does render if utmParams are provided 1`] = `
 exports[`FacebookMessengerButton renders a round button 1`] = `
 <styled.a
   activeColor="#005cd7"
+  aria-label="Facebook Messenger"
   color="#0084FF"
   hoverColor="#0070eb"
   onClick={[Function]}

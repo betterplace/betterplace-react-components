@@ -3,6 +3,7 @@
 exports[`TelegramButton adds a beforeClick function for the click handler 1`] = `
 <styled.a
   activeColor="#005fa3"
+  aria-label="Telegram"
   color="#0087CB"
   hoverColor="#0073b7"
   onClick={[Function]}
@@ -16,6 +17,7 @@ exports[`TelegramButton adds a beforeClick function for the click handler 1`] = 
 exports[`TelegramButton does render if boxShadow is true 1`] = `
 <styled.a
   activeColor="#005fa3"
+  aria-label="Telegram"
   boxShadow={true}
   color="#0087CB"
   hoverColor="#0073b7"
@@ -30,6 +32,7 @@ exports[`TelegramButton does render if boxShadow is true 1`] = `
 exports[`TelegramButton does render if teaser are provided 1`] = `
 <styled.a
   activeColor="#005fa3"
+  aria-label="Telegram"
   color="#0087CB"
   hoverColor="#0073b7"
   onClick={[Function]}
@@ -43,6 +46,7 @@ exports[`TelegramButton does render if teaser are provided 1`] = `
 exports[`TelegramButton does render if utmParams are provided 1`] = `
 <styled.a
   activeColor="#005fa3"
+  aria-label="Telegram"
   color="#0087CB"
   hoverColor="#0073b7"
   onClick={[Function]}
@@ -56,6 +60,7 @@ exports[`TelegramButton does render if utmParams are provided 1`] = `
 exports[`TelegramButton renders a round button 1`] = `
 <styled.a
   activeColor="#005fa3"
+  aria-label="Telegram"
   color="#0087CB"
   hoverColor="#0073b7"
   onClick={[Function]}

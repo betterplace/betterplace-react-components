@@ -3,6 +3,7 @@
 exports[`WhatsappButton adds a beforeClick function for the click handler 1`] = `
 <styled.a
   activeColor="#00be4f"
+  aria-label="WhatsApp"
   color="#01E677"
   hoverColor="#00d263"
   onClick={[Function]}
@@ -16,6 +17,7 @@ exports[`WhatsappButton adds a beforeClick function for the click handler 1`] = 
 exports[`WhatsappButton does render if boxShadow is true 1`] = `
 <styled.a
   activeColor="#00be4f"
+  aria-label="WhatsApp"
   boxShadow={true}
   color="#01E677"
   hoverColor="#00d263"
@@ -30,6 +32,7 @@ exports[`WhatsappButton does render if boxShadow is true 1`] = `
 exports[`WhatsappButton does render if teaser are provided 1`] = `
 <styled.a
   activeColor="#00be4f"
+  aria-label="WhatsApp"
   color="#01E677"
   hoverColor="#00d263"
   onClick={[Function]}
@@ -43,6 +46,7 @@ exports[`WhatsappButton does render if teaser are provided 1`] = `
 exports[`WhatsappButton does render if utmParams are provided 1`] = `
 <styled.a
   activeColor="#00be4f"
+  aria-label="WhatsApp"
   color="#01E677"
   hoverColor="#00d263"
   onClick={[Function]}
@@ -56,6 +60,7 @@ exports[`WhatsappButton does render if utmParams are provided 1`] = `
 exports[`WhatsappButton renders a round button 1`] = `
 <styled.a
   activeColor="#00be4f"
+  aria-label="WhatsApp"
   color="#01E677"
   hoverColor="#00d263"
   onClick={[Function]}
