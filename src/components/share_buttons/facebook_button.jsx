@@ -6,8 +6,9 @@ export const facebookShareAction = ({shareUrl, utmParams}) =>
   openPopup(`https://www.facebook.com/sharer/sharer.php?u=${encodedShareURL(shareUrl, utmParams)}`)
 
 export const FacebookButton = buildShareButtonComponent({
-  action: facebookShareAction,
-  color:  '#3F65A6',
-  icon:   FacebookIcon,
+  action:    facebookShareAction,
+  ariaLabel: 'Facebook',
+  color:     '#3F65A6',
+  icon:      FacebookIcon,
 })
 

@@ -6,7 +6,8 @@ export const whatsappShareAction = ({shareUrl, teaser, utmParams}) =>
   window.open(`https://api.whatsapp.com/send?text=${encodedShareURL(`${teaser ? teaser + ' ' : ''}${shareUrl}`, utmParams)}`)
 
 export const WhatsappButton = buildShareButtonComponent({
-  action: whatsappShareAction,
-  color:  '#01E677',
-  icon:   WhatsappIcon,
+  action:    whatsappShareAction,
+  ariaLabel: 'WhatsApp',
+  color:     '#01E677',
+  icon:      WhatsappIcon,
 })

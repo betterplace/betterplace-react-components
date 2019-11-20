@@ -9,9 +9,10 @@ export const facebookMessengerShareAction = ({facebookAppId, shareUrl, utmParams
     window.open(`fb-messenger://share?link=${encodedShareURL(shareUrl, utmParams)}${encodeURIComponent(`&app_id=${facebookAppId}`)}`)
 
 export const FacebookMessengerButton = buildShareButtonComponent({
-  action: facebookMessengerShareAction,
-  color:  '#0084FF',
-  icon:   FacebookMessengerIcon,
+  action:    facebookMessengerShareAction,
+  ariaLabel: 'Facebook Messenger',
+  color:     '#0084FF',
+  icon:      FacebookMessengerIcon,
 })
 
 FacebookMessengerButton.propTypes = Object.assign(FacebookMessengerButton.propTypes, {

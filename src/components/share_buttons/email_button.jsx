@@ -10,9 +10,10 @@ export const emailShareAction = ({shareUrl, subject = null, teaser, utmParams}) 
 }
 
 export const EmailButton = buildShareButtonComponent({
-  action: emailShareAction,
-  color:  '#BAC5CC',
-  icon:   EmailIcon,
+  action:    emailShareAction,
+  ariaLabel: 'Email',
+  color:     '#BAC5CC',
+  icon:      EmailIcon,
 })
 
 EmailButton.propTypes = Object.assign(EmailButton.propTypes, {

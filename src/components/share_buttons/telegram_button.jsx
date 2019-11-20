@@ -6,7 +6,8 @@ export const telegramShareAction = ({shareUrl, teaser, utmParams}) =>
   window.open(`https://telegram.me/share/url?url=${encodedShareURL(shareUrl, utmParams)}&text=${encodeURIComponent(teaser)}`)
 
 export const TelegramButton = buildShareButtonComponent({
-  action: telegramShareAction,
-  color:  '#0087CB',
-  icon:   TelegramIcon,
+  action:    telegramShareAction,
+  ariaLabel: 'Telegram',
+  color:     '#0087CB',
+  icon:      TelegramIcon,
 })

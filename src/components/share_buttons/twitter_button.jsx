@@ -6,7 +6,8 @@ export const twitterShareAction = ({shareUrl, utmParams}) =>
   openPopup(`https://twitter.com/share?via=betterplace_org&url=${encodedShareURL(shareUrl, utmParams)}`)
 
 export const TwitterButton = buildShareButtonComponent({
-  action: twitterShareAction,
-  color:  '#48AAE5',
-  icon:   TwitterIcon,
+  action:    twitterShareAction,
+  ariaLabel: 'Twitter',
+  color:     '#48AAE5',
+  icon:      TwitterIcon,
 })

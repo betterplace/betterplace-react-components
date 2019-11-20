@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { shapes } from './shapes'
 import { changeBrightness } from '../../helpers/color_helper'
 
-export const buildShareButtonComponent = ({action, color, icon}) => {
+export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
   const Icon        = icon
   const hoverColor  = changeBrightness(color, -20)
   const activeColor = changeBrightness(color, -40)
@@ -19,6 +19,7 @@ export const buildShareButtonComponent = ({action, color, icon}) => {
     return(
       <Shape
         activeColor={activeColor}
+        aria-label={ariaLabel}
         boxShadow={props.boxShadow}
         className={props.additionalClass}
         color={color}
