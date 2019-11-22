@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailButton adds a beforeClick function for the click handler 1`] = `
+<styled.a
+  activeColor="#929da4"
+  aria-label="Email"
+  color="#BAC5CC"
+  hoverColor="#a6b1b8"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <EmailIcon />
+</styled.a>
+`;
+
+exports[`EmailButton does render if boxShadow is true 1`] = `
+<styled.a
+  activeColor="#929da4"
+  aria-label="Email"
+  boxShadow={true}
+  color="#BAC5CC"
+  hoverColor="#a6b1b8"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <EmailIcon />
+</styled.a>
+`;
+
+exports[`EmailButton does render if utmParams are provided 1`] = `
+<styled.a
+  activeColor="#929da4"
+  aria-label="Email"
+  color="#BAC5CC"
+  hoverColor="#a6b1b8"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <EmailIcon />
+</styled.a>
+`;
+
+exports[`EmailButton renders a round button 1`] = `
+<styled.a
+  activeColor="#929da4"
+  aria-label="Email"
+  color="#BAC5CC"
+  hoverColor="#a6b1b8"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <EmailIcon />
+</styled.a>
+`;

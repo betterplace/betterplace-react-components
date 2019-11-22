@@ -1,7 +1,0 @@
-examples/
-node_modules/
-src/
-test/
-.babelrc
-.npmignore
-.gitignore

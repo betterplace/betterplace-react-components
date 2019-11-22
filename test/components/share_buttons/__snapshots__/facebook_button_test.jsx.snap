@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacebookButton adds a beforeClick function for the click handler 1`] = `
+<styled.a
+  activeColor="#173d7e"
+  aria-label="Facebook"
+  color="#3F65A6"
+  hoverColor="#2b5192"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <FacebookIcon />
+</styled.a>
+`;
+
+exports[`FacebookButton does render if boxShadow is true 1`] = `
+<styled.a
+  activeColor="#173d7e"
+  aria-label="Facebook"
+  boxShadow={true}
+  color="#3F65A6"
+  hoverColor="#2b5192"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <FacebookIcon />
+</styled.a>
+`;
+
+exports[`FacebookButton does render if teaser are provided 1`] = `
+<styled.a
+  activeColor="#173d7e"
+  aria-label="Facebook"
+  color="#3F65A6"
+  hoverColor="#2b5192"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <FacebookIcon />
+</styled.a>
+`;
+
+exports[`FacebookButton does render if utmParams are provided 1`] = `
+<styled.a
+  activeColor="#173d7e"
+  aria-label="Facebook"
+  color="#3F65A6"
+  hoverColor="#2b5192"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <FacebookIcon />
+</styled.a>
+`;
+
+exports[`FacebookButton renders a round button 1`] = `
+<styled.a
+  activeColor="#173d7e"
+  aria-label="Facebook"
+  color="#3F65A6"
+  hoverColor="#2b5192"
+  onClick={[Function]}
+  role="button"
+  title=""
+>
+  <FacebookIcon />
+</styled.a>
+`;
