@@ -14,6 +14,7 @@ fetch('https://www.bp42.com/api_v4/projects/1114.json')
         showDescription={true}
         progressbarColor='#9ECB0A'
         textColor='#000000'
+        extraHeight={100}
       />,
       teaserNode
     )

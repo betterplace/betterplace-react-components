@@ -40,6 +40,7 @@ export class ProjectTeaser extends React.Component {
         font={this.props.font}
         textColor={this.props.textColor}
         showDescription={this.props.showDescription}
+        extraHeight={this.props.extraHeight}
       >
         { this.props.children /* mount point, e.g. for injecting VisibilitySensor */ }
 
@@ -51,15 +52,18 @@ export class ProjectTeaser extends React.Component {
         <Divider>
          <FactList>
            <div>{project.city && <span>{ project.city }, </span>}{project.country}</div>
-           <div><span>{ donationsCount }</span> {donationsCountCaption}</div>
+            <div>{this.props.showCarrierName ? <span>{this.props.project.carrier.name}</span> : <><span>{donationsCount}</span> {donationsCountCaption}</>}</div>
            <div><span>{ openAmount }</span> {openAmountCaption}</div>
          </FactList>
          <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
         </Divider>
 
-        <Progress color={ this.props.progressbarColor || '#bad304' } value={ project.progress_percentage }>
+        <Progress color={this.props.progressbarColor || '#2a8576' } value={ project.progress_percentage }>
           <div className='bar'></div>
         </Progress>
+
+        {this.props.bottomContent }
+
       </Wrapper>
     )
   }
@@ -73,7 +77,10 @@ ProjectTeaser.propTypes = {
   onClick:          PropTypes.func,
   progressbarColor: PropTypes.string,
   project:          PropTypes.object.isRequired,
-  showDescription:  PropTypes.bool
+  showDescription:  PropTypes.bool,
+  extraHeight:      PropTypes.number,
+  showCarrierName:  PropTypes.bool,
+  bottomContent:    PropTypes.element
 }
 
 const Wrapper = styled.a`
@@ -86,7 +93,7 @@ const Wrapper = styled.a`
   flex-direction: column;
   color: ${ props => props.textColor ? props.textColor : '#000000' };
   font-weight: 300;
-  height: ${ props => props.showDescription ? '406px' : '319px' };
+  height: ${ props => (props.showDescription ? 406 : 319) + (props.extraHeight || 0 )}px;
   box-sizing: border-box;
   transition: 0.15s box-shadow ease-out;
 
@@ -168,11 +175,9 @@ const CarrierLogo = styled.img`
 `
 
 const Progress = styled.div`
-  background-color: #eee;
-  height: 10px;
+  background-color: #aecfd1;
+  height: 13px;
   width: 100%;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
   overflow: hidden;
 
   > div {
