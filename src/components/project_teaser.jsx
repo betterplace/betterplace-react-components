@@ -175,7 +175,7 @@ const CarrierLogo = styled.img`
 `
 
 const Progress = styled.div`
-  background-color: #aecfd1;
+  background-color: #eee;
   height: 13px;
   width: 100%;
   overflow: hidden;
