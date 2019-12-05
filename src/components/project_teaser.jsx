@@ -58,7 +58,7 @@ export class ProjectTeaser extends React.Component {
          <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
         </Divider>
 
-        <Progress color={this.props.progressbarColor || '#2a8576' } value={ project.progress_percentage }>
+        <Progress color={this.props.progressbarColor || '#9ECB0A' } value={ project.progress_percentage } backgroundColor={this.props.progressbarBackgroundColor || '#eee'}>
           <div className='bar'></div>
         </Progress>
 
@@ -175,14 +175,14 @@ const CarrierLogo = styled.img`
 `
 
 const Progress = styled.div`
-  background-color: #eee;
+  background-color: ${ props => props.backgroundColor };
   height: 13px;
   width: 100%;
   overflow: hidden;
 
   > div {
     width: ${props => props.value}%;
-    background: ${ props => props.color || 'red' };
+    background: ${ props => props.color };
     transition: width 0.2s linear;
     height: 100%;
   }

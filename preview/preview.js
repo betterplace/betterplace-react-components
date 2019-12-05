@@ -22,7 +22,7 @@ fetch('https://www.bp42.com/api_v4/projects/1114.json')
       <ProjectTeaser
         project={project}
         showDescription={true}
-        progressbarColor='#9ECB0A'
+        progressbarBackgroundColor='blue'
         textColor='#000000'
       />,
       teaserNode
