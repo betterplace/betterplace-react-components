@@ -176,7 +176,7 @@ const CarrierLogo = styled.img`
 
 const Progress = styled.div`
   background-color: ${ props => props.backgroundColor };
-  height: 13px;
+  height: 10px;
   width: 100%;
   overflow: hidden;
 
