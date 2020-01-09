@@ -7,7 +7,6 @@ export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
   const Icon        = icon
   const hoverColor  = changeBrightness(color, -20)
   const activeColor = changeBrightness(color, -40)
-
   const ShareButton = (props) => {
     const Shape = shapes[props.shape]
 
@@ -22,8 +21,8 @@ export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
         aria-label={ariaLabel}
         boxShadow={props.boxShadow}
         className={props.additionalClass}
-        color={color}
-        hoverColor={hoverColor}
+        color={props.color || color}
+        hoverColor={props.color || hoverColor}
         onClick={handleClick}
         role='button'
         title={props.title || ''}
@@ -57,4 +56,5 @@ const shareButtonPropTypes = {
   teaser:              PropTypes.string,
   title:               PropTypes.string,
   utmParams:           PropTypes.object,
+  color:               PropTypes.string
 }

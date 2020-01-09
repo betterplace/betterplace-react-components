@@ -50,7 +50,7 @@ const ButtonFull = styled.a`
     left: -2px
 
     svg {
-      width: 30px
+      width: 25px
       height: 25px
     }
   }
