@@ -20,9 +20,9 @@ export const copyToClipboard = (value) => {
   document.body.removeChild(tempEl)
 
   if (!success) {
-    const locale = locale || document.documentElement.lang || 'de'
-    const alert_message = locale === 'de' ? 'Sorry, dein Browser unterstützt diese Funktion nicht.' : "Sorry, your Browser doesn't support this feature."
-    alert(alert_message)
+    const locale = document.documentElement.lang || 'de'
+    const alertMessage = locale === 'de' ? 'Sorry, dein Browser unterstützt diese Funktion nicht.' : "Sorry, your Browser doesn't support this feature."
+    alert(alertMessage)
   }
 
   return success
