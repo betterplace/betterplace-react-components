@@ -8,6 +8,8 @@ import {
   TelegramButton,
   TwitterButton,
   WhatsappButton,
+  LinkButton,
+  InstagramButton
 } from '../src'
 
 const root = document.getElementById('root')
@@ -41,7 +43,7 @@ for (const [shape, boxShadow] of [
   const divider = document.createElement('hr');
   root.appendChild(divider)
 
-  for (const Button of [EmailButton, FacebookButton, FacebookMessengerButton, TelegramButton, TwitterButton, WhatsappButton]) {
+  for (const Button of [EmailButton, FacebookButton, FacebookMessengerButton, TelegramButton, TwitterButton, WhatsappButton, LinkButton, InstagramButton]) {
     const buttonNode = document.createElement('div')
     buttonNode.style.padding = '10px'
     buttonNode.style.display = 'inline-block'

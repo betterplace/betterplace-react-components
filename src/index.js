@@ -7,6 +7,8 @@ export { facebookMessengerShareAction, FacebookMessengerButton } from './compone
 export { telegramShareAction, TelegramButton } from './components/share_buttons/telegram_button'
 export { twitterShareAction, TwitterButton } from './components/share_buttons/twitter_button'
 export { whatsappShareAction, WhatsappButton } from './components/share_buttons/whatsapp_button'
+export { linkAction, LinkButton } from './components/share_buttons/link_button'
+export { instagramAction, InstagramButton } from './components/share_buttons/instagram_button'
 
 // helpers
 export { changeBrightness } from './helpers/color_helper'

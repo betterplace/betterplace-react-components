@@ -50,8 +50,8 @@ const ButtonFull = styled.a`
     left: -2px
 
     svg {
-      width: 35px
-      height: 35px
+      width: 30px
+      height: 25px
     }
   }
 
@@ -60,7 +60,6 @@ const ButtonFull = styled.a`
     font-size: 18px
     font-weight: 600
     padding: 0 20px 0 10px
-    text-align: center
   }
 `
 
