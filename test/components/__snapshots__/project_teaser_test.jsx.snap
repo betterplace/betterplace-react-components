@@ -40,7 +40,8 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
     />
   </styled.div>
   <styled.div
-    color="#2a8576"
+    backgroundColor="#eee"
+    color="#9ECB0A"
   >
     <div
       className="bar"
@@ -97,7 +98,8 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     />
   </styled.div>
   <styled.div
-    color="#2a8576"
+    backgroundColor="#eee"
+    color="#9ECB0A"
   >
     <div
       className="bar"
@@ -146,7 +148,8 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
     />
   </styled.div>
   <styled.div
-    color="#2a8576"
+    backgroundColor="#eee"
+    color="#9ECB0A"
   >
     <div
       className="bar"
@@ -195,7 +198,8 @@ exports[`ProjectTeaser renders 1`] = `
     />
   </styled.div>
   <styled.div
-    color="#2a8576"
+    backgroundColor="#eee"
+    color="#9ECB0A"
   >
     <div
       className="bar"
@@ -244,7 +248,8 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
     />
   </styled.div>
   <styled.div
-    color="#2a8576"
+    backgroundColor="#eee"
+    color="#9ECB0A"
   >
     <div
       className="bar"
