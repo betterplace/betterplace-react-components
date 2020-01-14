@@ -9,6 +9,6 @@ export const linkAction = ({ shareUrl, utmParams }) => {
 export const LinkButton = buildShareButtonComponent({
   action: linkAction,
   ariaLabel: 'ShareLink',
-  color: '#0183AB',
+  color: '#4E414B',
   icon: LinkIcon,
 })
