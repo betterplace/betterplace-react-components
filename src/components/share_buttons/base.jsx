@@ -10,8 +10,9 @@ export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
   const ShareButton = (props) => {
     const Shape = shapes[props.shape]
 
-    const handleClick = () => {
-      props.beforeOnClick && props.beforeOnClick()
+    const handleClick = (event) => {
+      event.preventDefault()
+      props.beforeOnClick && props.beforeOnClick(event)
       action(props)
     }
 
@@ -22,6 +23,7 @@ export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
         boxShadow={props.boxShadow}
         className={props.additionalClass}
         color={props.color || color}
+        href='#'
         hoverColor={props.color || hoverColor}
         onClick={handleClick}
         role='button'
