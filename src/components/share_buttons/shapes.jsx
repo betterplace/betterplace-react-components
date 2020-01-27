@@ -76,6 +76,7 @@ const ButtonMinimal = styled.a`
   font-size: 12px
 
   &, &:active, &:hover, &:focus {
+    color: ${props => props.color}
     text-decoration: none
   }
 
@@ -116,6 +117,7 @@ const ButtonRound = styled.a`
   cursor: pointer
 
   &, &:active, &:hover, &:focus {
+    color: #FFFFFF
     text-decoration: none
   }
 
@@ -164,6 +166,10 @@ const ButtonSquare = styled.a`
 
   svg {
     color: ${props => props.color}
+
+    &:focus {
+      color: ${props => props.color}
+    }
 
     &:hover {
       color: ${props => props.hoverColor}
