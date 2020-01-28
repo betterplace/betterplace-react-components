@@ -58,8 +58,8 @@ export class ProjectTeaser extends React.Component {
          <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
         </Divider>
 
-        <Progress color={this.props.progressbarColor || '#2B8475'} value={project.progress_percentage} backgroundColor={this.props.progressbarBackgroundColor || '#AECFD1'}>
-          <div className='bar'></div>
+        <Progress color={this.props.progressbarColor || '#2B8475'} value={project.progress_percentage} backgroundColor={this.props.progressbarBackgroundColor || '#AECFD1'} borderRadius={this.props.extraHeight ? '0px' : '3px'}>
+          <div className='bar' borderRadius={this.props.extraHeight ? '3px' : '0px'}></div>
         </Progress>
 
         {this.props.bottomContent }
@@ -179,12 +179,17 @@ const Progress = styled.div`
   height: 15px;
   width: 100%;
   overflow: hidden;
+  border-bottom-right-radius: ${ props => props.borderRadius};
+  border-bottom-left-radius: ${ props => props.borderRadius};
 
   > div {
     width: ${props => props.value}%;
     background: ${ props => props.color };
     transition: width 0.2s linear;
     height: 100%;
+    overflow: hidden;
+    border-bottom-right-radius: ${ props => props.borderRadius};
+    border-bottom-left-radius: ${ props => props.borderRadius};
   }
 `
 
