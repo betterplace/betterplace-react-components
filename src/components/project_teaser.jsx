@@ -188,7 +188,7 @@ const Progress = styled.div`
     transition: width 0.2s linear;
     height: 100%;
     overflow: hidden;
-    border-bottom-right-radius: ${ props => props.borderRadius};
+    border-bottom-right-radius: ${ props => props.value > 100 ? props.borderRadius : '0px'};
     border-bottom-left-radius: ${ props => props.borderRadius};
   }
 `
@@ -197,4 +197,6 @@ const ProfilePicture = styled.div`
 	background: url(${props => props.src});
   height: 150px;
   background-size: cover;
+  border-top-right-radius: 3px
+  border-top-left-radius: 3px
 `;
