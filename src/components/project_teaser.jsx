@@ -59,7 +59,7 @@ export class ProjectTeaser extends React.Component {
         </Divider>
 
         <Progress color={this.props.progressbarColor || '#2B8475'} value={project.progress_percentage} backgroundColor={this.props.progressbarBackgroundColor || '#AECFD1'} borderRadius={this.props.extraHeight ? '0px' : '3px'}>
-          <div className='bar' borderRadius={this.props.extraHeight ? '3px' : '0px'}></div>
+          <div className='bar'></div>
         </Progress>
 
         {this.props.bottomContent }
