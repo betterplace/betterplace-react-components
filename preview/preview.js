@@ -39,6 +39,7 @@ for (const [shape, boxShadow] of [
   ['round', false],
   ['round', true],
   ['square'],
+  ['roundWithLabel']
 ]) {
   const divider = document.createElement('hr');
   root.appendChild(divider)

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react'
 
 const fullSize   = '56px'
 const roundSize  = '45px'
@@ -182,9 +183,27 @@ const ButtonSquare = styled.a`
   }
 `
 
+const LabelWrapper = styled.div`
+  display: flex
+  align-items: center
+  flex-direction: column
+`
+
+// Grab `className` from original shape and apply it to the wrapper instead.
+// This is helpful when some `.display-none` is applied, b/c the label has to
+// be hidden as well.
+const ButtonRoundWithLabel = ({className, ...props}) => {
+  return <LabelWrapper className={className}>
+    <ButtonRound {...props} />
+    {props.label}
+  </LabelWrapper>
+}
+
+
 export const shapes = {
   'full':              ButtonFull,
   'minimal':           ButtonMinimal,
   'round':             ButtonRound,
   'square':            ButtonSquare,
+  'roundWithLabel':    ButtonRoundWithLabel,
 }

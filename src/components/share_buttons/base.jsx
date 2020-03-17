@@ -17,24 +17,22 @@ export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, color
     }
 
     return(
-      <div className={`share-button ${props.additionalClass}`}>
-        <Shape
-          activeColor={activeColor}
-          aria-label={ariaLabel}
-          boxShadow={props.boxShadow}
-          className={props.additionalClass}
-          color={props.color || color}
-          href='#'
-          hoverColor={props.color || hoverColor}
-          onClick={handleClick}
-          role='button'
-          title={props.title || ''}
-        >
-          {(props.shape === 'full') ? <div><Icon/></div> : <Icon/>}
-          {(props.shape === 'minimal' || props.shape === 'full') && <span>{props.content}</span>}
-        </Shape>
-        {props.withLabel && <label>{buttonLabel ? buttonLabel : ariaLabel}</label>}
-      </div>
+      <Shape
+        activeColor={activeColor}
+        aria-label={ariaLabel}
+        boxShadow={props.boxShadow}
+        className={props.className}
+        color={props.color || color}
+        href='#'
+        hoverColor={props.color || hoverColor}
+        onClick={handleClick}
+        role='button'
+        title={props.title || ''}
+        label={buttonLabel || ariaLabel}
+      >
+        {(props.shape === 'full') ? <div><Icon/></div> : <Icon/>}
+        {(props.shape === 'minimal' || props.shape === 'full') && <span>{props.content}</span>}
+      </Shape>
     )
   }
 
@@ -44,7 +42,7 @@ export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, color
 }
 
 const shareButtonPropTypes = {
-  additionalClass:     PropTypes.string,
+  className:           PropTypes.string,
   beforeOnClick:       PropTypes.func,
   boxShadow:           PropTypes.bool,
   withLabel:           PropTypes.bool,
@@ -57,7 +55,7 @@ const shareButtonPropTypes = {
       `prop ${key} must be non-empty string for ${klass} of shape ${props.shape}`
     )
   },
-  shape:               PropTypes.oneOf(['full', 'minimal', 'round', 'square']).isRequired,
+  shape:               PropTypes.oneOf(['full', 'minimal', 'round', 'square', 'roundWithLabel']).isRequired,
   shareUrl:            PropTypes.string.isRequired,
   teaser:              PropTypes.string,
   title:               PropTypes.string,
