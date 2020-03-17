@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { shapes } from './shapes'
 import { changeBrightness } from '../../helpers/color_helper'
 
-export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
+export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, color, icon}) => {
   const Icon        = icon
   const hoverColor  = changeBrightness(color, -20)
   const activeColor = changeBrightness(color, -40)
@@ -17,21 +17,24 @@ export const buildShareButtonComponent = ({action, ariaLabel, color, icon}) => {
     }
 
     return(
-      <Shape
-        activeColor={activeColor}
-        aria-label={ariaLabel}
-        boxShadow={props.boxShadow}
-        className={props.additionalClass}
-        color={props.color || color}
-        href='#'
-        hoverColor={props.color || hoverColor}
-        onClick={handleClick}
-        role='button'
-        title={props.title || ''}
-      >
-        {(props.shape === 'full') ? <div><Icon/></div> : <Icon/>}
-        {(props.shape === 'minimal' || props.shape === 'full') && <span>{props.content}</span>}
-      </Shape>
+      <div className={`share-button ${props.additionalClass}`}>
+        <Shape
+          activeColor={activeColor}
+          aria-label={ariaLabel}
+          boxShadow={props.boxShadow}
+          className={props.additionalClass}
+          color={props.color || color}
+          href='#'
+          hoverColor={props.color || hoverColor}
+          onClick={handleClick}
+          role='button'
+          title={props.title || ''}
+        >
+          {(props.shape === 'full') ? <div><Icon/></div> : <Icon/>}
+          {(props.shape === 'minimal' || props.shape === 'full') && <span>{props.content}</span>}
+        </Shape>
+        {props.withLabel && <label>{buttonLabel ? buttonLabel : ariaLabel}</label>}
+      </div>
     )
   }
 
@@ -44,6 +47,7 @@ const shareButtonPropTypes = {
   additionalClass:     PropTypes.string,
   beforeOnClick:       PropTypes.func,
   boxShadow:           PropTypes.bool,
+  withLabel:           PropTypes.bool,
   content:             (props, key, klass) => {
     // ignore this prop for button shapes that don't use it
     if (props.shape === 'square' || props.shape === 'round') return
