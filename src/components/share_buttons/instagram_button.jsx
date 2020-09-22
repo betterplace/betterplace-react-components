@@ -9,6 +9,6 @@ export const instagramAction = ({ shareUrl }) => {
 export const InstagramButton = buildShareButtonComponent({
   action:    instagramAction,
   ariaLabel: 'Instagram',
-  color:     '#E1306C',
+  className: 'share-button--instagram',
   icon:      InstagramIcon,
 })

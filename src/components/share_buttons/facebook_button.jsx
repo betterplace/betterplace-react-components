@@ -8,7 +8,6 @@ export const facebookShareAction = ({shareUrl, utmParams}) =>
 export const FacebookButton = buildShareButtonComponent({
   action:    facebookShareAction,
   ariaLabel: 'Facebook',
-  color:     '#3F65A6',
+  className: 'share-button--facebook',
   icon:      FacebookIcon,
 })
-

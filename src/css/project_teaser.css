@@ -1,0 +1,142 @@
+/* ---------------------------------- block --------------------------------- */
+
+.project-teaser {
+  cursor: pointer;
+  background: white;
+  font-family: "Fira Sans", Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  font-weight: 300;
+  height: 324px;
+  box-sizing: border-box;
+  transition: 0.15s box-shadow ease-out;
+  text-decoration: none;
+}
+
+.project-teaser:hover,
+.project-teaser:focus {
+  text-decoration: none;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  color: inherit;
+}
+
+.project-teaser:hover .project-teaser--title,
+.project-teaser:focus .project-teaser--title {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .project-teaser {
+    width: 100%;
+  }
+}
+
+/* ----------------------------- block modifier ----------------------------- */
+
+.project-teaser--with-description {
+  height: 411px;
+}
+
+.project-teaser--with-bottom-content {
+  height: 374px;
+}
+
+.project-teaser--with-bottom-content .project-teaser--progress {
+  border-radius: 0;
+}
+
+.project-teaser--with-bottom-content .project-teaser--progress-bar {
+  border-radius: 0;
+}
+
+/* -------------------------------- elements -------------------------------- */
+
+.project-teaser--profile-picture {
+  height: 150px;
+  background-size: cover;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.project-teaser--carrier-logo {
+  width: 65px;
+  height: 65px;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.project-teaser--title {
+  display: block;
+  margin: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  height: 41px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.project-teaser--description {
+  position: relative;
+  height: 71px;
+  overflow: hidden;
+  padding: 0 13px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6a6a6a;
+}
+
+.project-teaser--description:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+
+.project-teaser--divider {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.project-teaser--factlist {
+  font-size: 14px;
+  line-height: 22px;
+  padding-left: 13px;
+  width: calc(100% - 100px);
+}
+
+.project--teaser--factlist div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project--teaser--factlist span {
+  font-weight: bold;
+}
+
+.project-teaser--progress {
+  background-color: #AECFD1;
+  height: 15px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.project-teaser--progress-bar {
+  background: #2B8475;
+  transition: width 0.2s linear;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}

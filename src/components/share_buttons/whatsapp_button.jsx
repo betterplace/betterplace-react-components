@@ -8,6 +8,6 @@ export const whatsappShareAction = ({shareUrl, teaser, utmParams}) =>
 export const WhatsappButton = buildShareButtonComponent({
   action:    whatsappShareAction,
   ariaLabel: 'WhatsApp',
-  color:     '#01E677',
+  className: 'share-button--whatsapp',
   icon:      WhatsappIcon,
 })

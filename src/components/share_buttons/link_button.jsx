@@ -10,6 +10,6 @@ export const LinkButton = buildShareButtonComponent({
   action: linkAction,
   ariaLabel: 'ShareLink',
   buttonLabel: 'Link',
-  color: '#4E414B',
+  className: 'share-button--share-link',
   icon: LinkIcon,
 })
