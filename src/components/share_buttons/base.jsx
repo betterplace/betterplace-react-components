@@ -17,7 +17,7 @@ export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, class
       <Shape
         aria-label={ariaLabel}
         boxShadow={props.boxShadow}
-        className={className}
+        className={`${className} ${props.className ? props.className : ''}`}
         href='#'
         onClick={handleClick}
         role='button'
