@@ -36,8 +36,8 @@ const ButtonSquare = ({icon, content, className, boxShadow, ...props}) => {
 
 const ButtonRoundWithLabel = ({icon, content, className, boxShadow, ...props}) => {
   const Icon = icon
-  return <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-    <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${className}`}>
+  return <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}} className={className}>
+    <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''}`}>
       <Icon />
     </a>
     {content}
