@@ -5,7 +5,7 @@ import { buildShareButtonComponent } from './base'
 
 export const facebookMessengerShareAction = ({facebookAppId, shareUrl, utmParams}) =>
   isMobileOrTablet() ?
-    window.open(`fb-messenger://share?link=${encodedShareURL(shareUrl, utmParams)}${encodeURIComponent(`&app_id=${facebookAppId}`)}`) :
+    window.open(`fb-messenger://share?link=${encodedShareURL(shareUrl, utmParams)}&app_id=${facebookAppId}`) :
     openPopup(`http://www.facebook.com/dialog/send?app_id=${facebookAppId}&link=${encodedShareURL(shareUrl, utmParams)}&redirect_uri=${encodeURIComponent(shareUrl)}`)
 
 export const FacebookMessengerButton = buildShareButtonComponent({
