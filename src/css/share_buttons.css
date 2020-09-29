@@ -84,6 +84,12 @@
   cursor: pointer;
 }
 
+.share-button--round-with-label {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 /* ------------------------------ button square ----------------------------- */
 
 .share-button--square {

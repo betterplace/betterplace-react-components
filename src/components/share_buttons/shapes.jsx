@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ButtonFull = ({icon, content, className, boxShadow, ...props}) => {
+const ButtonFull = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
 
-  return <a {...props} className={`share-button--full ${boxShadow ? 'share-button--box-shadowed' : ''} ${className}`}>
+  return <a {...props} className={`share-button--full ${boxShadow ? 'share-button--box-shadowed' : ''} ${buttonClassName} ${className}`}>
     <div className='share-button--full-icon-wrapper'>
       <Icon className='share-button--icon' />
     </div>
@@ -11,33 +11,33 @@ const ButtonFull = ({icon, content, className, boxShadow, ...props}) => {
   </a>
 }
 
-const ButtonMinimal = ({icon, content, className, boxShadow, ...props}) => {
+const ButtonMinimal = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
 
-  return <a {...props} className={`share-button--minimal ${className}`}>
+  return <a {...props} className={`share-button--minimal ${buttonClassName} ${className}`}>
     <Icon className='share-button--icon' />
     <span className='share-button--text'>{content}</span>
   </a>
 }
 
-const ButtonRound = ({icon, content, className, boxShadow, ...props}) => {
+const ButtonRound = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
-  return <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${className}`}>
+  return <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${buttonClassName} ${className}`}>
     <Icon />
   </a>
 }
 
-const ButtonSquare = ({icon, content, className, boxShadow, ...props}) => {
+const ButtonSquare = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
-  return <a {...props} className={`share-button--square ${className}`}>
+  return <a {...props} className={`share-button--square ${buttonClassName} ${className}`}>
     <Icon />
   </a>
 }
 
-const ButtonRoundWithLabel = ({icon, content, className, boxShadow, ...props}) => {
+const ButtonRoundWithLabel = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
-  return <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}} className={className}>
-    <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''}`}>
+  return <div className={`share-button--round-with-label ${className}`}>
+    <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${buttonClassName}`}>
       <Icon />
     </a>
     {content}

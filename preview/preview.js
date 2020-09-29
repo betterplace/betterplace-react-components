@@ -61,6 +61,7 @@ for (const [shape, boxShadow] of [
         shareUrl='https://www.bp42.com'
         teaser='some teaser ...'
         title='some title'
+        className='test-class-name'
         {...(Button === FacebookMessengerButton ? { facebookAppId: 'foo' } : {})}
       />,
       buttonNode
