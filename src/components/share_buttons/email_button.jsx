@@ -12,7 +12,7 @@ export const emailShareAction = ({shareUrl, subject = null, teaser, utmParams}) 
 export const EmailButton = buildShareButtonComponent({
   action:    emailShareAction,
   ariaLabel: 'Email',
-  color:     '#BAC5CC',
+  className: 'share-button--email',
   icon:      EmailIcon,
 })
 

@@ -1,0 +1,321 @@
+/* -------------------------------- elements -------------------------------- */
+
+.share-button--text {
+  flex: 1 1 0;
+}
+
+/* ------------------------------- button full ------------------------------ */
+
+.share-button--full {
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: normal;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 1;
+  height: 56px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.share-button--full-icon-wrapper {
+  border-radius: 50%;
+  border: 1px solid #FFF;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -2px;
+}
+
+.share-button--full .share-button--icon {
+  width: 25px;
+  height: 25px;
+}
+
+.share-button--full .share-button--text {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 20px 0 10px;
+}
+
+/* ----------------------------- button minimal ----------------------------- */
+
+.share-button--minimal {
+  font-weight: normal;
+  padding: 3px 8px;
+  display: flex;
+  align-items: flex-end;
+  background-color: transparent !important;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  width: 100px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-button--minimal .share-button--icon {
+  width: auto;
+  height: 16px;
+  margin-right: 10px;
+}
+
+/* ------------------------------ button round ------------------------------ */
+
+.share-button--round {
+  padding: 0;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF !important;
+  border-radius: 50%;
+  border: none;
+  transition: background-color .1s ease;
+  cursor: pointer;
+}
+
+/* ------------------------------ button square ----------------------------- */
+
+.share-button--square {
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+  transition: border .1s ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ---------------------------- network modifier ---------------------------- */
+
+.share-button--email {
+  color: #BAC5CC;
+  border-color: #BAC5CC;
+  background-color: #BAC5CC;
+}
+
+.share-button--email:hover,
+.share-button--email:focus {
+  color: #a6b1b8;
+  border-color: #a6b1b8;
+  background-color: #a6b1b8;
+}
+
+.share-button--email:active {
+  color: #929da4;
+  border-color: #929da4;
+  background-color: #929da4;
+}
+
+.share-button--facebook {
+  color: #3F65A6;
+  border-color: #3F65A6;
+  background-color: #3F65A6;
+}
+
+.share-button--facebook:hover,
+.share-button--facebook:focus {
+  color: #2b5192;
+  border-color: #2b5192;
+  background-color: #2b5192;
+}
+
+.share-button--facebook:active {
+  color: #173d7e;
+  border-color: #173d7e;
+  background-color: #173d7e;
+}
+
+.share-button--facebook-messenger {
+  color: #0084FF;
+  border-color: #0084FF;
+  background-color: #0084FF;
+}
+
+.share-button--facebook-messenger:hover,
+.share-button--facebook-messenger:focus {
+  color: #0070eb;
+  border-color: #0070eb;
+  background-color: #0070eb;
+}
+
+.share-button--facebook-messenger:active {
+  color: #005cd7;
+  border-color: #005cd7;
+  background-color: #005cd7;
+}
+
+.share-button--telegram {
+  color: #0087CB;
+  border-color: #0087CB;
+  background-color: #0087CB;
+}
+
+.share-button--telegram:hover,
+.share-button--telegram:focus {
+  color: #0073b7;
+  border-color: #0073b7;
+  background-color: #0073b7;
+}
+
+.share-button--telegram:active {
+  color: #005fa3;
+  border-color: #005fa3;
+  background-color: #005fa3;
+}
+
+.share-button--twitter {
+  color: #48AAE5;
+  border-color: #48AAE5;
+  background-color: #48AAE5;
+}
+
+.share-button--twitter:hover,
+.share-button--twitter:focus {
+  color: #3496d1;
+  border-color: #3496d1;
+  background-color: #3496d1;
+}
+
+.share-button--twitter:active {
+  color: #2082bd;
+  border-color: #2082bd;
+  background-color: #2082bd;
+}
+
+.share-button--whatsapp {
+  color: #01E677;
+  border-color: #01E677;
+  background-color: #01E677;
+}
+
+.share-button--whatsapp:hover,
+.share-button--whatsapp:focus {
+  color: #00d263;
+  border-color: #00d263;
+  background-color: #00d263;
+}
+
+.share-button--whatsapp:active {
+  color: #00be4f;
+  border-color: #00be4f;
+  background-color: #00be4f;
+}
+
+.share-button--share-link {
+  color: #4E414B;
+  border-color: #4E414B;
+  background-color: #4E414B;
+}
+
+.share-button--share-link:hover,
+.share-button--share-link:focus {
+  color: #3a2d37;
+  border-color: #3a2d37;
+  background-color: #3a2d37;
+}
+
+.share-button--share-link:active {
+  color: #261923;
+  border-color: #261923;
+  background-color: #261923;
+}
+
+.share-button--instagram {
+  color: #E1306C;
+  border-color: #E1306C;
+  background-color: #E1306C;
+}
+
+.share-button--instagram:hover,
+.share-button--instagram:focus {
+  color: #cd1c58;
+  border-color: #cd1c58;
+  background-color: #cd1c58;
+}
+
+.share-button--instagram:active {
+  color: #b90844;
+  border-color: #b90844;
+  background-color: #b90844;
+}
+
+.share-button--box-shadowed {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px 0px;
+}
+
+.share-button--box-shadowed:focus,
+.share-button--box-shadowed:active {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px 0px, 0.2rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+  /* position: relative
+  border: 1px solid ${props => props.color}
+  font-weight: normal
+  padding: 0
+  display: flex
+  align-items: center
+  background-color: ${props => props.color}
+  border-radius: 50px
+  cursor: pointer
+  flex: 1
+  height: ${fullSize}
+
+  &, &:active, &:hover, &:focus {
+    color: #FFF
+    text-decoration: none
+  }
+
+  &:hover {
+    background-color: ${props => props.hoverColor}
+  }
+
+  &:active {
+    background-color: ${props => props.activeColor}
+  }
+
+  &:focus {
+    box-shadow: ${props => props.boxShadow ?
+      'rgba(0, 0, 0, 0.2) 0px 3px 3px 0px, 0.2rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1) inset' :
+      '0.2rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1) inset'}
+  }
+
+  ${props => props.boxShadow ? 'box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px 0px' : ''}
+
+  div {
+    border-radius: 50%
+    border: 1px solid #FFF
+    height: 56px
+    width: 56px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    left: -2px
+
+    svg {
+      width: 25px
+      height: 25px
+    }
+  }
+
+  span {
+    flex: 1 1 0
+    font-size: 18px
+    font-weight: 600
+    padding: 0 20px 0 10px
+  } */

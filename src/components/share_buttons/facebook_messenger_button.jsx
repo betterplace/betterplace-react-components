@@ -12,7 +12,7 @@ export const FacebookMessengerButton = buildShareButtonComponent({
   action:    facebookMessengerShareAction,
   ariaLabel: 'Facebook Messenger',
   buttonLabel: 'Messenger',
-  color:     '#0084FF',
+  className: 'share-button--facebook-messenger',
   icon:      FacebookMessengerIcon,
 })
 

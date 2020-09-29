@@ -12,6 +12,9 @@ import {
   InstagramButton
 } from '../src'
 
+import '../src/css/project_teaser.css'
+import '../src/css/share_buttons.css'
+
 const root = document.getElementById('root')
 
 var teaserNode = document.createElement('div');

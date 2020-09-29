@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import { shapes } from './shapes'
 import { changeBrightness } from '../../helpers/color_helper'
 
-export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, color, icon}) => {
-  const Icon        = icon
-  const hoverColor  = changeBrightness(color, -20)
-  const activeColor = changeBrightness(color, -40)
+export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, className, color, icon}) => {
   const ShareButton = (props) => {
     const Shape = shapes[props.shape]
 
@@ -18,21 +15,17 @@ export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, color
 
     return(
       <Shape
-        activeColor={activeColor}
         aria-label={ariaLabel}
         boxShadow={props.boxShadow}
-        className={props.className}
-        color={props.color || color}
+        className={`${className} ${props.className ? props.className : ''}`}
         href='#'
-        hoverColor={props.color || hoverColor}
         onClick={handleClick}
         role='button'
         title={props.title || ''}
         label={buttonLabel || ariaLabel}
-      >
-        {(props.shape === 'full') ? <div><Icon/></div> : <Icon/>}
-        {(props.shape === 'minimal' || props.shape === 'full') && <span>{props.content}</span>}
-      </Shape>
+        icon={icon}
+        content={props.content}
+      />
     )
   }
 
