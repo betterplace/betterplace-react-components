@@ -1,72 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import { formatAmount } from '../helpers/format_amount'
 
-export class ProjectTeaser extends React.Component {
-  handleClick = (event) => {
-    this.props.onClick && this.props.onClick(event, this.props.project)
-  }
+export const ProjectTeaser = (props) => {
+  const project = props.project
+  const locale = props.locale || document.documentElement.lang || 'de'
+  const openAmount = formatAmount({cents: project.open_amount_in_cents, locale: locale})
+  const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
+  const openAmountCaption = locale === 'de' ? 'fehlen noch' : 'still needed'
+  const donationsCountCaption = locale === 'de' ? 'Spenden' : 'donations'
+  const href = props.href || props.project.links.find(link => link.rel === 'platform')?.href
+  const projectImageUrl = props.project.profile_picture.links.find(link => link.rel === 'fill_410x214')?.href
+  const orgaImageUrl = props.project.carrier.picture.links.find(link => link.rel === 'fill_100x100')?.href
+  const handleClick = (event) => { props.onClick && props.onClick(event, project) }
 
-  get href() {
-    return this.props.href || this.props.project.links.find(link => link.rel === 'platform').href
-  }
+  return <a
+    title={project.title}
+    onClick={handleClick}
+    className={`project-teaser ${props.className ? props.className : ''} ${props.showDescription ? 'project-teaser--with-description' : ''} ${props.bottomContent ? 'project-teaser--with-bottom-content' : ''}`}
+    href={href}
+    target={props.openInTab ? '_blank' : '_parent'}
+  >
+    {props.children /* mount point, e.g. for injecting VisibilitySensor */}
 
-  get projectImageUrl() {
-    const link = this.props.project.profile_picture.links.find(link => link.rel === 'fill_410x214')
-    return link && link.href
-  }
+    <div className='project-teaser--profile-picture' style={{backgroundImage: `url(${projectImageUrl})`}} alt={project.title} />
 
-  get orgaImageUrl() {
-    const link = this.props.project.carrier.picture.links.find(link => link.rel === 'fill_100x100')
-    return link && link.href
-  }
+    <h2 className='project-teaser--title' dangerouslySetInnerHTML={{__html: project.title}} />
 
-  render() {
-    const project = this.props.project
-    const locale = this.props.locale || document.documentElement.lang || 'de'
-    const openAmount = formatAmount({cents: this.props.project.open_amount_in_cents, locale: locale})
-    const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
-    const openAmountCaption = locale === 'de' ? 'fehlen noch' : 'still needed'
-    const donationsCountCaption = locale === 'de' ? 'Spenden' : 'donations'
+    {props.showDescription && <div className='project-teaser--description' dangerouslySetInnerHTML={{__html: project.description}} />}
 
-    return (
-      <Wrapper
-        title={project.title}
-        onClick={this.handleClick}
-        className={this.props.className}
-        href={this.href}
-        target={this.props.openInTab ? '_blank': '_parent'}
-        font={this.props.font}
-        textColor={this.props.textColor}
-        showDescription={this.props.showDescription}
-        extraHeight={this.props.extraHeight}
-      >
-        { this.props.children /* mount point, e.g. for injecting VisibilitySensor */ }
+    <div className='project-teaser--divider'>
+      <div className='project-teaser--factlist'>
+        <div>{project.city && <span>{project.city}, </span>}{project.country}</div>
+        <div>{props.showCarrierName ? <span>{props.project.carrier.name}</span> : <><span>{donationsCount}</span> {donationsCountCaption}</>}</div>
+        <div><span>{openAmount}</span> {openAmountCaption}</div>
+      </div>
+      <img src={orgaImageUrl} alt={project.carrier.name} className='project-teaser--carrier-logo' />
+    </div>
 
-        <ProfilePicture src={ this.projectImageUrl } alt={ project.title } />
+    <div className='project-teaser--progress'>
+      <div className='project-teaser--progress-bar' style={{width: `${project.progress_percentage}%`}}></div>
+    </div>
 
-        <Title dangerouslySetInnerHTML={ { __html: project.title } } />
-        { this.props.showDescription && <Description dangerouslySetInnerHTML={ { __html: project.description } } /> }
-
-        <Divider>
-         <FactList>
-           <div>{project.city && <span>{ project.city }, </span>}{project.country}</div>
-            <div>{this.props.showCarrierName ? <span>{this.props.project.carrier.name}</span> : <><span>{donationsCount}</span> {donationsCountCaption}</>}</div>
-           <div><span>{ openAmount }</span> {openAmountCaption}</div>
-         </FactList>
-         <CarrierLogo src={ this.orgaImageUrl } alt={ project.carrier.name } />
-        </Divider>
-
-        <Progress color={this.props.progressbarColor || '#2B8475'} value={project.progress_percentage} backgroundColor={this.props.progressbarBackgroundColor || '#AECFD1'} borderRadius={this.props.extraHeight ? '0px' : '3px'}>
-          <div className='bar'></div>
-        </Progress>
-
-        {this.props.bottomContent }
-
-      </Wrapper>
-    )
-  }
+    {props.bottomContent}
+  </a>
 }
 
 ProjectTeaser.propTypes = {
@@ -82,121 +59,3 @@ ProjectTeaser.propTypes = {
   showCarrierName:  PropTypes.bool,
   bottomContent:    PropTypes.element
 }
-
-const Wrapper = styled.a`
-  cursor: pointer;
-  background: white;
-  font-family: ${ props => props.font ? props.font : '"Fira Sans", Arial, sans-serif' };
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  color: ${ props => props.textColor ? props.textColor : '#000000' };
-  font-weight: 300;
-  height: ${ props => (props.showDescription ? 411 : 324) + (props.extraHeight || 0 )}px;
-  box-sizing: border-box;
-  transition: 0.15s box-shadow ease-out;
-
-  @media (max-width: 767px) {
-    width: 100%;
-  }
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-    color: inherit;
-
-    h2 {
-      text-decoration: underline;
-    }
-  }
-`
-
-const Title = styled.h2`
-  display: block;
-  margin: 10px;
-  font-size: 16px;
-  line-height: 22px;
-  height: 41px;
-  font-weight: bold;
-  overflow: hidden;
-`
-
-const Description = styled.div`
-  position: relative;
-  height: 71px;
-  overflow: hidden;
-  padding: 0 13px;
-  font-size: 14px;
-  line-height: 18px;
-  color: #6a6a6a;
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 18px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-  }
-`
-
-const Divider = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-grow: 1;
-  margin-bottom: 10px;
-`
-
-const FactList = styled.div`
-  font-size: 14px;
-  line-height: 22px;
-  padding-left: 13px;
-  width: calc(100% - 100px);
-
-  > div {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    > span {
-      font-weight: bold;
-    }
-  }
-`
-
-const CarrierLogo = styled.img`
-  width: 65px;
-  height: 65px;
-  margin-right: 13px;
-  overflow: hidden;
-`
-
-const Progress = styled.div`
-  background-color: ${ props => props.backgroundColor };
-  height: 15px;
-  width: 100%;
-  overflow: hidden;
-  border-bottom-right-radius: ${ props => props.borderRadius};
-  border-bottom-left-radius: ${ props => props.borderRadius};
-
-  > div {
-    width: ${props => props.value}%;
-    background: ${ props => props.color };
-    transition: width 0.2s linear;
-    height: 100%;
-    overflow: hidden;
-    border-bottom-right-radius: ${ props => props.value > 100 ? props.borderRadius : '0px'};
-    border-bottom-left-radius: ${ props => props.borderRadius};
-  }
-`
-
-const ProfilePicture = styled.div`
-	background: url(${props => props.src});
-  height: 150px;
-  background-size: cover;
-  border-top-right-radius: 3px
-  border-top-left-radius: 3px
-`;

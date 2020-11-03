@@ -19,3 +19,4 @@ dist
 npm-debug.log
 errors.lst
 tags
+.tool-versions

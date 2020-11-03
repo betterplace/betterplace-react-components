@@ -12,6 +12,9 @@ import {
   InstagramButton
 } from '../src'
 
+import '../src/css/project_teaser.css'
+import '../src/css/share_buttons.css'
+
 const root = document.getElementById('root')
 
 var teaserNode = document.createElement('div');
@@ -58,6 +61,7 @@ for (const [shape, boxShadow] of [
         shareUrl='https://www.bp42.com'
         teaser='some teaser ...'
         title='some title'
+        className='test-class-name'
         {...(Button === FacebookMessengerButton ? { facebookAppId: 'foo' } : {})}
       />,
       buttonNode

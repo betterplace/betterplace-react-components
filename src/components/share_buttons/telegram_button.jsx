@@ -8,6 +8,6 @@ export const telegramShareAction = ({shareUrl, teaser, utmParams}) =>
 export const TelegramButton = buildShareButtonComponent({
   action:    telegramShareAction,
   ariaLabel: 'Telegram',
-  color:     '#0087CB',
+  className: 'share-button--telegram',
   icon:      TelegramIcon,
 })

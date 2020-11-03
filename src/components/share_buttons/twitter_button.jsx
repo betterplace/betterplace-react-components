@@ -8,6 +8,6 @@ export const twitterShareAction = ({shareUrl, utmParams}) =>
 export const TwitterButton = buildShareButtonComponent({
   action:    twitterShareAction,
   ariaLabel: 'Twitter',
-  color:     '#48AAE5',
+  className: 'share-button--twitter',
   icon:      TwitterIcon,
 })

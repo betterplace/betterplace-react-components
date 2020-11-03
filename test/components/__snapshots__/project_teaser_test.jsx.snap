@@ -1,24 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectTeaser does not render the description by default 1`] = `
-<styled.a
+<a
+  className="project-teaser   "
   href="bp.org/p123"
   onClick={[Function]}
   target="_parent"
   title="Skateistan Afghanistan"
 >
-  <styled.div
+  <div
     alt="Skateistan Afghanistan"
+    className="project-teaser--profile-picture"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
   />
-  <styled.h2
+  <h2
+    className="project-teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
       }
     }
   />
-  <styled.div>
-    <styled.div>
+  <div
+    className="project-teaser--divider"
+  >
+    <div
+      className="project-teaser--factlist"
+    >
       <div />
       <div>
         <span>
@@ -34,50 +46,66 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
          
         fehlen noch
       </div>
-    </styled.div>
-    <styled.img
+    </div>
+    <img
       alt="Skateistan"
+      className="project-teaser--carrier-logo"
     />
-  </styled.div>
-  <styled.div
-    backgroundColor="#AECFD1"
-    borderRadius="3px"
-    color="#2B8475"
+  </div>
+  <div
+    className="project-teaser--progress"
   >
     <div
-      className="bar"
+      className="project-teaser--progress-bar"
+      style={
+        Object {
+          "width": "undefined%",
+        }
+      }
     />
-  </styled.div>
-</styled.a>
+  </div>
+</a>
 `;
 
 exports[`ProjectTeaser does render the description if showDescription is true 1`] = `
-<styled.a
+<a
+  className="project-teaser  project-teaser--with-description "
   href="bp.org/p123"
   onClick={[Function]}
-  showDescription={true}
   target="_parent"
   title="Skateistan Afghanistan"
 >
-  <styled.div
+  <div
     alt="Skateistan Afghanistan"
+    className="project-teaser--profile-picture"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
   />
-  <styled.h2
+  <h2
+    className="project-teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
       }
     }
   />
-  <styled.div
+  <div
+    className="project-teaser--description"
     dangerouslySetInnerHTML={
       Object {
         "__html": "this is amazing",
       }
     }
   />
-  <styled.div>
-    <styled.div>
+  <div
+    className="project-teaser--divider"
+  >
+    <div
+      className="project-teaser--factlist"
+    >
       <div />
       <div>
         <span>
@@ -93,42 +121,58 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
          
         fehlen noch
       </div>
-    </styled.div>
-    <styled.img
+    </div>
+    <img
       alt="Skateistan"
+      className="project-teaser--carrier-logo"
     />
-  </styled.div>
-  <styled.div
-    backgroundColor="#AECFD1"
-    borderRadius="3px"
-    color="#2B8475"
+  </div>
+  <div
+    className="project-teaser--progress"
   >
     <div
-      className="bar"
+      className="project-teaser--progress-bar"
+      style={
+        Object {
+          "width": "undefined%",
+        }
+      }
     />
-  </styled.div>
-</styled.a>
+  </div>
+</a>
 `;
 
 exports[`ProjectTeaser is possible to force the locale 1`] = `
-<styled.a
+<a
+  className="project-teaser   "
   href="coupons.org/p123"
   onClick={[Function]}
   target="_parent"
   title="Skateistan Afghanistan"
 >
-  <styled.div
+  <div
     alt="Skateistan Afghanistan"
+    className="project-teaser--profile-picture"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
   />
-  <styled.h2
+  <h2
+    className="project-teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
       }
     }
   />
-  <styled.div>
-    <styled.div>
+  <div
+    className="project-teaser--divider"
+  >
+    <div
+      className="project-teaser--factlist"
+    >
       <div />
       <div>
         <span>
@@ -144,42 +188,58 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
          
         fehlen noch
       </div>
-    </styled.div>
-    <styled.img
+    </div>
+    <img
       alt="Skateistan"
+      className="project-teaser--carrier-logo"
     />
-  </styled.div>
-  <styled.div
-    backgroundColor="#AECFD1"
-    borderRadius="3px"
-    color="#2B8475"
+  </div>
+  <div
+    className="project-teaser--progress"
   >
     <div
-      className="bar"
+      className="project-teaser--progress-bar"
+      style={
+        Object {
+          "width": "undefined%",
+        }
+      }
     />
-  </styled.div>
-</styled.a>
+  </div>
+</a>
 `;
 
 exports[`ProjectTeaser renders 1`] = `
-<styled.a
+<a
+  className="project-teaser   "
   href="bp.org/p123"
   onClick={[Function]}
   target="_parent"
   title="Skateistan Afghanistan"
 >
-  <styled.div
+  <div
     alt="Skateistan Afghanistan"
+    className="project-teaser--profile-picture"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
   />
-  <styled.h2
+  <h2
+    className="project-teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
       }
     }
   />
-  <styled.div>
-    <styled.div>
+  <div
+    className="project-teaser--divider"
+  >
+    <div
+      className="project-teaser--factlist"
+    >
       <div />
       <div>
         <span>
@@ -195,42 +255,58 @@ exports[`ProjectTeaser renders 1`] = `
          
         fehlen noch
       </div>
-    </styled.div>
-    <styled.img
+    </div>
+    <img
       alt="Skateistan"
+      className="project-teaser--carrier-logo"
     />
-  </styled.div>
-  <styled.div
-    backgroundColor="#AECFD1"
-    borderRadius="3px"
-    color="#2B8475"
+  </div>
+  <div
+    className="project-teaser--progress"
   >
     <div
-      className="bar"
+      className="project-teaser--progress-bar"
+      style={
+        Object {
+          "width": "undefined%",
+        }
+      }
     />
-  </styled.div>
-</styled.a>
+  </div>
+</a>
 `;
 
 exports[`ProjectTeaser uses a custom href if given 1`] = `
-<styled.a
+<a
+  className="project-teaser   "
   href="coupons.org/p123"
   onClick={[Function]}
   target="_parent"
   title="Skateistan Afghanistan"
 >
-  <styled.div
+  <div
     alt="Skateistan Afghanistan"
+    className="project-teaser--profile-picture"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
   />
-  <styled.h2
+  <h2
+    className="project-teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
       }
     }
   />
-  <styled.div>
-    <styled.div>
+  <div
+    className="project-teaser--divider"
+  >
+    <div
+      className="project-teaser--factlist"
+    >
       <div />
       <div>
         <span>
@@ -246,19 +322,23 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
          
         fehlen noch
       </div>
-    </styled.div>
-    <styled.img
+    </div>
+    <img
       alt="Skateistan"
+      className="project-teaser--carrier-logo"
     />
-  </styled.div>
-  <styled.div
-    backgroundColor="#AECFD1"
-    borderRadius="3px"
-    color="#2B8475"
+  </div>
+  <div
+    className="project-teaser--progress"
   >
     <div
-      className="bar"
+      className="project-teaser--progress-bar"
+      style={
+        Object {
+          "width": "undefined%",
+        }
+      }
     />
-  </styled.div>
-</styled.a>
+  </div>
+</a>
 `;
