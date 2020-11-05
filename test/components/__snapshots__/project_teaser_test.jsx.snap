@@ -2,7 +2,7 @@
 
 exports[`ProjectTeaser does not render the description by default 1`] = `
 <a
-  className="project-teaser   "
+  className="teaser   "
   href="bp.org/p123"
   onClick={[Function]}
   target="_parent"
@@ -10,7 +10,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
 >
   <div
     alt="Skateistan Afghanistan"
-    className="project-teaser--profile-picture"
+    className="teaser--profile-picture"
     style={
       Object {
         "backgroundImage": "url(undefined)",
@@ -18,7 +18,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
     }
   />
   <h2
-    className="project-teaser--title"
+    className="teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
@@ -26,10 +26,10 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
     }
   />
   <div
-    className="project-teaser--divider"
+    className="teaser--divider"
   >
     <div
-      className="project-teaser--factlist"
+      className="teaser--factlist"
     >
       <div />
       <div>
@@ -49,14 +49,14 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
     </div>
     <img
       alt="Skateistan"
-      className="project-teaser--carrier-logo"
+      className="teaser--carrier-logo"
     />
   </div>
   <div
-    className="project-teaser--progress"
+    className="teaser--progress"
   >
     <div
-      className="project-teaser--progress-bar"
+      className="teaser--progress-bar"
       style={
         Object {
           "width": "undefined%",
@@ -69,7 +69,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
 
 exports[`ProjectTeaser does render the description if showDescription is true 1`] = `
 <a
-  className="project-teaser  project-teaser--with-description "
+  className="teaser  teaser--with-description "
   href="bp.org/p123"
   onClick={[Function]}
   target="_parent"
@@ -77,7 +77,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
 >
   <div
     alt="Skateistan Afghanistan"
-    className="project-teaser--profile-picture"
+    className="teaser--profile-picture"
     style={
       Object {
         "backgroundImage": "url(undefined)",
@@ -85,7 +85,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     }
   />
   <h2
-    className="project-teaser--title"
+    className="teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
@@ -93,7 +93,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     }
   />
   <div
-    className="project-teaser--description"
+    className="teaser--description"
     dangerouslySetInnerHTML={
       Object {
         "__html": "this is amazing",
@@ -101,10 +101,10 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     }
   />
   <div
-    className="project-teaser--divider"
+    className="teaser--divider"
   >
     <div
-      className="project-teaser--factlist"
+      className="teaser--factlist"
     >
       <div />
       <div>
@@ -124,14 +124,14 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     </div>
     <img
       alt="Skateistan"
-      className="project-teaser--carrier-logo"
+      className="teaser--carrier-logo"
     />
   </div>
   <div
-    className="project-teaser--progress"
+    className="teaser--progress"
   >
     <div
-      className="project-teaser--progress-bar"
+      className="teaser--progress-bar"
       style={
         Object {
           "width": "undefined%",
@@ -144,7 +144,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
 
 exports[`ProjectTeaser is possible to force the locale 1`] = `
 <a
-  className="project-teaser   "
+  className="teaser   "
   href="coupons.org/p123"
   onClick={[Function]}
   target="_parent"
@@ -152,7 +152,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
 >
   <div
     alt="Skateistan Afghanistan"
-    className="project-teaser--profile-picture"
+    className="teaser--profile-picture"
     style={
       Object {
         "backgroundImage": "url(undefined)",
@@ -160,7 +160,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
     }
   />
   <h2
-    className="project-teaser--title"
+    className="teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
@@ -168,10 +168,10 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
     }
   />
   <div
-    className="project-teaser--divider"
+    className="teaser--divider"
   >
     <div
-      className="project-teaser--factlist"
+      className="teaser--factlist"
     >
       <div />
       <div>
@@ -191,14 +191,14 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
     </div>
     <img
       alt="Skateistan"
-      className="project-teaser--carrier-logo"
+      className="teaser--carrier-logo"
     />
   </div>
   <div
-    className="project-teaser--progress"
+    className="teaser--progress"
   >
     <div
-      className="project-teaser--progress-bar"
+      className="teaser--progress-bar"
       style={
         Object {
           "width": "undefined%",
@@ -211,7 +211,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
 
 exports[`ProjectTeaser renders 1`] = `
 <a
-  className="project-teaser   "
+  className="teaser   "
   href="bp.org/p123"
   onClick={[Function]}
   target="_parent"
@@ -219,7 +219,7 @@ exports[`ProjectTeaser renders 1`] = `
 >
   <div
     alt="Skateistan Afghanistan"
-    className="project-teaser--profile-picture"
+    className="teaser--profile-picture"
     style={
       Object {
         "backgroundImage": "url(undefined)",
@@ -227,7 +227,7 @@ exports[`ProjectTeaser renders 1`] = `
     }
   />
   <h2
-    className="project-teaser--title"
+    className="teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
@@ -235,10 +235,10 @@ exports[`ProjectTeaser renders 1`] = `
     }
   />
   <div
-    className="project-teaser--divider"
+    className="teaser--divider"
   >
     <div
-      className="project-teaser--factlist"
+      className="teaser--factlist"
     >
       <div />
       <div>
@@ -258,14 +258,14 @@ exports[`ProjectTeaser renders 1`] = `
     </div>
     <img
       alt="Skateistan"
-      className="project-teaser--carrier-logo"
+      className="teaser--carrier-logo"
     />
   </div>
   <div
-    className="project-teaser--progress"
+    className="teaser--progress"
   >
     <div
-      className="project-teaser--progress-bar"
+      className="teaser--progress-bar"
       style={
         Object {
           "width": "undefined%",
@@ -278,7 +278,7 @@ exports[`ProjectTeaser renders 1`] = `
 
 exports[`ProjectTeaser uses a custom href if given 1`] = `
 <a
-  className="project-teaser   "
+  className="teaser   "
   href="coupons.org/p123"
   onClick={[Function]}
   target="_parent"
@@ -286,7 +286,7 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
 >
   <div
     alt="Skateistan Afghanistan"
-    className="project-teaser--profile-picture"
+    className="teaser--profile-picture"
     style={
       Object {
         "backgroundImage": "url(undefined)",
@@ -294,7 +294,7 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
     }
   />
   <h2
-    className="project-teaser--title"
+    className="teaser--title"
     dangerouslySetInnerHTML={
       Object {
         "__html": "Skateistan Afghanistan",
@@ -302,10 +302,10 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
     }
   />
   <div
-    className="project-teaser--divider"
+    className="teaser--divider"
   >
     <div
-      className="project-teaser--factlist"
+      className="teaser--factlist"
     >
       <div />
       <div>
@@ -325,14 +325,14 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
     </div>
     <img
       alt="Skateistan"
-      className="project-teaser--carrier-logo"
+      className="teaser--carrier-logo"
     />
   </div>
   <div
-    className="project-teaser--progress"
+    className="teaser--progress"
   >
     <div
-      className="project-teaser--progress-bar"
+      className="teaser--progress-bar"
       style={
         Object {
           "width": "undefined%",

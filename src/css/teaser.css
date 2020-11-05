@@ -1,6 +1,6 @@
 /* ---------------------------------- block --------------------------------- */
 
-.project-teaser {
+.teaser {
   cursor: pointer;
   background: white;
   font-family: "Fira Sans", Arial, sans-serif;
@@ -16,59 +16,59 @@
   text-decoration: none;
 }
 
-.project-teaser:hover,
-.project-teaser:focus {
+.teaser:hover,
+.teaser:focus {
   text-decoration: none;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
   color: inherit;
 }
 
-.project-teaser:hover .project-teaser--title,
-.project-teaser:focus .project-teaser--title {
+.teaser:hover .teaser--title,
+.teaser:focus .teaser--title {
   text-decoration: underline;
 }
 
 @media (max-width: 767px) {
-  .project-teaser {
+  .teaser {
     width: 100%;
   }
 }
 
 /* ----------------------------- block modifier ----------------------------- */
 
-.project-teaser--with-description {
+.teaser--with-description {
   height: 411px;
 }
 
-.project-teaser--with-bottom-content {
+.teaser--with-bottom-content {
   height: 374px;
 }
 
-.project-teaser--with-bottom-content .project-teaser--progress {
+.teaser--with-bottom-content .teaser--progress {
   border-radius: 0;
 }
 
-.project-teaser--with-bottom-content .project-teaser--progress-bar {
+.teaser--with-bottom-content .teaser--progress-bar {
   border-radius: 0;
 }
 
 /* -------------------------------- elements -------------------------------- */
 
-.project-teaser--profile-picture {
+.teaser--profile-picture {
   height: 150px;
   background-size: cover;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 
-.project-teaser--carrier-logo {
+.teaser--carrier-logo {
   width: 65px;
   height: 65px;
   margin-right: 13px;
   overflow: hidden;
 }
 
-.project-teaser--title {
+.teaser--title {
   display: block;
   margin: 10px;
   font-size: 16px;
@@ -78,7 +78,7 @@
   overflow: hidden;
 }
 
-.project-teaser--description {
+.teaser--description {
   position: relative;
   height: 71px;
   overflow: hidden;
@@ -88,7 +88,7 @@
   color: #6a6a6a;
 }
 
-.project-teaser--description:after {
+.teaser--description:after {
   content: '';
   position: absolute;
   left: 0;
@@ -98,7 +98,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
-.project-teaser--divider {
+.teaser--divider {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -106,24 +106,24 @@
   margin-bottom: 10px;
 }
 
-.project-teaser--factlist {
+.teaser--factlist {
   font-size: 14px;
   line-height: 22px;
   padding-left: 13px;
   width: calc(100% - 100px);
 }
 
-.project--teaser--factlist div {
+.-teaser--factlist div {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.project--teaser--factlist span {
+.-teaser--factlist span {
   font-weight: bold;
 }
 
-.project-teaser--progress {
+.teaser--progress {
   background-color: #AECFD1;
   height: 15px;
   width: 100%;
@@ -132,11 +132,28 @@
   border-bottom-left-radius: 3px;
 }
 
-.project-teaser--progress-bar {
+.teaser--progress-bar {
   background: #2B8475;
   transition: width 0.2s linear;
   height: 100%;
   overflow: hidden;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+}
+
+.teaser--badge {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+  margin: 3px 3px 3px 0;
+  padding: 3.6px 7.2px;
+  background-color: #919191;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.strong {
+  font-weight: bold;
 }
