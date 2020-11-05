@@ -5,6 +5,7 @@ import {
   FacebookButton,
   FacebookMessengerButton,
   ProjectTeaser,
+  FundraisingEventTeaser,
   TelegramButton,
   TwitterButton,
   WhatsappButton,
@@ -12,13 +13,15 @@ import {
   InstagramButton
 } from '../src'
 
-import '../src/css/project_teaser.css'
+import '../src/css/teaser.css'
 import '../src/css/share_buttons.css'
 
 const root = document.getElementById('root')
 
-var teaserNode = document.createElement('div');
-root.appendChild(teaserNode)
+var projectTeaserNode = document.createElement('div');
+root.appendChild(projectTeaserNode)
+var fundraisingEventTeaserNode = document.createElement('div');
+root.appendChild(fundraisingEventTeaserNode)
 
 fetch('https://www.bp42.com/api_v4/projects/1114.json')
   .then(response => response.json())
@@ -30,7 +33,18 @@ fetch('https://www.bp42.com/api_v4/projects/1114.json')
         progressbarBackgroundColor='blue'
         textColor='#000000'
       />,
-      teaserNode
+      projectTeaserNode
+    )
+  )
+
+fetch('https://api.betterplace.org/de/api_v4/fundraising_events/30943.json')
+  .then(response => response.json())
+  .then(fundraisingEvent =>
+    render(
+      <FundraisingEventTeaser
+        fundraisingEvent={fundraisingEvent}
+      />,
+      fundraisingEventTeaserNode
     )
   )
 

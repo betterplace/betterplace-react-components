@@ -1,4 +1,5 @@
 export { ProjectTeaser } from './components/project_teaser'
+export { FundraisingEventTeaser } from './components/fundraising_event_teaser'
 
 // sharing
 export { emailShareAction, EmailButton } from './components/share_buttons/email_button'
