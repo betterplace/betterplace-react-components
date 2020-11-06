@@ -3,7 +3,8 @@
 exports[`TwitterButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="Twitter"
-  className="share-button--twitter"
+  buttonClassName="share-button--twitter"
+  className=""
   href="#"
   icon={[Function]}
   label="Twitter"
@@ -17,7 +18,8 @@ exports[`TwitterButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="Twitter"
   boxShadow={true}
-  className="share-button--twitter"
+  buttonClassName="share-button--twitter"
+  className=""
   href="#"
   icon={[Function]}
   label="Twitter"
@@ -30,7 +32,8 @@ exports[`TwitterButton does render if boxShadow is true 1`] = `
 exports[`TwitterButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="Twitter"
-  className="share-button--twitter"
+  buttonClassName="share-button--twitter"
+  className=""
   href="#"
   icon={[Function]}
   label="Twitter"
@@ -43,7 +46,8 @@ exports[`TwitterButton does render if utmParams are provided 1`] = `
 exports[`TwitterButton renders a round button 1`] = `
 <ButtonRound
   aria-label="Twitter"
-  className="share-button--twitter"
+  buttonClassName="share-button--twitter"
+  className=""
   href="#"
   icon={[Function]}
   label="Twitter"

@@ -3,7 +3,8 @@
 exports[`EmailButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="Email"
-  className="share-button--email"
+  buttonClassName="share-button--email"
+  className=""
   href="#"
   icon={[Function]}
   label="Email"
@@ -17,7 +18,8 @@ exports[`EmailButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="Email"
   boxShadow={true}
-  className="share-button--email"
+  buttonClassName="share-button--email"
+  className=""
   href="#"
   icon={[Function]}
   label="Email"
@@ -30,7 +32,8 @@ exports[`EmailButton does render if boxShadow is true 1`] = `
 exports[`EmailButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="Email"
-  className="share-button--email"
+  buttonClassName="share-button--email"
+  className=""
   href="#"
   icon={[Function]}
   label="Email"
@@ -43,7 +46,8 @@ exports[`EmailButton does render if utmParams are provided 1`] = `
 exports[`EmailButton renders a round button 1`] = `
 <ButtonRound
   aria-label="Email"
-  className="share-button--email"
+  buttonClassName="share-button--email"
+  className=""
   href="#"
   icon={[Function]}
   label="Email"

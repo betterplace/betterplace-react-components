@@ -3,7 +3,8 @@
 exports[`FacebookMessengerButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="Facebook Messenger"
-  className="share-button--facebook-messenger"
+  buttonClassName="share-button--facebook-messenger"
+  className=""
   href="#"
   icon={[Function]}
   label="Messenger"
@@ -17,7 +18,8 @@ exports[`FacebookMessengerButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="Facebook Messenger"
   boxShadow={true}
-  className="share-button--facebook-messenger"
+  buttonClassName="share-button--facebook-messenger"
+  className=""
   href="#"
   icon={[Function]}
   label="Messenger"
@@ -30,7 +32,8 @@ exports[`FacebookMessengerButton does render if boxShadow is true 1`] = `
 exports[`FacebookMessengerButton does render if teaser are provided 1`] = `
 <ButtonRound
   aria-label="Facebook Messenger"
-  className="share-button--facebook-messenger"
+  buttonClassName="share-button--facebook-messenger"
+  className=""
   href="#"
   icon={[Function]}
   label="Messenger"
@@ -43,7 +46,8 @@ exports[`FacebookMessengerButton does render if teaser are provided 1`] = `
 exports[`FacebookMessengerButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="Facebook Messenger"
-  className="share-button--facebook-messenger"
+  buttonClassName="share-button--facebook-messenger"
+  className=""
   href="#"
   icon={[Function]}
   label="Messenger"
@@ -56,7 +60,8 @@ exports[`FacebookMessengerButton does render if utmParams are provided 1`] = `
 exports[`FacebookMessengerButton renders a round button 1`] = `
 <ButtonRound
   aria-label="Facebook Messenger"
-  className="share-button--facebook-messenger"
+  buttonClassName="share-button--facebook-messenger"
+  className=""
   href="#"
   icon={[Function]}
   label="Messenger"

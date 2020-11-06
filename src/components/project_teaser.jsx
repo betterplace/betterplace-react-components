@@ -31,7 +31,7 @@ export const ProjectTeaser = (props) => {
 
     <div className='teaser--divider'>
       <div className='teaser--factlist'>
-        <div>{project.city && <span>{project.city}, </span>}{project.country}</div>
+        <div>{project.city && <span>{project.city}</span>}, {project.country}</div>
         <div>{props.showCarrierName ? <span>{props.project.carrier.name}</span> : <><span>{donationsCount}</span> {donationsCountCaption}</>}</div>
         <div><span>{openAmount}</span> {openAmountCaption}</div>
       </div>

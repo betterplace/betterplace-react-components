@@ -3,7 +3,8 @@
 exports[`TelegramButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="Telegram"
-  className="share-button--telegram"
+  buttonClassName="share-button--telegram"
+  className=""
   href="#"
   icon={[Function]}
   label="Telegram"
@@ -17,7 +18,8 @@ exports[`TelegramButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="Telegram"
   boxShadow={true}
-  className="share-button--telegram"
+  buttonClassName="share-button--telegram"
+  className=""
   href="#"
   icon={[Function]}
   label="Telegram"
@@ -30,7 +32,8 @@ exports[`TelegramButton does render if boxShadow is true 1`] = `
 exports[`TelegramButton does render if teaser are provided 1`] = `
 <ButtonRound
   aria-label="Telegram"
-  className="share-button--telegram"
+  buttonClassName="share-button--telegram"
+  className=""
   href="#"
   icon={[Function]}
   label="Telegram"
@@ -43,7 +46,8 @@ exports[`TelegramButton does render if teaser are provided 1`] = `
 exports[`TelegramButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="Telegram"
-  className="share-button--telegram"
+  buttonClassName="share-button--telegram"
+  className=""
   href="#"
   icon={[Function]}
   label="Telegram"
@@ -56,7 +60,8 @@ exports[`TelegramButton does render if utmParams are provided 1`] = `
 exports[`TelegramButton renders a round button 1`] = `
 <ButtonRound
   aria-label="Telegram"
-  className="share-button--telegram"
+  buttonClassName="share-button--telegram"
+  className=""
   href="#"
   icon={[Function]}
   label="Telegram"

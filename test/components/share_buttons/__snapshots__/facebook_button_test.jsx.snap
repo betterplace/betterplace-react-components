@@ -3,7 +3,8 @@
 exports[`FacebookButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="Facebook"
-  className="share-button--facebook"
+  buttonClassName="share-button--facebook"
+  className=""
   href="#"
   icon={[Function]}
   label="Facebook"
@@ -17,7 +18,8 @@ exports[`FacebookButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="Facebook"
   boxShadow={true}
-  className="share-button--facebook"
+  buttonClassName="share-button--facebook"
+  className=""
   href="#"
   icon={[Function]}
   label="Facebook"
@@ -30,7 +32,8 @@ exports[`FacebookButton does render if boxShadow is true 1`] = `
 exports[`FacebookButton does render if teaser are provided 1`] = `
 <ButtonRound
   aria-label="Facebook"
-  className="share-button--facebook"
+  buttonClassName="share-button--facebook"
+  className=""
   href="#"
   icon={[Function]}
   label="Facebook"
@@ -43,7 +46,8 @@ exports[`FacebookButton does render if teaser are provided 1`] = `
 exports[`FacebookButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="Facebook"
-  className="share-button--facebook"
+  buttonClassName="share-button--facebook"
+  className=""
   href="#"
   icon={[Function]}
   label="Facebook"
@@ -56,7 +60,8 @@ exports[`FacebookButton does render if utmParams are provided 1`] = `
 exports[`FacebookButton renders a round button 1`] = `
 <ButtonRound
   aria-label="Facebook"
-  className="share-button--facebook"
+  buttonClassName="share-button--facebook"
+  className=""
   href="#"
   icon={[Function]}
   label="Facebook"

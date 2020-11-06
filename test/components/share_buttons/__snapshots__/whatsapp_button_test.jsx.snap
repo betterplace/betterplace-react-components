@@ -3,7 +3,8 @@
 exports[`WhatsappButton adds a beforeClick function for the click handler 1`] = `
 <ButtonRound
   aria-label="WhatsApp"
-  className="share-button--whatsapp"
+  buttonClassName="share-button--whatsapp"
+  className=""
   href="#"
   icon={[Function]}
   label="WhatsApp"
@@ -17,7 +18,8 @@ exports[`WhatsappButton does render if boxShadow is true 1`] = `
 <ButtonRound
   aria-label="WhatsApp"
   boxShadow={true}
-  className="share-button--whatsapp"
+  buttonClassName="share-button--whatsapp"
+  className=""
   href="#"
   icon={[Function]}
   label="WhatsApp"
@@ -30,7 +32,8 @@ exports[`WhatsappButton does render if boxShadow is true 1`] = `
 exports[`WhatsappButton does render if teaser are provided 1`] = `
 <ButtonRound
   aria-label="WhatsApp"
-  className="share-button--whatsapp"
+  buttonClassName="share-button--whatsapp"
+  className=""
   href="#"
   icon={[Function]}
   label="WhatsApp"
@@ -43,7 +46,8 @@ exports[`WhatsappButton does render if teaser are provided 1`] = `
 exports[`WhatsappButton does render if utmParams are provided 1`] = `
 <ButtonRound
   aria-label="WhatsApp"
-  className="share-button--whatsapp"
+  buttonClassName="share-button--whatsapp"
+  className=""
   href="#"
   icon={[Function]}
   label="WhatsApp"
@@ -56,7 +60,8 @@ exports[`WhatsappButton does render if utmParams are provided 1`] = `
 exports[`WhatsappButton renders a round button 1`] = `
 <ButtonRound
   aria-label="WhatsApp"
-  className="share-button--whatsapp"
+  buttonClassName="share-button--whatsapp"
+  className=""
   href="#"
   icon={[Function]}
   label="WhatsApp"

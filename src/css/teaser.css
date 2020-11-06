@@ -109,17 +109,17 @@
 .teaser--factlist {
   font-size: 14px;
   line-height: 22px;
-  padding-left: 13px;
+  padding-left: 10px;
   width: calc(100% - 100px);
 }
 
-.-teaser--factlist div {
+.teaser--factlist div {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.-teaser--factlist span {
+.teaser--factlist span {
   font-weight: bold;
 }
 
@@ -152,8 +152,4 @@
   border-radius: 0.25rem;
   font-size: 12px;
   line-height: 12px;
-}
-
-.strong {
-  font-weight: bold;
 }

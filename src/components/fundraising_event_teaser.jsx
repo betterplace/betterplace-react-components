@@ -24,11 +24,11 @@ export const FundraisingEventTeaser = (props) => {
 
     <div className='teaser--divider'>
       <div className='teaser--factlist'>
-        <div className='strong'>{fundraisingEvent.contact.name}</div>
-        <div className='teaser--badge'>{fundraisingEvent.category || 'Kategorie XY'}</div>
-        <div><span className='strong'>{fundraisingEvent.donor_count}</span> {locale === 'de' ? 'Spenden' : 'donations'}</div>
+        <div><span>{fundraisingEvent.contact.name}</span></div>
+        {fundraisingEvent.category && <div className='teaser--badge'>{fundraisingEvent.category}</div>}
+        <div><span>{fundraisingEvent.donor_count}</span> {locale === 'de' ? 'Spenden' : 'donations'}</div>
       </div>
-      <img style={{ borderRadius: '50%'}} src={contactImageUrl} alt={fundraisingEvent.contact.name} className='teaser--carrier-logo' />
+      <img style={{ borderRadius: '50%', border: '1px solid #cccccc'}} src={contactImageUrl} alt={fundraisingEvent.contact.name} className='teaser--carrier-logo' />
     </div>
   </a>
 }
