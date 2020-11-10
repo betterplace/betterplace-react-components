@@ -12,23 +12,23 @@ export const FundraisingEventTeaser = (props) => {
   return <a
     title={fundraisingEvent.title}
     onClick={handleClick}
-    className='teaser'
+    className='donatable-teaser'
     href={href}
     target={props.openInTab ? '_blank' : '_parent'}
   >
     {props.children /* mount point, e.g. for injecting VisibilitySensor */}
 
-    <div className='teaser--profile-picture' style={{backgroundImage: `url(${fundraisingEventImageUrl})`}} alt={fundraisingEvent.title} />
+    <div className='donatable-teaser--profile-picture' style={{backgroundImage: `url(${fundraisingEventImageUrl})`}} alt={fundraisingEvent.title} />
 
-    <h2 className='teaser--title' dangerouslySetInnerHTML={{__html: fundraisingEvent.title}} />
+    <h2 className='donatable-teaser--title' dangerouslySetInnerHTML={{__html: fundraisingEvent.title}} />
 
-    <div className='teaser--divider'>
-      <div className='teaser--factlist'>
+    <div className='donatable-teaser--divider'>
+      <div className='donatable-teaser--factlist'>
         <div><span>{fundraisingEvent.contact.name}</span></div>
-        {fundraisingEvent.category && <div className='teaser--badge'>{fundraisingEvent.category}</div>}
+        {fundraisingEvent.category && <div className='donatable-teaser--badge'>{fundraisingEvent.category}</div>}
         <div><span>{fundraisingEvent.donor_count}</span> {locale === 'de' ? 'Spenden' : 'donations'}</div>
       </div>
-      <img style={{ borderRadius: '50%', border: '1px solid #cccccc'}} src={contactImageUrl} alt={fundraisingEvent.contact.name} className='teaser--carrier-logo' />
+      <img style={{ borderRadius: '50%', border: '1px solid #cccccc'}} src={contactImageUrl} alt={fundraisingEvent.contact.name} className='donatable-teaser--carrier-logo' />
     </div>
   </a>
 }

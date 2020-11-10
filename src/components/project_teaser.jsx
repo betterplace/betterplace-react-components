@@ -17,29 +17,29 @@ export const ProjectTeaser = (props) => {
   return <a
     title={project.title}
     onClick={handleClick}
-    className={`teaser ${props.className ? props.className : ''} ${props.showDescription ? 'teaser--with-description' : ''} ${props.bottomContent ? 'teaser--with-bottom-content' : ''}`}
+    className={`donatable-teaser ${props.className ? props.className : ''} ${props.showDescription ? 'donatable-teaser--with-description' : ''} ${props.bottomContent ? 'donatable-teaser--with-bottom-content' : ''}`}
     href={href}
     target={props.openInTab ? '_blank' : '_parent'}
   >
     {props.children /* mount point, e.g. for injecting VisibilitySensor */}
 
-    <div className='teaser--profile-picture' style={{backgroundImage: `url(${projectImageUrl})`}} alt={project.title} />
+    <div className='donatable-teaser--profile-picture' style={{backgroundImage: `url(${projectImageUrl})`}} alt={project.title} />
 
-    <h2 className='teaser--title' dangerouslySetInnerHTML={{__html: project.title}} />
+    <h2 className='donatable-teaser--title' dangerouslySetInnerHTML={{__html: project.title}} />
 
-    {props.showDescription && <div className='teaser--description' dangerouslySetInnerHTML={{__html: project.description}} />}
+    {props.showDescription && <div className='donatable-teaser--description' dangerouslySetInnerHTML={{__html: project.description}} />}
 
-    <div className='teaser--divider'>
-      <div className='teaser--factlist'>
+    <div className='donatable-teaser--divider'>
+      <div className='donatable-teaser--factlist'>
         <div>{project.city && <span>{project.city}</span>}, {project.country}</div>
         <div>{props.showCarrierName ? <span>{props.project.carrier.name}</span> : <><span>{donationsCount}</span> {donationsCountCaption}</>}</div>
         <div><span>{openAmount}</span> {openAmountCaption}</div>
       </div>
-      <img src={orgaImageUrl} alt={project.carrier.name} className='teaser--carrier-logo' />
+      <img src={orgaImageUrl} alt={project.carrier.name} className='donatable-teaser--carrier-logo' />
     </div>
 
-    <div className='teaser--progress'>
-      <div className='teaser--progress-bar' style={{width: `${project.progress_percentage}%`}}></div>
+    <div className='donatable-teaser--progress'>
+      <div className='donatable-teaser--progress-bar' style={{width: `${project.progress_percentage}%`}}></div>
     </div>
 
     {props.bottomContent}

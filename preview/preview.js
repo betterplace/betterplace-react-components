@@ -13,7 +13,7 @@ import {
   InstagramButton
 } from '../src'
 
-import '../src/css/teaser.css'
+import '../src/css/donatable_teaser.css'
 import '../src/css/share_buttons.css'
 
 const root = document.getElementById('root')

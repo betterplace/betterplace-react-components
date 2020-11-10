@@ -1,6 +1,6 @@
 /* ---------------------------------- block --------------------------------- */
 
-.teaser {
+.donatable-teaser {
   cursor: pointer;
   background: white;
   font-family: "Fira Sans", Arial, sans-serif;
@@ -16,59 +16,59 @@
   text-decoration: none;
 }
 
-.teaser:hover,
-.teaser:focus {
+.donatable-teaser:hover,
+.donatable-teaser:focus {
   text-decoration: none;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
   color: inherit;
 }
 
-.teaser:hover .teaser--title,
-.teaser:focus .teaser--title {
+.donatable-teaser:hover .donatable-teaser--title,
+.donatable-teaser:focus .donatable-teaser--title {
   text-decoration: underline;
 }
 
 @media (max-width: 767px) {
-  .teaser {
+  .donatable-teaser {
     width: 100%;
   }
 }
 
 /* ----------------------------- block modifier ----------------------------- */
 
-.teaser--with-description {
+.donatable-teaser--with-description {
   height: 411px;
 }
 
-.teaser--with-bottom-content {
+.donatable-teaser--with-bottom-content {
   height: 374px;
 }
 
-.teaser--with-bottom-content .teaser--progress {
+.donatable-teaser--with-bottom-content .donatable-teaser--progress {
   border-radius: 0;
 }
 
-.teaser--with-bottom-content .teaser--progress-bar {
+.donatable-teaser--with-bottom-content .donatable-teaser--progress-bar {
   border-radius: 0;
 }
 
 /* -------------------------------- elements -------------------------------- */
 
-.teaser--profile-picture {
+.donatable-teaser--profile-picture {
   height: 150px;
   background-size: cover;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 
-.teaser--carrier-logo {
+.donatable-teaser--carrier-logo {
   width: 65px;
   height: 65px;
   margin-right: 13px;
   overflow: hidden;
 }
 
-.teaser--title {
+.donatable-teaser--title {
   display: block;
   margin: 10px;
   font-size: 16px;
@@ -78,7 +78,7 @@
   overflow: hidden;
 }
 
-.teaser--description {
+.donatable-teaser--description {
   position: relative;
   height: 71px;
   overflow: hidden;
@@ -88,7 +88,7 @@
   color: #6a6a6a;
 }
 
-.teaser--description:after {
+.donatable-teaser--description:after {
   content: '';
   position: absolute;
   left: 0;
@@ -98,7 +98,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
-.teaser--divider {
+.donatable-teaser--divider {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -106,24 +106,24 @@
   margin-bottom: 10px;
 }
 
-.teaser--factlist {
+.donatable-teaser--factlist {
   font-size: 14px;
   line-height: 22px;
   padding-left: 10px;
   width: calc(100% - 100px);
 }
 
-.teaser--factlist div {
+.donatable-teaser--factlist div {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.teaser--factlist span {
+.donatable-teaser--factlist span {
   font-weight: bold;
 }
 
-.teaser--progress {
+.donatable-teaser--progress {
   background-color: #AECFD1;
   height: 15px;
   width: 100%;
@@ -132,7 +132,7 @@
   border-bottom-left-radius: 3px;
 }
 
-.teaser--progress-bar {
+.donatable-teaser--progress-bar {
   background: #2B8475;
   transition: width 0.2s linear;
   height: 100%;
@@ -141,7 +141,7 @@
   border-bottom-left-radius: 3px;
 }
 
-.teaser--badge {
+.donatable-teaser--badge {
   display: inline-block;
   white-space: nowrap;
   vertical-align: baseline;
