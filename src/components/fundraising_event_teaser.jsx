@@ -24,9 +24,9 @@ export const FundraisingEventTeaser = (props) => {
 
     <div className='donatable-teaser--divider'>
       <div className='donatable-teaser--factlist'>
-        <div><span>{fundraisingEvent.contact.name}</span></div>
+        <div><span dangerouslySetInnerHTML={{ __html: fundraisingEvent.contact.name }}/></div>
         {fundraisingEvent.category && <div className='donatable-teaser--badge'>{fundraisingEvent.category}</div>}
-        <div><span>{fundraisingEvent.donor_count}</span> {locale === 'de' ? 'Spenden' : 'donations'}</div>
+        <div><span>{fundraisingEvent.donor_count}</span> {fundraisingEvent.donor_count === 1 ? (locale === 'de' ? 'Spende' : 'donation') : (locale === 'de' ? 'Spenden' : 'donations')}</div>
       </div>
       <img style={{ borderRadius: '50%', border: '1px solid #cccccc'}} src={contactImageUrl} alt={fundraisingEvent.contact.name} className='donatable-teaser--carrier-logo' />
     </div>
