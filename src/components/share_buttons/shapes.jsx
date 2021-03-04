@@ -22,6 +22,7 @@ const ButtonMinimal = ({icon, content, className, boxShadow, buttonClassName, ..
 
 const ButtonRound = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
+
   return <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${buttonClassName} ${className}`}>
     <Icon />
   </a>
@@ -29,6 +30,7 @@ const ButtonRound = ({icon, content, className, boxShadow, buttonClassName, ...p
 
 const ButtonSquare = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
+
   return <a {...props} className={`share-button--square ${buttonClassName} ${className}`}>
     <Icon />
   </a>
@@ -36,6 +38,7 @@ const ButtonSquare = ({icon, content, className, boxShadow, buttonClassName, ...
 
 const ButtonRoundWithLabel = ({icon, content, className, boxShadow, buttonClassName, ...props}) => {
   const Icon = icon
+
   return <div className={`share-button--round-with-label ${className}`}>
     <a {...props} className={`share-button--round ${boxShadow ? 'share-button--box-shadowed' : ''} ${buttonClassName}`}>
       <Icon />

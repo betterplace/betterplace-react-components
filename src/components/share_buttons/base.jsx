@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { shapes } from './shapes'
-import { changeBrightness } from '../../helpers/color_helper'
 
-export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, className, color, icon}) => {
+export const buildShareButtonComponent = ({action, ariaLabel, buttonLabel, className, icon}) => {
   const ShareButton = (props) => {
     const Shape = shapes[props.shape]
 
