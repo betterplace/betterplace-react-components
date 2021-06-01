@@ -1,29 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import { ButtonProps, shapes } from './shapes';
 
-export type ButtonBuilderOptions = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ButtonBuilderOptions<T extends BaseShareActionArgs> = {
   ariaLabel?: string
   buttonLabel?: string
   className?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: React.FC<any>
-  action: (props: ShareButtonProps) => void
+  action: (args: T) => void
 }
 
 export type ShareButtonProps = {
   shape: keyof typeof shapes
   beforeOnClick?: (event: React.MouseEvent) => void
 } & ButtonProps
-export const buildShareButtonComponent = ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type BaseShareActionArgs = { shareUrl: string; utmParams?: Record<string, any> }
+export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
   action,
   ariaLabel,
   buttonLabel,
   className,
   icon,
-}: ButtonBuilderOptions) => {
-  const ShareButton: React.FC<ShareButtonProps> = (props) => {
+}: ButtonBuilderOptions<T>) => {
+  const ShareButton = (props: ShareButtonProps & T) => {
     const Shape = shapes[props.shape]
 
     const handleClick = (event: React.MouseEvent) => {

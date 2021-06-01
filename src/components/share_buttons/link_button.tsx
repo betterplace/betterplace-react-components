@@ -1,8 +1,8 @@
-import { LinkIcon } from '../../assets/icons'
-import { buildShareButtonComponent } from './base'
-import { toQuery, copyToClipboard } from '../../helpers/sharing_helper'
+import { LinkIcon } from '../../assets/icons';
+import { copyToClipboard, toQuery } from '../../helpers/sharing_helper';
+import { BaseShareActionArgs, buildShareButtonComponent } from './base';
 
-export const linkAction = ({ shareUrl, utmParams }) => {
+export const linkAction = ({ shareUrl, utmParams }: BaseShareActionArgs) => {
   copyToClipboard(`${shareUrl}${toQuery(utmParams || {})}`)
 }
 

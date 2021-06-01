@@ -1,13 +1,15 @@
-import { encodedShareURL } from '../../helpers/sharing_helper'
-import { TelegramIcon } from '../../assets/icons'
-import { buildShareButtonComponent } from './base'
+import { TelegramIcon } from '../../assets/icons';
+import { encodedShareURL } from '../../helpers/sharing_helper';
+import { BaseShareActionArgs, buildShareButtonComponent } from './base';
 
-export const telegramShareAction = ({shareUrl, teaser, utmParams}) =>
-  window.open(`https://telegram.me/share/url?url=${encodedShareURL(shareUrl, utmParams)}&text=${encodeURIComponent(teaser)}`)
+export const telegramShareAction = ({ shareUrl, teaser, utmParams }: BaseShareActionArgs & { teaser: string }) =>
+  window.open(
+    `https://telegram.me/share/url?url=${encodedShareURL(shareUrl, utmParams)}&text=${encodeURIComponent(teaser)}`
+  )
 
 export const TelegramButton = buildShareButtonComponent({
-  action:    telegramShareAction,
+  action: telegramShareAction,
   ariaLabel: 'Telegram',
   className: 'share-button--telegram',
-  icon:      TelegramIcon,
+  icon: TelegramIcon,
 })

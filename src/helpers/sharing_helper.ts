@@ -1,17 +1,20 @@
-export const toQuery = (object) => {
-  const searchParams = Object.keys(object).map(k => {
-    return object[k] ? (encodeURIComponent(k) + '=' + encodeURIComponent(object[k])) : null
-  }).filter(e => e).join('&')
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const toQuery = (object: Record<string, any>) => {
+  const searchParams = Object.keys(object)
+    .map((k) => {
+      return object[k] ? encodeURIComponent(k) + '=' + encodeURIComponent(object[k]) : null
+    })
+    .filter((e) => e)
+    .join('&')
   return searchParams ? `?${searchParams}` : ''
 }
 
-export const encodedShareURL = (url, utmParams) =>
+export const encodedShareURL = (url: string, utmParams?: Record<string, any>) =>
   encodeURIComponent(url + toQuery(utmParams || {}))
 
-export const openPopup = (url) =>
-  window.open(url, 'sharer', 'toolbar=no,width=1042,height=436')
+export const openPopup = (url: string) => window.open(url, 'sharer', 'toolbar=no,width=1042,height=436')
 
-export const copyToClipboard = (value) => {
+export const copyToClipboard = (value: string) => {
   const tempEl = document.createElement('textarea')
   tempEl.value = value
   document.body.appendChild(tempEl)
@@ -21,7 +24,10 @@ export const copyToClipboard = (value) => {
 
   if (!success) {
     const locale = document.documentElement.lang || 'de'
-    const alertMessage = locale === 'de' ? 'Sorry, dein Browser unterstützt diese Funktion nicht.' : "Sorry, your Browser doesn't support this feature."
+    const alertMessage =
+      locale === 'de'
+        ? 'Sorry, dein Browser unterstützt diese Funktion nicht.'
+        : "Sorry, your Browser doesn't support this feature."
     alert(alertMessage)
   }
 

@@ -4,9 +4,9 @@
   "description": "betterplace React components",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist && babel src --out-dir dist",
+    "build": "rm -rf dist && babel src --out-dir dist --extensions '.ts,.tsx' && tsc",
     "prepublish": "npm run build",
-    "start": "webpack-dev-server --config webpack.config.js",
+    "start": "webpack serve --config webpack.config.js",
     "test": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest",
     "testc": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --coverage",
     "testw": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --watch"

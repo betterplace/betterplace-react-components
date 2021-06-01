@@ -1,13 +1,13 @@
-import { encodedShareURL, openPopup } from '../../helpers/sharing_helper'
-import { TwitterIcon } from '../../assets/icons'
-import { buildShareButtonComponent } from './base'
+import { TwitterIcon } from '../../assets/icons';
+import { encodedShareURL, openPopup } from '../../helpers/sharing_helper';
+import { BaseShareActionArgs, buildShareButtonComponent } from './base';
 
-export const twitterShareAction = ({shareUrl, utmParams}) =>
+export const twitterShareAction = ({ shareUrl, utmParams }: BaseShareActionArgs) =>
   openPopup(`https://twitter.com/intent/tweet?url=${encodedShareURL(shareUrl, utmParams)}&via=betterplace_org`)
 
 export const TwitterButton = buildShareButtonComponent({
-  action:    twitterShareAction,
+  action: twitterShareAction,
   ariaLabel: 'Twitter',
   className: 'share-button--twitter',
-  icon:      TwitterIcon,
+  icon: TwitterIcon,
 })
