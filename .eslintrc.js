@@ -5,7 +5,7 @@ module.exports = {
   },
   globals: {},
   root: true,
-  plugins: ['@typescript-eslint', 'react', 'import', 'prettier'],
+  plugins: ['@typescript-eslint', 'react', 'prettier'],
   env: {
     browser: true,
     node: true,

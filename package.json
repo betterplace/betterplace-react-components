@@ -13,9 +13,9 @@
     "testw": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --watch",
     "lint": "tsc --noEmit && eslint .",
     "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "lint:fix": "yarn run lint:js  --fix"
+    "pre-commit": "lint-staged",
+    "lint:fix": "yarn run lint  --fix",
+    "prepare": "husky install"
   },
   "files": [
     "dist",
@@ -38,16 +38,13 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint . --fix",
-      "git add"
+      "eslint . --fix"
     ],
     "test/**/*.{js,jsx,ts,tsx}": [
-      "eslint . --fix",
-      "git add"
+      "eslint . --fix"
     ],
     "preview/**/*.{js,jsx,ts,tsx}": [
-      "eslint . --fix",
-      "git add"
+      "eslint . --fix"
     ]
   },
   "husky": {
