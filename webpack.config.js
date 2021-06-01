@@ -2,9 +2,9 @@
 // NOTE: only used for preview with webpack-dev-server
 // ----
 
-const path = require('path');
+const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
@@ -12,32 +12,37 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path:     path.resolve(__dirname, 'tmp'),
+    path: path.resolve(__dirname, 'tmp'),
   },
   mode: 'development',
   module: {
-		rules: [
-			{
-				test: /.jsx?$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-				}
+    rules: [
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: ['ts-loader'],
       },
       {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: false }
-          }
-        ]
+            options: { minimize: false },
+          },
+        ],
       },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
-		]
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -47,10 +52,11 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: './tmp',
-    open:        true,
-  }
-};
+    open: true,
+  },
+}

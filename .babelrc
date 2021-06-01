@@ -6,13 +6,14 @@
         "corejs": "3",
         "modules": "commonjs",
         "targets": {
-          "browsers": "> 1%",
+          "browsers": "> 1%"
         },
         "forceAllTransforms": true,
         "useBuiltIns": "entry"
       }
     ],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
