@@ -5,7 +5,7 @@ module.exports = {
   },
   globals: {},
   root: true,
-  plugins: ['@typescript-eslint', 'react', 'import'],
+  plugins: ['@typescript-eslint', 'react', 'import', 'prettier'],
   env: {
     browser: true,
     node: true,
@@ -16,6 +16,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
   ],
   settings: {
     react: {
