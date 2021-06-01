@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import { ButtonProps, shapes } from './shapes';
+import { ButtonProps, shapes } from './shapes'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ButtonBuilderOptions<T extends BaseShareActionArgs> = {

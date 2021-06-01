@@ -1,8 +1,8 @@
-import { shallow } from 'enzyme';
-import React from 'react';
+import { shallow } from 'enzyme'
+import React from 'react'
 
-import { components } from '../../src/apiV4';
-import { ProjectTeaser } from '../../src/components/project_teaser';
+import { components } from '../../src/apiV4'
+import { ProjectTeaser } from '../../src/components/project_teaser'
 
 const project = {
   id: 1,

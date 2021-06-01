@@ -1,7 +1,7 @@
-import { shallow } from 'enzyme';
-import React from 'react';
+import { shallow } from 'enzyme'
+import React from 'react'
 
-import { TwitterButton } from '../../../src';
+import { TwitterButton } from '../../../src'
 
 const shareUrl = 'https://foo.bar'
 const shape = 'round'

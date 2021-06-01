@@ -1,6 +1,6 @@
-import { TelegramIcon } from '../../assets/icons';
-import { encodedShareURL } from '../../helpers/sharing_helper';
-import { BaseShareActionArgs, buildShareButtonComponent } from './base';
+import { TelegramIcon } from '../../assets/icons'
+import { encodedShareURL } from '../../helpers/sharing_helper'
+import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
 export const telegramShareAction = ({ shareUrl, teaser = '', utmParams }: BaseShareActionArgs) =>
   window.open(

@@ -1,22 +1,22 @@
-import '../src/css/donatable_teaser.css';
-import '../src/css/share_buttons.css';
+import '../src/css/donatable_teaser.css'
+import '../src/css/share_buttons.css'
 
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 
 import {
-    EmailButton,
-    FacebookButton,
-    FacebookMessengerButton,
-    FundraisingEventTeaser,
-    InstagramButton,
-    LinkButton,
-    ProjectTeaser,
-    TelegramButton,
-    TwitterButton,
-    WhatsappButton,
-} from '../src';
-import { ShareButtonProps } from '../src/components/share_buttons/base';
+  EmailButton,
+  FacebookButton,
+  FacebookMessengerButton,
+  FundraisingEventTeaser,
+  InstagramButton,
+  LinkButton,
+  ProjectTeaser,
+  TelegramButton,
+  TwitterButton,
+  WhatsappButton,
+} from '../src'
+import { ShareButtonProps } from '../src/components/share_buttons/base'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = document.getElementById('root')!

@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { EmailIcon } from '../../assets/icons';
-import { encodedShareURL } from '../../helpers/sharing_helper';
-import { BaseShareActionArgs, buildShareButtonComponent } from './base';
+import { EmailIcon } from '../../assets/icons'
+import { encodedShareURL } from '../../helpers/sharing_helper'
+import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
 export const emailShareAction = ({
   shareUrl,

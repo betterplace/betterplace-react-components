@@ -1,6 +1,6 @@
-import { WhatsappIcon } from '../../assets/icons';
-import { encodedShareURL, isMobileOrTablet } from '../../helpers/sharing_helper';
-import { BaseShareActionArgs, buildShareButtonComponent } from './base';
+import { WhatsappIcon } from '../../assets/icons'
+import { encodedShareURL, isMobileOrTablet } from '../../helpers/sharing_helper'
+import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
 export const whatsappShareAction = ({ shareUrl, teaser, utmParams }: BaseShareActionArgs) =>
   window.open(

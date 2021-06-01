@@ -1,8 +1,8 @@
-import { components } from 'apiV4';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { components } from 'apiV4'
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import { formatAmount } from '../helpers/format_amount';
+import { formatAmount } from '../helpers/format_amount'
 
 export type FundraisingEventTeaserProps = {
   locale?: string

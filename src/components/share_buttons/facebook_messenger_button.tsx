@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { FacebookMessengerIcon } from '../../assets/icons';
-import { encodedShareURL, isMobileOrTablet, openPopup } from '../../helpers/sharing_helper';
-import { BaseShareActionArgs, buildShareButtonComponent } from './base';
+import { FacebookMessengerIcon } from '../../assets/icons'
+import { encodedShareURL, isMobileOrTablet, openPopup } from '../../helpers/sharing_helper'
+import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
 export const facebookMessengerShareAction = ({
   facebookAppId,

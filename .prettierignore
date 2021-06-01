@@ -1,0 +1,5 @@
+dist/**/*
+node_modules
+coverage
+.history
+src/apiV4.ts
