@@ -17,6 +17,7 @@ export type ProjectTeaserProps = {
   font?: string
   textColor?: string
   progressbarColor?: string
+  progressbarBackgroundColor?: string
   extraHeight?: number
 }
 export const ProjectTeaser: React.FC<ProjectTeaserProps> = (props) => {

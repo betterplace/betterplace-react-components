@@ -19,7 +19,7 @@ export type ShareButtonProps = {
   beforeOnClick?: (event: React.MouseEvent) => void
 } & ButtonProps
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type BaseShareActionArgs = { shareUrl: string; utmParams?: Record<string, any> }
+export type BaseShareActionArgs = { shareUrl: string; utmParams?: Record<string, any>; teaser?: string }
 export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
   action,
   ariaLabel,
@@ -27,7 +27,7 @@ export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
   className,
   icon,
 }: ButtonBuilderOptions<T>) => {
-  const ShareButton = (props: ShareButtonProps & T) => {
+  const ShareButton = (props: Omit<ShareButtonProps, Exclude<keyof ButtonBuilderOptions<T>, 'className'>> & T) => {
     const Shape = shapes[props.shape]
 
     const handleClick = (event: React.MouseEvent) => {
@@ -53,7 +53,7 @@ export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
     )
   }
 
-  ShareButton.propTypes = { ...shareButtonPropTypes } as React.WeakValidationMap<ShareButtonProps>
+  ShareButton.propTypes = { ...shareButtonPropTypes } as any
 
   return ShareButton
 }

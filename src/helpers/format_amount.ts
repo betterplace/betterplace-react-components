@@ -1,4 +1,4 @@
-export type FormatAmountOptions = { cents: number; locale: string; showCents?: boolean }
+export type FormatAmountOptions = { cents: number; locale?: string; showCents?: boolean }
 export const formatAmount = ({ cents, locale, showCents = false }: FormatAmountOptions): string =>
   new Intl.NumberFormat(locale, {
     style: 'currency',

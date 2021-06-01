@@ -2,8 +2,8 @@ import React from 'react';
 
 export type ButtonProps = {
   icon: React.FC<{ className?: string }>
-  content: React.ReactNode
-  boxShadow: boolean
+  content?: React.ReactNode
+  boxShadow?: boolean
   buttonClassName?: string
   href?: string
   label?: string

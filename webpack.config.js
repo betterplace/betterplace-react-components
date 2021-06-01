@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    preview: './preview/preview.js',
+    preview: './preview/preview.tsx',
   },
   output: {
     filename: '[name].js',
