@@ -13,18 +13,31 @@ export type FundraisingEventTeaserProps = {
   fundraisingEvent: FundraisingEvent
   onClick?: (event: React.MouseEvent, fundraisingEvent: FundraisingEvent) => void
 }
-export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = (props) => {
-  const fundraisingEvent = props.fundraisingEvent
-  const locale = props.locale || document.documentElement.lang || 'de'
-  const href = props.href || fundraisingEvent.links.find((link) => link.rel === 'platform')?.href
+
+const pluralizeDonation = (locale: string, count: number) => {
+  if (count === 1) return locale === 'de' ? 'Spende' : 'donation'
+  return locale === 'de' ? 'Spenden' : 'donations'
+}
+
+export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = ({
+  fundraisingEvent,
+  locale = document.documentElement.lang || 'de',
+  href: href_,
+  onClick,
+  openInTab,
+  children,
+}) => {
+  const href = href_ || fundraisingEvent.links.find((link) => link.rel === 'platform')?.href
   const fundraisingEventImageUrl = fundraisingEvent.profile_picture?.links.find(
     (link) => link.rel === 'fill_410x214'
   )?.href
   const donationsAmount = formatAmount({ cents: fundraisingEvent.donated_amount_in_cents, locale: locale })
   const contactImageUrl = fundraisingEvent.contact?.picture?.links.find((link) => link.rel === 'fill_100x100')?.href
   const handleClick = (event: React.MouseEvent) => {
-    props.onClick && props.onClick(event, fundraisingEvent)
+    onClick && onClick(event, fundraisingEvent)
   }
+
+  const donationsTxt = pluralizeDonation(locale, fundraisingEvent.donations_count)
 
   return (
     <a
@@ -32,10 +45,10 @@ export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = (pr
       onClick={handleClick}
       className="donatable-teaser"
       href={href}
-      target={props.openInTab ? '_blank' : '_parent'}
+      target={openInTab ? '_blank' : '_parent'}
       rel="noreferrer"
     >
-      {props.children /* mount point, e.g. for injecting VisibilitySensor */}
+      {children /* mount point, e.g. for injecting VisibilitySensor */}
 
       <div
         className="donatable-teaser--profile-picture"
@@ -51,14 +64,7 @@ export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = (pr
             <span dangerouslySetInnerHTML={{ __html: fundraisingEvent.contact?.name ?? '' }} />
           </div>
           <div>
-            <span>{fundraisingEvent.donations_count}</span>{' '}
-            {fundraisingEvent.donations_count === 1
-              ? locale === 'de'
-                ? 'Spende'
-                : 'donation'
-              : locale === 'de'
-              ? 'Spenden'
-              : 'donations'}
+            <span>{fundraisingEvent.donations_count}</span> {donationsTxt}
           </div>
           <div>
             <span>{donationsAmount}</span> {locale === 'de' ? 'gesammelt' : 'collected'}

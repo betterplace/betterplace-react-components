@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import { ButtonProps, shapes } from './shapes'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ButtonBuilderOptions<T extends BaseShareActionArgs> = {
   ariaLabel?: string
   buttonLabel?: string
@@ -53,6 +51,7 @@ export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
     )
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ShareButton.propTypes = { ...shareButtonPropTypes } as any
 
   return ShareButton

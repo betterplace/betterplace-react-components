@@ -20,32 +20,41 @@ export type ProjectTeaserProps = {
   progressbarBackgroundColor?: string
   extraHeight?: number
 }
-export const ProjectTeaser: React.FC<ProjectTeaserProps> = (props) => {
-  const project = props.project
-  const locale = props.locale || document.documentElement.lang || 'de'
-  const openAmount = formatAmount({ cents: project.open_amount_in_cents, locale: locale })
+export const ProjectTeaser: React.FC<ProjectTeaserProps> = ({
+  project,
+  locale = document.documentElement.lang || 'de',
+  href: href_,
+  onClick,
+  className,
+  showDescription,
+  openInTab,
+  bottomContent,
+  children,
+  showCarrierName,
+}) => {
+  const openAmount = formatAmount({ cents: project.open_amount_in_cents, locale })
   const donationsCount = new Intl.NumberFormat(locale).format(project.donations_count)
   const openAmountCaption = locale === 'de' ? 'fehlen noch' : 'still needed'
   const donationsCountCaption = locale === 'de' ? 'Spenden' : 'donations'
-  const href = props.href || props.project.links.find((link) => link.rel === 'platform')?.href
-  const projectImageUrl = props.project.profile_picture?.links.find((link) => link.rel === 'fill_410x214')?.href
-  const orgaImageUrl = props.project.carrier?.picture?.links.find((link) => link.rel === 'fill_100x100')?.href
+  const href = href_ || project.links.find((link) => link.rel === 'platform')?.href
+  const projectImageUrl = project.profile_picture?.links.find((link) => link.rel === 'fill_410x214')?.href
+  const orgaImageUrl = project.carrier?.picture?.links.find((link) => link.rel === 'fill_100x100')?.href
   const handleClick = (event: React.MouseEvent) => {
-    props.onClick && props.onClick(event, project)
+    onClick && onClick(event, project)
   }
 
   return (
     <a
       title={project.title}
       onClick={handleClick}
-      className={`donatable-teaser ${props.className ?? ''} ${
-        props.showDescription ? 'donatable-teaser--with-description' : ''
-      } ${props.bottomContent ? 'donatable-teaser--with-bottom-content' : ''}`}
+      className={`donatable-teaser ${className ?? ''} ${showDescription ? 'donatable-teaser--with-description' : ''} ${
+        bottomContent ? 'donatable-teaser--with-bottom-content' : ''
+      }`}
       href={href}
-      target={props.openInTab ? '_blank' : '_parent'}
+      target={openInTab ? '_blank' : '_parent'}
       rel="noreferrer"
     >
-      {props.children /* mount point, e.g. for injecting VisibilitySensor */}
+      {children /* mount point, e.g. for injecting VisibilitySensor */}
 
       <div
         className="donatable-teaser--profile-picture"
@@ -55,7 +64,7 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = (props) => {
 
       <h2 className="donatable-teaser--title" dangerouslySetInnerHTML={{ __html: project.title }} />
 
-      {props.showDescription && (
+      {showDescription && (
         <div className="donatable-teaser--description" dangerouslySetInnerHTML={{ __html: project.description }} />
       )}
 
@@ -65,8 +74,8 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = (props) => {
             {project.city && <span>{project.city}</span>}, {project.country}
           </div>
           <div>
-            {props.showCarrierName ? (
-              <span>{props.project.carrier?.name}</span>
+            {showCarrierName ? (
+              <span>{project.carrier?.name}</span>
             ) : (
               <>
                 <span>{donationsCount}</span> {donationsCountCaption}
@@ -84,7 +93,7 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = (props) => {
         <div className="donatable-teaser--progress-bar" style={{ width: `${project.progress_percentage}%` }}></div>
       </div>
 
-      {props.bottomContent}
+      {bottomContent}
     </a>
   )
 }
