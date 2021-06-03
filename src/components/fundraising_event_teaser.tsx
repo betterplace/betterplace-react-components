@@ -4,13 +4,14 @@ import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
 
+export type FundraisingEvent = components['schemas']['FundraisingEventResult']
 export type FundraisingEventTeaserProps = {
   locale?: string
   href?: string
   font?: string
   openInTab?: boolean
-  fundraisingEvent: components['schemas']['FundraisingEventResult']
-  onClick?: (event: React.MouseEvent, project: components['schemas']['FundraisingEventResult']) => void
+  fundraisingEvent: FundraisingEvent
+  onClick?: (event: React.MouseEvent, fundraisingEvent: FundraisingEvent) => void
 }
 export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = (props) => {
   const fundraisingEvent = props.fundraisingEvent

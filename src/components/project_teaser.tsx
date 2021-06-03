@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
-
+export type Project = components['schemas']['ProjectResult']
 export type ProjectTeaserProps = {
   locale?: string
-  project: components['schemas']['ProjectResult']
-  onClick?: (event: React.MouseEvent, project: components['schemas']['ProjectResult']) => void
+  project: Project
+  onClick?: (event: React.MouseEvent, project: Project) => void
   showDescription?: boolean
   bottomContent?: React.ReactNode
   href?: string

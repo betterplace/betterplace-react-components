@@ -1,8 +1,7 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { components } from '../../src/apiV4'
-import { ProjectTeaser } from '../../src/components/project_teaser'
+import { Project, ProjectTeaser } from '../../src/components/project_teaser'
 
 const project = {
   id: 1,
@@ -25,7 +24,7 @@ const project = {
       href: 'bp.org/p123',
     },
   ],
-} as unknown as components['schemas']['ProjectResult']
+} as unknown as Project
 // TODO provide a proper project example
 
 beforeEach(() => (document.documentElement.lang = 'de'))
