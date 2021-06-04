@@ -26,7 +26,7 @@ root.appendChild(projectTeaserNode)
 const fundraisingEventTeaserNode = document.createElement('div')
 root.appendChild(fundraisingEventTeaserNode)
 
-fetch('https://www.bp42.com/api_v4/projects/1114.json')
+fetch('https://api.betterplace.org/de/api_v4/projects/1114.json')
   .then((response) => response.json())
   .then((project) =>
     render(
