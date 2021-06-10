@@ -114,7 +114,9 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "formik": "^2.2.9",
+    "react-use": "^17.2.4"
   },
   "browserslist": {
     "production": [

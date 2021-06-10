@@ -18,3 +18,4 @@ export { instagramAction, InstagramButton } from './components/share_buttons/ins
 export { changeBrightness } from './helpers/color_helper'
 export { formatAmount } from './helpers/format_amount'
 export { encodedShareURL, openPopup } from './helpers/sharing_helper'
+export * from './workshop'
