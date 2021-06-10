@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { ButtonProps, shapes } from './shapes'
+export type RequirePicked<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
 
 export type ButtonBuilderOptions<T extends BaseShareActionArgs> = {
   ariaLabel?: string
@@ -12,10 +12,16 @@ export type ButtonBuilderOptions<T extends BaseShareActionArgs> = {
   action: (args: T) => void
 }
 
+export type ButtonShapes = keyof typeof shapes
+
+export type ButtonWithContentProps = { shape: Exclude<ButtonShapes, 'square' | 'round'> } & RequirePicked<
+  ButtonProps,
+  'content'
+>
+export type ButtonWithoutContentProps = { shape: Extract<ButtonShapes, 'square' | 'round'> } & ButtonProps
 export type ShareButtonProps = {
-  shape: keyof typeof shapes
   beforeOnClick?: (event: React.MouseEvent) => void
-} & ButtonProps
+} & (ButtonWithoutContentProps | ButtonWithContentProps)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type BaseShareActionArgs = { shareUrl: string; utmParams?: Record<string, any>; teaser?: string }
 export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
@@ -52,31 +58,5 @@ export const buildShareButtonComponent = <T extends BaseShareActionArgs>({
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ShareButton.propTypes = { ...shareButtonPropTypes } as any
-
   return ShareButton
-}
-
-const shareButtonPropTypes = {
-  className: PropTypes.string,
-  beforeOnClick: PropTypes.func,
-  boxShadow: PropTypes.bool,
-  withLabel: PropTypes.bool,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  content: (props: Record<string, any>, key: string, klass: string) => {
-    // ignore this prop for button shapes that don't use it
-    if (props.shape === 'square' || props.shape === 'round') return null
-
-    // require it for other shapes
-    if (typeof props[key] !== 'string' || props[key] === '')
-      return new Error(`prop ${key} must be non-empty string for ${klass} of shape ${props.shape}`)
-    return null
-  },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  shape: PropTypes.oneOf(['full', 'minimal', 'round', 'square', 'roundWithLabel']).isRequired as any,
-  shareUrl: PropTypes.string.isRequired,
-  teaser: PropTypes.string,
-  title: PropTypes.string,
-  utmParams: PropTypes.object,
-  color: PropTypes.string,
 }

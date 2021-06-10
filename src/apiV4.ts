@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-  '/projects/{projects_id}/blog_posts.json': {
+  "/projects/{projects_id}/blog_posts.json": {
     /**
      * A list of the blog posts of a betterplace.org project or fundraising event.
      * Results are contained in a *data* attribute.
@@ -24,41 +24,41 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id?: number
+          project_id?: number;
           /** Fundraising Event id as an integer number ≥ 1. */
-          fundraising_event_id?: number
-          page?: number
-          per_page?: number
-        }
-      }
+          fundraising_event_id?: number;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['BlogResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["BlogResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/blog_posts/{blog_posts_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/blog_posts/{blog_posts_id}.json": {
     /**
      * The details of a blog post of a betterplace.org project.
      * The details and list view show the same data.
@@ -72,34 +72,34 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
+          projects_id: number;
           /** blog_posts_id */
-          blog_posts_id: number
-        }
+          blog_posts_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
+          project_id: number;
           /** Blogpost id as an integer number ≥ 9. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['BlogResult']
-          }
-        }
+            "application/json": components["schemas"]["BlogResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/categories.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/categories.json": {
     /**
      * A list of betterplace.org project categories.
      * Results are contained in a *data* attribute.
@@ -108,39 +108,39 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-          page?: number
-          per_page?: number
-        }
-      }
+          project_id: number;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['CategoryResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["CategoryResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/client_donations.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/client_donations.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -153,11 +153,11 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /**
            * You can search for a specific client_reference: <code>?facets=client_reference:54</code>
            *
@@ -172,35 +172,35 @@ export interface paths {
            * <a href="../donation_form/third_party_app_donation_form.md">ThirdPartyApp custom donation form for organisations</a>
            * and the <a href="client_donation_pledges.md">Client donation pledge endpoint</a>.
            */
-          facets?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          facets?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ClientDonationResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ClientDonationResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/client_donations/{client_donations_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/client_donations/{client_donations_id}.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -211,37 +211,37 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** client_donations_id */
-          client_donations_id: string
-        }
+          client_donations_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /**
            * The donation token that the client donation form passed to the
            * callback url or the client_reference that was provided by the client.
            */
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ClientDonationResult']
-          }
-        }
+            "application/json": components["schemas"]["ClientDonationResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/tags.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/tags.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -253,68 +253,68 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client id */
-          client_id: string
-          page?: number
-          per_page?: number
-        }
-      }
+          client_id: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ClientTagResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ClientTagResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}.json": {
     /** This API endpoint returns links to more specific information about this client. */
     get: {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink */
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ClientResult']
-          }
-        }
+            "application/json": components["schemas"]["ClientResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/users/{users_id}/contact_data.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/users/{users_id}/contact_data.json": {
     /**
      * Name and email for the given user.
      *
@@ -329,30 +329,30 @@ export interface paths {
       parameters: {
         path: {
           /** users_id */
-          users_id: number
-        }
+          users_id: number;
+        };
         query: {
           /** User-id as an integer number. */
-          user_id: number
-        }
-      }
+          user_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ContactDataResult']
-          }
-        }
+            "application/json": components["schemas"]["ContactDataResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/projects/{projects_id}/direct_deposits.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/projects/{projects_id}/direct_deposits.json": {
     /**
      * Create an unconfirmed direct deposit donation to a project.
      * The donation is confirmed when the money arrives on the betterplace
@@ -382,40 +382,40 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-        }
-      }
+          project_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['DirectDepositResult']
-          }
-        }
+            "application/json": components["schemas"]["DirectDepositResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Creating a Direct Deposit Donation  Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['CreatingADirectDepositDonationRequest']
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/projects/{projects_id}/donation_pledges.json': {
+          "application/json": components["schemas"]["CreatingADirectDepositDonationRequest"];
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/projects/{projects_id}/donation_pledges.json": {
     /**
      * Submit a donation pledge into the system. This will be transformed into
      * a donation to the receiver. The request has to be a POST request with a
@@ -518,40 +518,40 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-        }
-      }
+          project_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['SuccessResult']
-          }
-        }
+            "application/json": components["schemas"]["SuccessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Creating a Client Donation Pledge  Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['CreatingAClientDonationPledgeRequest']
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/donation_pledges/{donation_pledges_id}.json': {
+          "application/json": components["schemas"]["CreatingAClientDonationPledgeRequest"];
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/donation_pledges/{donation_pledges_id}.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -566,41 +566,41 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** donation_pledges_id */
-          donation_pledges_id: number
-        }
+          donation_pledges_id: number;
+        };
         query: {
           /** The donation is marked with the language you use in your URL. */
-          language: string
+          language: string;
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /**
            * The ID of the donation pledge.
            *
            * TODO: In the future this will be returned within the
            * response of a successful donation pledge POST.
            */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['MandateProcessResult']
-          }
-        }
+            "application/json": components["schemas"]["MandateProcessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/projects/{projects_id}/forwarding_requests.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/projects/{projects_id}/forwarding_requests.json": {
     /**
      * Transfer money from a client donation pool to a Project.
      * The request has to be a POST request with a JSON body.
@@ -681,40 +681,40 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-        }
-      }
+          project_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['SuccessResult']
-          }
-        }
+            "application/json": components["schemas"]["SuccessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Creating a Client Forwarding Request  Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['CreatingAClientForwardingRequestRequest']
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/forwarding_requests/{forwarding_requests_id}.json': {
+          "application/json": components["schemas"]["CreatingAClientForwardingRequestRequest"];
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/forwarding_requests/{forwarding_requests_id}.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -726,39 +726,39 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** forwarding_requests_id */
-          forwarding_requests_id: number
-        }
+          forwarding_requests_id: number;
+        };
         query: {
           /** The donation is marked with the language you use in your URL. */
-          language: string
+          language: string;
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /**
            * The ID of the forwarding request, returned within the
            * response of a successful forwarding request POST.
            */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['MandateProcessResult']
-          }
-        }
+            "application/json": components["schemas"]["MandateProcessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/fundraising_events/{fundraising_events_id}/featured_projects.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/fundraising_events/{fundraising_events_id}/featured_projects.json": {
     /**
      * A list of projects that are currently supported by the fundraising event.
      *
@@ -768,39 +768,39 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number
-        }
+          fundraising_events_id: number;
+        };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
-          fundraising_event_id: number
-          page?: number
-          per_page?: number
-        }
-      }
+          fundraising_event_id: number;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ProjectResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ProjectResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/fundraising_events/{fundraising_events_id}/forwardings.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/fundraising_events/{fundraising_events_id}/forwardings.json": {
     /**
      * A list of forwarings from the fundraising event to its projects.
      *
@@ -810,39 +810,39 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number
-        }
+          fundraising_events_id: number;
+        };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
-          fundraising_event_id: number
-          page?: number
-          per_page?: number
-        }
-      }
+          fundraising_event_id: number;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['FundraisingEventForwardingResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["FundraisingEventForwardingResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/fundraising_event_statistics.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/fundraising_event_statistics.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      * Some client-statistics for a betterplace.org client. All results are cached for 20 minutes.
@@ -851,30 +851,30 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink */
-          client_id: string
-        }
-      }
+          client_id: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ClientStatisticFundraisingEventResult']
-          }
-        }
+            "application/json": components["schemas"]["ClientStatisticFundraisingEventResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/fundraising_events.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/fundraising_events.json": {
     /**
      * A list of betterplace.org fundraising events (donate money).
      * Results are contained in a *data* attribute.
@@ -897,9 +897,9 @@ export interface paths {
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          scope?: string
+          scope?: string;
           /** Search query. The searches behaviour is based on the scope. */
-          q?: string
+          q?: string;
           /**
            * Filter the result set.
            * <br>
@@ -923,7 +923,7 @@ export interface paths {
            * It is possible to set multiple facet filters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          facets?: string
+          facets?: string;
           /**
            * Order the result set.
            * <br>
@@ -947,35 +947,35 @@ export interface paths {
            * It is possible to set multiple order parameters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['FundraisingEventResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["FundraisingEventResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/fundraising_events/{fundraising_events_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/fundraising_events/{fundraising_events_id}.json": {
     /**
      * The details of a betterplace.org fundraising events (donate money).
      *
@@ -986,30 +986,30 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number
-        }
+          fundraising_events_id: number;
+        };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['FundraisingEventResult']
-          }
-        }
+            "application/json": components["schemas"]["FundraisingEventResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/projects/{projects_id}/mailing_subscriptions.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/projects/{projects_id}/mailing_subscriptions.json": {
     /**
      * Create or update a mailing subscriptions for a project.
      *
@@ -1033,10 +1033,10 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /**
            * The subscription is marked with the language you use in your URL.
@@ -1044,36 +1044,36 @@ export interface paths {
            * target with the subscription lang. To target a lang see
            * <a href="../README.md#addressing-the-locale-of-a-resource">api setting lang</a>.
            */
-          language: string
+          language: string;
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-        }
-      }
+          project_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['SuccessResult']
-          }
-        }
+            "application/json": components["schemas"]["SuccessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Client Mailing Subscriptions Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['ClientMailingSubscriptionsRequest']
-        }
-      }
-    }
-  }
-  '/matching_funds.json': {
+          "application/json": components["schemas"]["ClientMailingSubscriptionsRequest"];
+        };
+      };
+    };
+  };
+  "/matching_funds.json": {
     /** A list of betterplace.org matching funds. */
     get: {
       parameters: {
@@ -1084,40 +1084,40 @@ export interface paths {
            * This way one can show a list of matching funds where
            * the given project is part of the matching fund projects list.
            */
-          project_id?: number
+          project_id?: number;
           /**
            * Filter the result set by <code>state</code> (activated|closed)
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          facets?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          facets?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['MatchingFundResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["MatchingFundResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/matching_funds/{matching_funds_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/matching_funds/{matching_funds_id}.json": {
     /**
      * The details of a betterplace.org matching fund.
      * The details and list view show the same data.
@@ -1126,30 +1126,30 @@ export interface paths {
       parameters: {
         path: {
           /** matching_funds_id */
-          matching_funds_id: number
-        }
+          matching_funds_id: number;
+        };
         query: {
           /** matching-fund-id as an integer number ≥ 9. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['MatchingFundResult']
-          }
-        }
+            "application/json": components["schemas"]["MatchingFundResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/needs.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/needs.json": {
     /**
      * A list of betterplace.org projects needs (donate money).
      * Results are contained in a *data* attribute.
@@ -1164,11 +1164,11 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
+          project_id: number;
           /**
            * Filter the result set.
            * Documented and supported filters are:
@@ -1177,7 +1177,7 @@ export interface paths {
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          facets?: string
+          facets?: string;
           /**
            * Order the result set. Documented and supported orders are:
            * <ul>
@@ -1186,35 +1186,35 @@ export interface paths {
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['NeedResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["NeedResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/needs/{needs_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/needs/{needs_id}.json": {
     /**
      * The details of a betterplace.org project need (donate money).
      * The details and list view show the same data per project need.
@@ -1228,34 +1228,34 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
+          projects_id: number;
           /** needs_id */
-          needs_id: number
-        }
+          needs_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
+          project_id: number;
           /** Need-id as an integer number ≥ 29. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['NeedResult']
-          }
-        }
+            "application/json": components["schemas"]["NeedResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/newsletter_opt_ins.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/newsletter_opt_ins.json": {
     /**
      * Start the opt-in process to subscribe an email address to the
      * betterplace platform newsletter.
@@ -1274,38 +1274,38 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** The language preference of the subscriber. */
-          language: string
-        }
-      }
+          language: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['SuccessResult']
-          }
-        }
+            "application/json": components["schemas"]["SuccessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Client Newsletter OptIns Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['ClientNewsletterOptInsRequest']
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/opinions.json': {
+          "application/json": components["schemas"]["ClientNewsletterOptInsRequest"];
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/opinions.json": {
     /**
      * A list of betterplace.org projects opinions (donate money).
      * (There is no details view for opinions.)
@@ -1321,21 +1321,21 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /**
            * Project id as an integer number ≥ 14.
            * This parameter is required in case you want to show project opinions.
            * Also check the URL example in the introduction.
            */
-          project_id?: number
+          project_id?: number;
           /**
            * Fundraising Event id as an integer number ≥ 1.
            * This parameter is required in case you want to show fundraising event opinions.
            * Also check the URL example in the introduction.
            */
-          fundraising_event_id?: number
+          fundraising_event_id?: number;
           /**
            * Order the result set.
            * <br>
@@ -1356,35 +1356,35 @@ export interface paths {
            * It is possible to set multiple order parameters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['DonationResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["DonationResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/organisations.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/organisations.json": {
     /**
      * A list of betterplace.org organisations.
      * Results are contained in a *data* attribute.
@@ -1396,34 +1396,34 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          page?: number
-          per_page?: number
-        }
-      }
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['OrganisationResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["OrganisationResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/organisations/{organisations_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/organisations/{organisations_id}.json": {
     /**
      * The details of a betterplace.org organisation.
      * The details and list view show the same data per organisation.
@@ -1437,30 +1437,30 @@ export interface paths {
       parameters: {
         path: {
           /** organisations_id */
-          organisations_id: number
-        }
+          organisations_id: number;
+        };
         query: {
           /** Organisation-id as an integer number ≥ 14. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['OrganisationResult']
-          }
-        }
+            "application/json": components["schemas"]["OrganisationResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/pool.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/pool.json": {
     /**
      * The details of a betterplace.org client pool.
      *
@@ -1476,30 +1476,30 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
-        }
-      }
+          client_id: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['PoolResult']
-          }
-        }
+            "application/json": components["schemas"]["PoolResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/pictures.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/pictures.json": {
     /**
      * A list of pictures of a betterplace.org project (donate money).
      * Results are contained in a *data* attribute.
@@ -1527,39 +1527,39 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
-          page?: number
-          per_page?: number
-        }
-      }
+          project_id: number;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ProjectImageResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ProjectImageResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}/pictures/{pictures_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}/pictures/{pictures_id}.json": {
     /**
      * The details of a betterplace.org project picture.
      * The details and list view show the same data.
@@ -1574,34 +1574,34 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
+          projects_id: number;
           /** pictures_id */
-          pictures_id: number
-        }
+          pictures_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          project_id: number
+          project_id: number;
           /** Picture-id as an integer number ≥ 1. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ProjectImageResult']
-          }
-        }
+            "application/json": components["schemas"]["ProjectImageResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/project_statistics.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/project_statistics.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      * Some client statistics for a betterplace.org client. All results are cached for 20 minutes.
@@ -1610,30 +1610,30 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
-        }
+          clients_id: string;
+        };
         query: {
           /** The betterplace.org-internal client permalink */
-          client_id: string
-        }
-      }
+          client_id: string;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ClientStatisticProjectResult']
-          }
-        }
+            "application/json": components["schemas"]["ClientStatisticProjectResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/projects/{projects_id}/tags.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/projects/{projects_id}/tags.json": {
     /**
      * **For [betterplace.org clients](../README.md#client-api) only:**
      *
@@ -1650,15 +1650,15 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** The betterplace.org-internal client permalink */
-          client_id: string
+          client_id: string;
           /** Project id as an integer number ≥ 14. */
-          project_id: number
+          project_id: number;
           /**
            * Order the result set.
            * <br>
@@ -1675,35 +1675,35 @@ export interface paths {
            * It is possible to set multiple facet filters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ClientTagResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ClientTagResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects.json": {
     /**
      * A list of betterplace.org projects (donate money).
      * Results are contained in a *data* attribute.
@@ -1731,7 +1731,7 @@ export interface paths {
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          scope?: string
+          scope?: string;
           /**
            * Order the results by the distance to the given location from near to far.
            * <br>
@@ -1752,7 +1752,7 @@ export interface paths {
            * Check the <code>around_location</code> to see what latitude/longitude
            * values have been used for the query.
            */
-          around?: string
+          around?: string;
           /**
            * In combination with the <code>around</code> parameter the search will be
            * limited to results whose location is closer than the given value to the
@@ -1763,17 +1763,17 @@ export interface paths {
            * When <code>around_distance</code> is given without <code>around</code> it
            * will be ignored.
            */
-          around_distance?: string
+          around_distance?: string;
           /** For geographic bound filterning: The northeast corner's latitude. */
-          nelat?: number
+          nelat?: number;
           /** For geographic bound filterning: The northeast corner's longitude. */
-          nelng?: number
+          nelng?: number;
           /** For geographic bound filterning: The southwest corner's latitude. */
-          swlat?: number
+          swlat?: number;
           /** For geographic bound filterning: The southwest corner's longitude. */
-          swlng?: number
+          swlng?: number;
           /** Search query. The searches behaviour is based on the scope. */
-          q?: string
+          q?: string;
           /**
            * Filter the result set.
            * <br>
@@ -1796,7 +1796,7 @@ export interface paths {
            * It is possible to set multiple facet filters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          facets?: string
+          facets?: string;
           /**
            * Order the result set.
            * <br>
@@ -1821,35 +1821,35 @@ export interface paths {
            * It is possible to set multiple order parameters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['ProjectResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["ProjectResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/projects/{projects_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/projects/{projects_id}.json": {
     /**
      * The details of a betterplace.org project (donate money).
      *
@@ -1860,70 +1860,70 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number
-        }
+          projects_id: number;
+        };
         query: {
           /** Project id as an integer number ≥ 14. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['ProjectResult']
-          }
-        }
+            "application/json": components["schemas"]["ProjectResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/search.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/search.json": {
     /** TODO */
     get: {
       parameters: {
         query: {
           /** Fulltext search query. */
-          q?: string
+          q?: string;
           /**
            * A string of four comma-seperated floating point geo coordinates in
            * range of -180…180 for <code>sw_lat,sw_lng,ne_lat,ne_lng</code>
            * describing a bounding box around the search results' geo coordinates.
            */
-          bounds?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          bounds?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['SearchResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["SearchResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/volunteering.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/volunteering.json": {
     /**
      * A list of betterplace.org volunteering offers (donate time).
      * Results are contained in a *data* attribute.
@@ -1947,7 +1947,7 @@ export interface paths {
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
-          scope?: string
+          scope?: string;
           /**
            * Order the results by the distance to the given location from near to far.
            * <br>
@@ -1968,7 +1968,7 @@ export interface paths {
            * Check the <code>around_location</code> to see what latitude/longitude
            * values have been used for the query.
            */
-          around?: string
+          around?: string;
           /**
            * In combination with the <code>around</code> parameter the search will be
            * limited to results whose location is closer than the given value to the
@@ -1979,17 +1979,17 @@ export interface paths {
            * When <code>around_distance</code> is given without <code>around</code> it
            * will be ignored.
            */
-          around_distance?: string
+          around_distance?: string;
           /** For geographic bound filterning: The northeast corner's latitude. */
-          nelat?: number
+          nelat?: number;
           /** For geographic bound filterning: The northeast corner's longitude. */
-          nelng?: number
+          nelng?: number;
           /** For geographic bound filterning: The southwest corner's latitude. */
-          swlat?: number
+          swlat?: number;
           /** For geographic bound filterning: The southwest corner's longitude. */
-          swlng?: number
+          swlng?: number;
           /** Search query. The searches behaviour is based on the scope. */
-          q?: string
+          q?: string;
           /**
            * Order the result by <code>has_image</code> (default),
            * <code>content_updated_at</code> (second default). Use the optional
@@ -2000,35 +2000,35 @@ export interface paths {
            * <a href="http://www.betterplace.org/en/discover-volunteering">betterplace.org volunteering list</a>:
            * <code>has_image:desc| carrier_has_image:desc| content_updated_at:desc</code>
            */
-          order?: string
-          page?: number
-          per_page?: number
-        }
-      }
+          order?: string;
+          page?: number;
+          per_page?: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': {
-              total_entries: number
-              offset: number
-              total_pages: number
-              current_page: number
-              per_page: number
-              data: components['schemas']['JobDescriptionResult'][]
-            }
-          }
-        }
+            "application/json": {
+              total_entries: number;
+              offset: number;
+              total_pages: number;
+              current_page: number;
+              per_page: number;
+              data: components["schemas"]["JobDescriptionResult"][];
+            };
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/volunteering/{volunteering_id}.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/volunteering/{volunteering_id}.json": {
     /**
      * The details of a betterplace.org volunteering offer (donate time).
      *
@@ -2039,30 +2039,30 @@ export interface paths {
       parameters: {
         path: {
           /** volunteering_id */
-          volunteering_id: number
-        }
+          volunteering_id: number;
+        };
         query: {
           /** Volunteering-id as an integer number ≥ 1. */
-          id: number
-        }
-      }
+          id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['JobDescriptionResult']
-          }
-        }
+            "application/json": components["schemas"]["JobDescriptionResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
-    }
-  }
-  '/clients/{clients_id}/volunteering/{volunteering_id}/inquiries.json': {
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
+    };
+  };
+  "/clients/{clients_id}/volunteering/{volunteering_id}/inquiries.json": {
     /**
      * Submit a volunteering inquiry into the system. It will be sent as
      * email to the manager of the volunteering. A copy of the inquiry will
@@ -2086,89 +2086,89 @@ export interface paths {
       parameters: {
         path: {
           /** clients_id */
-          clients_id: string
+          clients_id: string;
           /** volunteering_id */
-          volunteering_id: number
-        }
+          volunteering_id: number;
+        };
         query: {
           /** The betterplace.org-internal client permalink. */
-          client_id: string
+          client_id: string;
           /** volunteering/job description id as an integer number. */
-          volunteering_id: number
-        }
-      }
+          volunteering_id: number;
+        };
+      };
       responses: {
         /** OK */
         200: {
           content: {
-            'application/json': components['schemas']['SuccessResult']
-          }
-        }
+            "application/json": components["schemas"]["SuccessResult"];
+          };
+        };
         /** Error */
         default: {
           content: {
-            'application/json': components['schemas']['ErrorEnvelope']
-          }
-        }
-      }
+            "application/json": components["schemas"]["ErrorEnvelope"];
+          };
+        };
+      };
       /** Volunteering Inquiries Request */
       requestBody: {
         content: {
-          'application/json': components['schemas']['VolunteeringInquiriesRequest']
-        }
-      }
-    }
-  }
+          "application/json": components["schemas"]["VolunteeringInquiriesRequest"];
+        };
+      };
+    };
+  };
 }
 
 export interface components {
   schemas: {
     ErrorEnvelope: {
-      name: string
-      status: string
-      status_code: number
-      reason: string
-      backtrace: string[]
-      message: string
-      errors?: { [key: string]: any }
-      links: string[]
-    }
+      name: string;
+      status: string;
+      status_code: number;
+      reason: string;
+      backtrace: string[];
+      message: string;
+      errors?: { [key: string]: any };
+      links: string[];
+    };
     BlogResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Blog posts have only one language at the moment */
-      lang: string
+      lang: string;
       /**
        * Blogposts are always created by a user, and this
        * field always has the value <code>BlogPost</code>.
        */
-      type: string
-      title: string
+      type: string;
+      title: string;
       /** DateTime (ISO8601 with Timezone) */
-      published_at: string
+      published_at: string;
       /**
        * The body may contain html such as links, embedded videos, and picture or
        * any of the following HTML tags:
        * ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
-      body: string
+      body: string;
       /**
        * Display name of a betterplace.org user.
        * Possible formats: "Till B.", "T. Behnke", "Till Behnke"
        */
-      author: string
+      author: string;
       links: {
-        rel: 'self' | 'platform' | 'documentation'
-        href: string
-      }[]
-    }
+        rel: "self" | "platform" | "documentation";
+        href: string;
+      }[];
+    };
     ContactResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /**
        * Display name of a betterplace.org user.
        * Possible formats: "Till B.", "T. Behnke", "Till Behnke".
@@ -2176,41 +2176,41 @@ export interface components {
        * In the case of donation-opinions the name might also be
        * empty/null for anonymous donations for anonymous donations.
        */
-      name: string | null
+      name: string | null;
       /** User profile picture or a fallback image */
-      picture?: components['schemas']['UserProfilePictureResult']
+      picture?: components["schemas"]["UserProfilePictureResult"];
       links: {
-        rel: 'platform' | 'contact_data'
-        href: string
-      }[]
-    }
+        rel: "platform" | "contact_data";
+        href: string;
+      }[];
+    };
     UserProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean
+      fallback: boolean;
       links: {
-        rel: 'fill_100x100' | 'original'
-        href: string
-      }[]
-    }
+        rel: "fill_100x100" | "original";
+        href: string;
+      }[];
+    };
     CategoryResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Name to be displayed for this category */
-      name: string
+      name: string;
       /** Slug for this category */
-      slug: string
+      slug: string;
       links: {
-        rel: 'platform'
-        href: string
-      }[]
-    }
+        rel: "platform";
+        href: string;
+      }[];
+    };
     ClientDonationResult: {
       /** Donated amount in cents */
-      amount_in_cents: number
+      amount_in_cents: number;
       /**
        * At the moment, all donations that are returned by the API are "confirmed".
        * Unconfirmed donations do not show up at all or disappear after they were revoked.
@@ -2219,18 +2219,18 @@ export interface components {
        * Please make sure to check for the "confirmed" state in your application explicitly since
        * we might add a "revoked" state in the future.
        */
-      state: string
+      state: string;
       /** Donor information, if available. */
-      donor: components['schemas']['ContactResult'] | null
+      donor: components["schemas"]["ContactResult"] | null;
       /**
        * An optional message by users.
        *
        * The body may contain html with any of the following HTML tags:
        * ```b, br, em, i, li, ol, p, strong, ul```.
        */
-      message: string | null
+      message: string | null;
       /** A token uniquely identifies a donation on the platform. */
-      token: string
+      token: string;
       /**
        * Client Donations can be identified via a custom client reference token.
        *
@@ -2238,132 +2238,132 @@ export interface components {
        * <a href="../donation_form/third_party_app_donation_form.md">
        * ThirdPartyApp custom donation form for organisations</a>, for example.
        */
-      client_reference: string
+      client_reference: string;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /**
        * Client donations may go to a <code>Project</code>,
        * a Project's <code>Element</code>, a <code>FundraisingEvent</code>,
        * a <code>Pool</code>.
        */
-      receiver_type: string
+      receiver_type: string;
       /** The id of the project, project element or fundraising event. */
-      receiver_id: number
+      receiver_id: number;
       /** The title of the project, project element or fundraising event. */
-      receiver_title: string
+      receiver_title: string;
       links: {
-        rel: 'receiver' | 'self'
-        href: string
-      }[]
-    }
+        rel: "receiver" | "self";
+        href: string;
+      }[];
+    };
     ClientTagResult: {
       /** The name of the tag. It is unique per client. */
-      tag: string
+      tag: string;
       /**
        * The slug of the tag. It is unique per client and used to build urls.
        * It must not contain any non url-safe characters.
        */
-      slug: string
+      slug: string;
       /**
        * The number of <a href="projects_list.md">projects</a>
        * that were tagged with this tag.
        */
-      projects_count: number
+      projects_count: number;
       links: {
-        rel: 'projects'
-        href: string
-      }[]
-    }
+        rel: "projects";
+        href: string;
+      }[];
+    };
     ClientResult: {
       links: {
         rel:
-          | 'projects'
-          | 'volunteering'
-          | 'client_donations'
-          | 'client_project_tags'
-          | 'client_fundraising_events'
-          | 'project_mailing_subscriptions'
-          | 'project_statistics'
-          | 'fundraising_event_statistics'
-        href: string
-      }[]
-    }
+          | "projects"
+          | "volunteering"
+          | "client_donations"
+          | "client_project_tags"
+          | "client_fundraising_events"
+          | "project_mailing_subscriptions"
+          | "project_statistics"
+          | "fundraising_event_statistics";
+        href: string;
+      }[];
+    };
     ContactDataResult: {
       /** The first name of the user or donor. */
-      first_name: string
+      first_name: string;
       /** The last name of the user or donor. */
-      last_name: string
+      last_name: string;
       /** The email address of the user or donor. */
-      email: string
-    }
+      email: string;
+    };
     CreatingADirectDepositDonationRequest: {
-      first_name: string
-      last_name: string
-      company_name?: string
-      email: string
-      message?: string
-      amount_cents: number
-      client_reference: string
-      street?: string
-      city?: string
-      zip?: string
-      country_alpha2?: string
-      validate_address?: boolean
-    }
+      first_name: string;
+      last_name: string;
+      company_name?: string;
+      email: string;
+      message?: string;
+      amount_cents: number;
+      client_reference: string;
+      street?: string;
+      city?: string;
+      zip?: string;
+      country_alpha2?: string;
+      validate_address?: boolean;
+    };
     DirectDepositResult: {
       /**
        * The reference for the pending debit donation. Use it within
        * the transaction to ensure it gets matched with the donation.
        */
-      reference_id: number
+      reference_id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** The IBAN for the SEPA transaction. */
-      iban: string
+      iban: string;
       /** The holder name for the SEPA transaction. */
-      holder_name: string
-    }
+      holder_name: string;
+    };
     CreatingAClientDonationPledgeRequest: {
-      first_name?: string
-      last_name?: string
-      email?: string
-      amount_in_cents: number
-      client_reference: string
-      tracking_via?: string
-      earmark?: number
-      street?: string
-      city?: string
-      zip?: string
-      country_code?: string
-      validate_address?: boolean
-    }
+      first_name?: string;
+      last_name?: string;
+      email?: string;
+      amount_in_cents: number;
+      client_reference: string;
+      tracking_via?: string;
+      earmark?: number;
+      street?: string;
+      city?: string;
+      zip?: string;
+      country_code?: string;
+      validate_address?: boolean;
+    };
     SuccessResult: {
       /**
        * HTTP status code as a descriptive string.
        * For a list of codes, <a href="http://httpstatus.es/">see httpstatus.es</a>.
        * Example: "accepted" for code 202
        */
-      status: string
+      status: string;
       /** HTTP status code as an integer number, e.g. 202. */
-      status_code: number
+      status_code: number;
       links: {
-        rel: 'location'
-        href: string
-      }[]
-    }
+        rel: "location";
+        href: string;
+      }[];
+    };
     MandateProcessResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      confirmed_at: { [key: string]: any }
+      confirmed_at: { [key: string]: any };
       /** DateTime (ISO8601 with Timezone) */
-      failed_at: { [key: string]: any }
+      failed_at: { [key: string]: any };
       /**
        * One of "pending", "confirmed" or "failed".
        * <ul>
@@ -2377,7 +2377,7 @@ export interface components {
        * This state is final.
        * </ul>
        */
-      state: string
+      state: string;
       /**
        * A set of failure codes.<br>
        * You could use this to choose follow up actions in
@@ -2395,7 +2395,7 @@ export interface components {
        * deprecated and not used anymore at some point in the
        * future.
        */
-      failure_code: string
+      failure_code: string;
       /**
        * A more detailed description of the failure.<br>
        * This message is meant to be interpreted by a
@@ -2404,62 +2404,62 @@ export interface components {
        * use it to match actions based on the message
        * string.
        */
-      failure_reason: string
+      failure_reason: string;
       links: {
-        rel: 'donation'
-        href: string
-      }[]
-    }
+        rel: "donation";
+        href: string;
+      }[];
+    };
     CreatingAClientForwardingRequestRequest: {
-      amount_in_cents: number
-      client_reference: string
-      tracking_via?: string
-    }
+      amount_in_cents: number;
+      client_reference: string;
+      tracking_via?: string;
+    };
     ProjectResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /**
        * DateTime (ISO8601 with Timezone) when the project was created by the
        * project manager.
        */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Decimal degrees based on user input */
-      latitude: number
+      latitude: number;
       /** Decimal degrees based on user input */
-      longitude: number
+      longitude: number;
       /** Street address */
-      street: string | null
+      street: string | null;
       /** ZIP code */
-      zip: string | null
+      zip: string | null;
       /** Name of the city */
-      city: string | null
+      city: string | null;
       /** Name of the country */
-      country: string | null
+      country: string | null;
       /** DateTime (ISO8601 with Timezone) */
-      content_updated_at: string
+      content_updated_at: string;
       /**
        * DateTime (ISO8601 with Timezone) when the project was activated
        * by us, otherwise it is null.
        */
-      activated_at: string | null
+      activated_at: string | null;
       /** Max 50 character */
-      title: string
+      title: string;
       /**
        * A description of the project. This may contain any of the following
        * HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
-      description: string
+      description: string;
       /** A short summary of the project.. */
-      summary: string
+      summary: string;
       /**
        * True if the project marked as tax deductible.
        * If so, Users can request a tax receipt that can be used
        * with the German tax authorities.
        * [More about this](http://www.betterplace.org/c/hilfe/projekt-steuerlich-absetzbar/).
        */
-      tax_deductible: boolean
+      tax_deductible: boolean;
       /**
        * True if the project must not receive donations. This might happen, for example,
        * if a tax receipt of German tax authorities ran out.
@@ -2469,7 +2469,7 @@ export interface components {
        * the user will open the donation form and see an error message on
        * betterplace.org instead!
        */
-      donations_prohibited: boolean
+      donations_prohibited: boolean;
       /**
        * DateTime (ISO8601 with Timezone) of the moment the project was fully
        * funded (100% `progress_percentage`).
@@ -2477,7 +2477,7 @@ export interface components {
        * A completed project may still be active (as in not closed).
        * See `closed_at for details.
        */
-      completed_at: string
+      completed_at: string;
       /**
        * DateTime (ISO8601 with Timezone) when the project was closed by the
        * project manager.
@@ -2485,9 +2485,9 @@ export interface components {
        * A closed project does not have to be fully funded.
        * See `completed_at` for details.
        */
-      closed_at: string
+      closed_at: string;
       /** How many cents are needed to complete the project */
-      open_amount_in_cents: number
+      open_amount_in_cents: number;
       /**
        * How many cents are donated already.
        * This includes:
@@ -2498,7 +2498,7 @@ export interface components {
        * Subtracting:
        * - backwardings from the project
        */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /**
        * Number of positive opinions that are given to a project without a donation.
        * Those are plain opinions as well as visitor opinions.
@@ -2509,7 +2509,7 @@ export interface components {
        * between positive and negative comments any more, all opinions were converted
        * into comments.
        */
-      positive_opinions_count: number
+      positive_opinions_count: number;
       /**
        * Number of *negative* opinions (usually 0) that are given to a project without a donation.
        * Those are plain opinions as well as visitor opinions.
@@ -2520,9 +2520,9 @@ export interface components {
        *
        * Always returns 0. Don't use this field any more.
        */
-      negative_opinions_count: number
+      negative_opinions_count: number;
       /** Count of confirmed donations for this project */
-      donations_count: number
+      donations_count: number;
       /**
        * Count of active newsletter subscriptions for this project.
        *
@@ -2530,13 +2530,13 @@ export interface components {
        *
        * Can be removed at any time. Use with caution
        */
-      newsletter_subscriptions_count: number
+      newsletter_subscriptions_count: number;
       /**
        * Count of all comments for this project. This contains positive and negative
        * reviews of the project, questions and answers by the project manager, as
        * well as comments from users.
        */
-      comments_count: number
+      comments_count: number;
       /**
        * ⚠️ DEPRECATED!
        * This value is deprecated and will be removed after 2021-01-01.
@@ -2544,24 +2544,24 @@ export interface components {
        *
        * Number of unique donors, based on the payment-email-address
        */
-      donor_count: number
+      donor_count: number;
       /**
        * % financed. Note: We have legacy projects with substantial
        * donation needs (pre ~2014). This percentage includes those needs.
        */
-      progress_percentage: number
+      progress_percentage: number;
       /** Number of needs that still need donations */
-      incomplete_need_count: number
+      incomplete_need_count: number;
       /** Number of completed needs */
-      completed_need_count: number
+      completed_need_count: number;
       /** Number of blogposts (all types) */
-      blog_post_count: number
+      blog_post_count: number;
       /** The public face of the project / project manager */
-      contact?: components['schemas']['ContactResult']
+      contact?: components["schemas"]["ContactResult"];
       /** The organisation that carries this project */
-      carrier: components['schemas']['CarrierResult'] | null
+      carrier: components["schemas"]["CarrierResult"] | null;
       /** TODO */
-      profile_picture: components['schemas']['ProfilePictureResult'] | null
+      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
       /**
        * **DEPRECATED** Do not use this data. We will remove the nested
        * matching fund data in the future.
@@ -2569,100 +2569,106 @@ export interface components {
        * To get this data follow the active_matching_fund link and retrieve
        * the data from the appropriate endpoint.
        */
-      active_matching_fund: components['schemas']['MatchingFundResult'] | null
+      active_matching_fund: components["schemas"]["MatchingFundResult"] | null;
       /** **This is an experimental feature and is still under heavy development. Please use it with caution.** */
-      closed_notice: components['schemas']['ClosedNoticeResult'] | null
+      closed_notice: components["schemas"]["ClosedNoticeResult"] | null;
       links: {
         rel:
-          | 'self'
-          | 'platform'
-          | 'opinions'
-          | 'pictures'
-          | 'needs'
-          | 'blog_posts'
-          | 'active_matching_fund'
-          | 'video'
-          | 'matching_funds'
-          | 'categories'
-          | 'new_client_donation'
-          | 'new_donation'
-        href: string
-      }[]
-    }
+          | "self"
+          | "platform"
+          | "opinions"
+          | "pictures"
+          | "needs"
+          | "blog_posts"
+          | "active_matching_fund"
+          | "video"
+          | "matching_funds"
+          | "categories"
+          | "new_client_donation"
+          | "new_donation";
+        href: string;
+      }[];
+    };
     CarrierResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** The carrier can be an organisation or user. */
-      name: string
+      name: string;
       /** The city in which the carrier resides */
-      city: string
+      city: string;
       /** The organisation logo, user profile picture or a fallback image */
-      picture?: components['schemas']['UserProfilePictureResult']
+      picture?: components["schemas"]["UserProfilePictureResult"];
       links: {
-        rel: 'self'
-        href: string
-      }[]
-    }
+        rel: "self";
+        href: string;
+      }[];
+    };
     ProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean
+      fallback: boolean;
       links: {
-        rel: 'fill_960x500' | 'fill_730x380' | 'fill_618x322' | 'fill_410x214' | 'fill_270x141' | 'original'
-        href: string
-      }[]
-    }
+        rel:
+          | "fill_960x500"
+          | "fill_730x380"
+          | "fill_618x322"
+          | "fill_410x214"
+          | "fill_270x141"
+          | "original";
+        href: string;
+      }[];
+    };
     MatchingFundResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      activated_at: string | null
+      activated_at: string | null;
       /** Our matching fund's name */
-      title: string
+      title: string;
       /** The description of the matching fund */
-      description: string
+      description: string;
       /** The company that supports it */
-      company_name: string
+      company_name: string;
       /** The client to which the matching fund belongs */
-      client_id: string
+      client_id: string;
       /** The amount in cents the company provided to be matched */
-      provided_amount_in_cents: number
+      provided_amount_in_cents: number;
       /** The amount in cents the company already donated */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /** Current state of this matching fund: either activated or closed */
-      state: string
+      state: string;
       /** The URL of the logo image. */
-      logo_url: string
+      logo_url: string;
       /** Up to this amount donations get matched by the matching fund */
-      maximum_matching_amount_in_cents: number
+      maximum_matching_amount_in_cents: number;
       links: {
-        rel: 'self' | 'platform' | 'projects' | 'documentation'
-        href: string
-      }[]
-    }
+        rel: "self" | "platform" | "projects" | "documentation";
+        href: string;
+      }[];
+    };
     ClosedNoticeResult: {
       /** A close notice from the project manager */
-      text: string | null
+      text: string | null;
       links: {
-        rel: 'call_to_action'
-        href: string
-      }[]
-    }
+        rel: "call_to_action";
+        href: string;
+      }[];
+    };
     FundraisingEventForwardingResult: {
       /** The amount in cents the fundraising event has forwarded to this project. */
-      forwarded_amount_in_cents: number
+      forwarded_amount_in_cents: number;
       /** The name of the receiving project */
-      title: string
+      title: string;
       /** The ID of the receiving project */
-      project_id: number
+      project_id: number;
       links: {
-        rel: 'project' | 'platform'
-        href: string
-      }[]
-    }
+        rel: "project" | "platform";
+        href: string;
+      }[];
+    };
     ClientStatisticFundraisingEventResult: {
       /**
        * How many cents are donated already to all fundraising events of this client.
@@ -2672,52 +2678,52 @@ export interface components {
        * Remember: This includes all donations to fundraising events of this client even those
        * that are donated via betterplace.org or other channels.
        */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /**
        * The number of <a href="fundraising_events_list.md">fundraising events</a> of this client.
        *
        * Blocked fundraising events are excluded from this count and from the API in general.
        */
-      fundraising_events_count: number
+      fundraising_events_count: number;
       /**
        * How many cents are donated through the clients donation page to
        * all fundraising events (those that are active, closed, blocked and so on).
        *
        * The client-pool-fundraising-event is ignored.
        */
-      client_donated_amount_in_cents: number
+      client_donated_amount_in_cents: number;
       /**
        * The number of <a href="client_donations_list.md">client donations</a> for this client to
        * all fundraising events (those that are active, closed, blocked and so on).
        *
        * The client-pool-fundraising-event is ignored.
        */
-      client_donations_count: number
-    }
+      client_donations_count: number;
+    };
     FundraisingEventResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      content_updated_at: string
+      content_updated_at: string;
       /** Max 50 character */
-      title: string
+      title: string;
       /**
        * A description of the fundraising event. This may contain any of the
        * following HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        * Max 25.000 characters.
        */
-      description: string
+      description: string;
       /**
        * True if the fundraising event is marked as tax deductible and
        * can only support tax deductible projects.
        * If so, users can request a tax receipt for their donation
        * that can be used with the German tax authorities.
        */
-      tax_deductible: boolean
+      tax_deductible: boolean;
       /**
        * True if the fundraising event must not and cannot receive donations.
        * This might happen if the event was closed by the manager,
@@ -2729,19 +2735,19 @@ export interface components {
        * the user will open the donation form and see an error message on
        * betterplace.org instead!
        */
-      donations_prohibited: boolean
+      donations_prohibited: boolean;
       /**
        * DateTime (ISO8601 with Timezone) when the fundraising event was closed
        * by the manager.
        */
-      closed_at: string
+      closed_at: string;
       /**
        * DateTime (ISO8601 with Timezone). Donations are prohibited until this
        * date and time is reached. Defaults to NULL.
        */
-      activate_donations_at: string
+      activate_donations_at: string;
       /** Count of confirmed donations for this fundraising event */
-      donations_count: number
+      donations_count: number;
       /**
        * ⚠️ DEPRECATED!
        * This value is deprecated and will be removed after 2021-01-01.
@@ -2749,60 +2755,60 @@ export interface components {
        *
        * Number of unique donors, based on the payment-email-address
        */
-      donor_count: number
+      donor_count: number;
       /** How many cents were already raised with the fundraising event */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /**
        * How many cents were requested to be raised with the fundraising event.
        * This value is optional! The manager decides if his event has a goal or not.
        */
-      requested_amount_in_cents: number
+      requested_amount_in_cents: number;
       /** How many cents were already forwarded to a project. */
-      forwarded_amount_in_cents: number
+      forwarded_amount_in_cents: number;
       /**
        * % financed. This value is only present in case the manager
        * decided to add a <code>requested_amount_in_cents</code>.
        */
-      progress_percentage: number
+      progress_percentage: number;
       /** The public face of the fundraising event / fundraising event manager */
-      contact?: components['schemas']['ContactResult']
+      contact?: components["schemas"]["ContactResult"];
       /** TODO */
-      profile_picture: components['schemas']['ProfilePictureResult'] | null
+      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
       links: {
         rel:
-          | 'self'
-          | 'featured_projects'
-          | 'blog_posts'
-          | 'forwardings'
-          | 'platform'
-          | 'opinions'
-          | 'new_client_donation'
-          | 'new_donation'
-          | 'header_picture'
-          | 'new_message'
-        href: string
-      }[]
-    }
+          | "self"
+          | "featured_projects"
+          | "blog_posts"
+          | "forwardings"
+          | "platform"
+          | "opinions"
+          | "new_client_donation"
+          | "new_donation"
+          | "header_picture"
+          | "new_message";
+        href: string;
+      }[];
+    };
     ClientMailingSubscriptionsRequest: {
-      email: string
-      first_name: string
-      last_name: string
-      active: boolean
-    }
+      email: string;
+      first_name: string;
+      last_name: string;
+      active: boolean;
+    };
     NeedResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Max 50 character */
-      title: string
-      description: string
+      title: string;
+      description: string;
       /** True if the need is 100 % financed */
-      completed: boolean
+      completed: boolean;
       /** % financed */
-      progress_percentage: number
+      progress_percentage: number;
       /**
        * How many cents are donated already.
        * This includes all donations that can be given to a need
@@ -2811,29 +2817,29 @@ export interface components {
        * forwarding of fundraising event donations,
        * offline donations and also(!) external donations)
        */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /** How many cents are still needed to complete the need */
-      open_amount_in_cents: number
+      open_amount_in_cents: number;
       /** How much money is needed in total */
-      requested_amount_in_cents: number
+      requested_amount_in_cents: number;
       links: {
-        rel: 'self' | 'project' | 'new_client_donation' | 'new_donation'
-        href: string
-      }[]
-    }
+        rel: "self" | "project" | "new_client_donation" | "new_donation";
+        href: string;
+      }[];
+    };
     ClientNewsletterOptInsRequest: {
-      email: string
-      first_name: string
-      last_name: string
-      wording: string
-    }
+      email: string;
+      first_name: string;
+      last_name: string;
+      wording: string;
+    };
     DonationResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /**
        * The amount donated, but only if the user allowed the amount to be
        * visible. Most donation forms allow the donor to specify if they
@@ -2843,7 +2849,7 @@ export interface components {
        * Known issue: For forwarding donations (money that is forwarded from a fundraising event to a project)
        * this field is always empty, which is wrong.
        */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /**
        * If a matching fund was active during the donation then the amount
        * donated by a user might was matched with another donation.
@@ -2852,116 +2858,116 @@ export interface components {
        * restrictions, e.g. when the matching fund is depleted or the donation
        * was higher than the maximum matching threshold.
        */
-      matched_amount_in_cents: number
+      matched_amount_in_cents: number;
       /**
        * The matched field is true if this is a donor opinion for a donation that
        * was matched by a <a href="matching_fund_details.md">matching fund</a>.
        * It's false otherwise.
        */
-      matched: boolean
+      matched: boolean;
       /** DEPRECATED 2017-06-16 - Always returns "positive" */
-      score: string
+      score: string;
       /** Donor information, if available. */
-      author: components['schemas']['ContactResult'] | null
+      author: components["schemas"]["ContactResult"] | null;
       /**
        * An optional message by users.
        *
        * The body may contain html with any of the following HTML tags:
        * ```b, br, em, i, li, ol, p, strong, ul```.
        */
-      message: string | null
+      message: string | null;
       /** DateTime (ISO8601 with Timezone) */
-      confirmed_at: string
+      confirmed_at: string;
       links: {
-        rel: 'project' | 'fundraising_event' | 'matching_fund'
-        href: string
-      }[]
-    }
+        rel: "project" | "fundraising_event" | "matching_fund";
+        href: string;
+      }[];
+    };
     OrganisationResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Decimal degrees based on user input */
-      latitude: number
+      latitude: number;
       /** Decimal degrees based on user input */
-      longitude: number
+      longitude: number;
       /** Street address */
-      street: string | null
+      street: string | null;
       /** ZIP code */
-      zip: string | null
+      zip: string | null;
       /** Name of the city */
-      city: string | null
+      city: string | null;
       /** Name of the country */
-      country: string | null
+      country: string | null;
       /** DateTime (ISO8601 with Timezone) */
-      content_updated_at: string
+      content_updated_at: string;
       /**
        * <a href="http://en.wikipedia.org/wiki/Clean_URL#Slug">URL slug</a>
        * for the permalink
        */
-      slug: string
+      slug: string;
       /** Name of the organisation */
-      name: string
+      name: string;
       /**
        * A description of the organisation.
        * This may contain <code>br</code> tags.
        */
-      description: string
+      description: string;
       /**
        * True if the organisation is a tax-exempt charity.
        * If so, Users can request a tax receipt for donations to that organisation.
        */
-      tax_deductible: boolean
+      tax_deductible: boolean;
       /** The public contact person for this organisation. */
-      contact?: components['schemas']['ContactResult']
+      contact?: components["schemas"]["ContactResult"];
       /** TODO */
-      picture: components['schemas']['SquareProfilePictureResult'] | null
+      picture: components["schemas"]["SquareProfilePictureResult"] | null;
       links: {
-        rel: 'self' | 'platform' | 'projects' | 'website'
-        href: string
-      }[]
-    }
+        rel: "self" | "platform" | "projects" | "website";
+        href: string;
+      }[];
+    };
     SquareProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean
+      fallback: boolean;
       links: {
-        rel: 'fill_100x100' | 'fill_200x200' | 'fill_400x400' | 'original'
-        href: string
-      }[]
-    }
+        rel: "fill_100x100" | "fill_200x200" | "fill_400x400" | "original";
+        href: string;
+      }[];
+    };
     PoolResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** The amount in cents this pool has received */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /** The amount in cents the pool has forwarded to projects. */
-      forwarded_amount_in_cents: number
+      forwarded_amount_in_cents: number;
       links: {
-        rel: 'self'
-        href: string
-      }[]
-    }
+        rel: "self";
+        href: string;
+      }[];
+    };
     ProjectImageResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Description of the picture */
-      description: string
+      description: string;
       links: {
-        rel: 'image' | 'self' | 'parent'
-        href: string
-      }[]
-    }
+        rel: "image" | "self" | "parent";
+        href: string;
+      }[];
+    };
     ClientStatisticProjectResult: {
       /**
        * How many cents are donated already through user donations or forwardings
@@ -2970,12 +2976,12 @@ export interface components {
        * Remember: This includes all donations to projects of this client even those
        * that are donated via betterplace.org or other channels.
        */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /**
        * How many cents are external donations, that means they were given directly
        * to the project on other, non-betterplace channels.
        */
-      external_donated_amount_in_cents: number
+      external_donated_amount_in_cents: number;
       /**
        * How many cents were requested by all client projects in total.
        * This calculation is based on the sum of all
@@ -2985,115 +2991,115 @@ export interface components {
        * are completed like this:
        *   `requested_amount_in_cents - donated_amount_in_cents - external_donated_amount_in_cents`
        */
-      requested_amount_in_cents: number
+      requested_amount_in_cents: number;
       /** The number of <a href="projects_list.md">projects</a> of this client. */
-      projects_count: number
+      projects_count: number;
       /**
        * How many cents are donated through the client's donation page and forwarded
        * from the clients donation pool or matching funds of this client.
        */
-      client_donated_amount_in_cents: number
+      client_donated_amount_in_cents: number;
       /** The number of <a href="client_donations_list.md">client donations</a> for this client. */
-      client_donations_count: number
-    }
+      client_donations_count: number;
+    };
     SearchResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Decimal degrees based on user input */
-      latitude: number
+      latitude: number;
       /** Decimal degrees based on user input */
-      longitude: number
+      longitude: number;
       /** Name of the entity */
-      title: string
+      title: string;
       /** Type of the entity, either Project or FundraisingEvent */
-      type: string
+      type: string;
       /** The public face of this entity */
-      contact?: components['schemas']['ContactResult']
+      contact?: components["schemas"]["ContactResult"];
       /** % financed. */
-      progress_percentage: number
+      progress_percentage: number;
       /** TODO */
-      profile_picture: components['schemas']['ProfilePictureResult'] | null
+      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
       /** How many cents were already raised with the fundraising event */
-      donated_amount_in_cents: number
+      donated_amount_in_cents: number;
       /** Name where this entity is located */
-      country: string | null
+      country: string | null;
       /** Name where this entity is located */
-      city: string | null
+      city: string | null;
       /** The organisation that carries this project */
-      carrier: components['schemas']['CarrierResult'] | null
+      carrier: components["schemas"]["CarrierResult"] | null;
       /** Count of confirmed donations for this entity */
-      donations_count: number
+      donations_count: number;
       /** How many cents are needed to complete the project */
-      open_amount_in_cents: number
+      open_amount_in_cents: number;
       links: {
-        rel: 'platform' | 'self' | 'pictures'
-        href: string
-      }[]
-    }
+        rel: "platform" | "self" | "pictures";
+        href: string;
+      }[];
+    };
     JobDescriptionResult: {
       /** An integer number ≥ 1 */
-      id: number
+      id: number;
       /** DateTime (ISO8601 with Timezone) */
-      created_at: string
+      created_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      updated_at: string
+      updated_at: string;
       /** Decimal degrees based on user input */
-      latitude: number
+      latitude: number;
       /** Decimal degrees based on user input */
-      longitude: number
+      longitude: number;
       /** Street address */
-      street: string | null
+      street: string | null;
       /** ZIP code */
-      zip: string | null
+      zip: string | null;
       /** Name of the city */
-      city: string | null
+      city: string | null;
       /** Name of the country */
-      country: string | null
+      country: string | null;
       /** DateTime (ISO8601 with Timezone) */
-      content_updated_at: string
+      content_updated_at: string;
       /** Max 100 character */
-      title: string
+      title: string;
       /**
        * A description of the offer. This may contain any of the following
        * HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
-      description: string
+      description: string;
       /** The organisation that carrier this volunteering */
-      carrier?: components['schemas']['JobDescriptionCarrierResult']
+      carrier?: components["schemas"]["JobDescriptionCarrierResult"];
       /** The number of volunteers that are needed, provided by the manager */
-      vacancies: number
+      vacancies: number;
       /** Each volunteering has one optional image / DEPRECATED, will be removed after 5/2015 */
-      image: components['schemas']['JobDescriptionImageResult'] | null
+      image: components["schemas"]["JobDescriptionImageResult"] | null;
       /** Contact person, contact data and contact address */
-      contact?: components['schemas']['JobDescriptionContactResult']
+      contact?: components["schemas"]["JobDescriptionContactResult"];
       /**
        * Specifies whether the volunteering offer is limited to a certain location or if it may be
        * executed remotely.
        */
-      location_fixed: boolean
+      location_fixed: boolean;
       /**
        * Working time selection, specifies if this is a one-time event or if
        * this volunteering can takes place regulary.
        */
-      working_time_selection: string
+      working_time_selection: string;
       /**
        * Up to three working time preferences. They specify when this volunteering
        * should take place on weekends.
        */
-      working_time_weekends: string[]
+      working_time_weekends: string[];
       /**
        * Up to three working time preferences. They specify when this volunteering
        * should take place on weekdays.
        */
-      working_time_weekdays: string[]
+      working_time_weekdays: string[];
       /** DateTime (ISO8601 with Timezone) */
-      begins_at: string
+      begins_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      ends_at: string
+      ends_at: string;
       /**
        * Up to 4 categories that describe, what for which causes you need volunteers.
        * Results are translated to the requested language.
@@ -3101,7 +3107,7 @@ export interface components {
        * "Children & youth", "Development cooperation ", "DisabledEducation", "Elderly people",
        * "Human rights", "Refugees & immigrants", "Invalid", "Local help", "Socially deprived"
        */
-      topics: string[]
+      topics: string[];
       /**
        * Up to 4 categories that describe, what for which causes you need volunteers.
        * Results are translated to the requested language.
@@ -3110,73 +3116,81 @@ export interface components {
        * "organising/managing", "painting/designing", "tutoring/reading",
        * "visiting/accompanying", "writing/translating"
        */
-      activities: string[] | null
+      activities: string[] | null;
       /** Where Betterplace imports volunteering from. */
-      imported_from: string | null
+      imported_from: string | null;
       /**
        * Meta data concerning the import of this volunteering offer, if it
        * was indeed imported.
        */
-      import_information: { [key: string]: any }
+      import_information: { [key: string]: any };
       /** TODO */
-      profile_picture: components['schemas']['ProfilePictureResult'] | null
+      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
       links: {
-        rel: 'self' | 'platform' | 'inquiries'
-        href: string
-      }[]
-    }
+        rel: "self" | "platform" | "inquiries";
+        href: string;
+      }[];
+    };
     JobDescriptionCarrierResult: {
       /** Decimal degrees based on user input */
-      latitude: number
+      latitude: number;
       /** Decimal degrees based on user input */
-      longitude: number
+      longitude: number;
       /** An organisation name, Users will be added later */
-      name: string
+      name: string;
       /** Contact data for the organisation */
-      street: string
+      street: string;
       /** Contact data for the organisation */
-      city: string
+      city: string;
       /** Contact data for the organisation */
-      zip: string
+      zip: string;
       /** Contact data for the organisation */
-      country: string
+      country: string;
       /** TODO */
-      picture: components['schemas']['SquareProfilePictureResult'] | null
+      picture: components["schemas"]["SquareProfilePictureResult"] | null;
       links: {
-        rel: 'self'
-        href: string
-      }[]
-    }
+        rel: "self";
+        href: string;
+      }[];
+    };
     JobDescriptionImageResult: {
       /** Image description */
-      description: string
+      description: string;
       links: {
-        rel: 'fill_618x322' | 'fill_270x141' | 'original' | 'thumb' | 'medium' | 'regular'
-        href: string
-      }[]
-    }
+        rel:
+          | "fill_618x322"
+          | "fill_270x141"
+          | "original"
+          | "thumb"
+          | "medium"
+          | "regular";
+        href: string;
+      }[];
+    };
     JobDescriptionContactResult: {
       /** Fullname of the contact person. */
-      name: string
+      name: string;
       /**
        * Phone number for direct contact.
        * No validations on input apply.
        */
-      phone: string
+      phone: string;
       /** Plain text email-address for direct contact */
-      email: string
+      email: string;
       /** User profile picture or a fallback image */
-      picture?: components['schemas']['UserProfilePictureResult']
-    }
+      picture?: components["schemas"]["UserProfilePictureResult"];
+    };
     VolunteeringInquiriesRequest: {
-      first_name: string
-      last_name: string
-      email: string
-      phone?: string
-      availability: string
-      profile?: string
-      questions?: string
-      terms_of_use: boolean
-    }
-  }
+      first_name: string;
+      last_name: string;
+      email: string;
+      phone?: string;
+      availability: string;
+      profile?: string;
+      questions?: string;
+      terms_of_use: boolean;
+    };
+  };
 }
+
+export interface operations {}

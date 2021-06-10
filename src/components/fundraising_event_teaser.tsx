@@ -1,5 +1,4 @@
 import { components } from 'apiV4'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
@@ -79,11 +78,4 @@ export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = ({
       </div>
     </a>
   )
-}
-
-FundraisingEventTeaser.propTypes = {
-  font: PropTypes.string,
-  href: PropTypes.string,
-  onClick: PropTypes.func,
-  fundraisingEvent: PropTypes.any.isRequired,
 }

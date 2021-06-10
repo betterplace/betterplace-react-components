@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { FacebookMessengerIcon } from '../../assets/icons'
 import { encodedShareURL, isMobileOrTablet, openPopup } from '../../helpers/sharing_helper'
 import { BaseShareActionArgs, buildShareButtonComponent } from './base'
@@ -24,8 +22,4 @@ export const FacebookMessengerButton = buildShareButtonComponent({
   buttonLabel: 'Messenger',
   className: 'share-button--facebook-messenger',
   icon: FacebookMessengerIcon,
-})
-
-FacebookMessengerButton.propTypes = Object.assign(FacebookMessengerButton.propTypes, {
-  facebookAppId: PropTypes.string,
 })

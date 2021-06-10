@@ -1,5 +1,4 @@
 import { components } from 'apiV4'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
@@ -96,18 +95,4 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = ({
       {bottomContent}
     </a>
   )
-}
-
-ProjectTeaser.propTypes = {
-  className: PropTypes.string,
-  font: PropTypes.string,
-  textColor: PropTypes.string,
-  href: PropTypes.string,
-  onClick: PropTypes.func,
-  progressbarColor: PropTypes.string,
-  project: PropTypes.any.isRequired,
-  showDescription: PropTypes.bool,
-  extraHeight: PropTypes.number,
-  showCarrierName: PropTypes.bool,
-  bottomContent: PropTypes.element,
 }
