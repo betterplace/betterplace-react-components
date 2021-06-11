@@ -9,67 +9,67 @@ const project: Project = {
   updated_at: 'string',
   latitude: 0,
   longitude: 0,
-  street: 'string',
-  zip: 'string',
-  city: 'string',
-  country: 'string',
+  street: 'Street',
+  zip: 'Zip-Code',
+  city: 'City',
+  country: 'Country',
   content_updated_at: 'string',
   activated_at: 'string',
   title: 'Skateistan Afghanistan',
-  description: 'Skateistan',
-  summary: 'string',
+  description: 'this is amazing',
+  summary: 'Summa summarum',
   tax_deductible: true,
   donations_prohibited: true,
   completed_at: 'string',
   closed_at: 'string',
-  open_amount_in_cents: 0,
-  donated_amount_in_cents: 1.337,
-  positive_opinions_count: 0,
-  negative_opinions_count: 0,
-  donations_count: 0,
+  open_amount_in_cents: 4200,
+  donated_amount_in_cents: 1337,
+  positive_opinions_count: 10,
+  negative_opinions_count: 11,
+  donations_count: 1337,
   newsletter_subscriptions_count: 0,
   comments_count: 0,
   donor_count: 0,
-  progress_percentage: 0,
+  progress_percentage: 33,
   incomplete_need_count: 0,
   completed_need_count: 0,
   blog_post_count: 0,
   contact: {
     id: 0,
-    name: 'string',
+    name: 'Contact',
     picture: {
       fallback: true,
       links: [
         {
           rel: 'fill_100x100',
-          href: 'string',
+          href: 'contact_pic_url',
         },
       ],
     },
     links: [
       {
         rel: 'platform',
-        href: 'string',
+        href: 'contact_pic_platform_url',
       },
     ],
   },
   carrier: {
     id: 0,
-    name: 'string',
+    name: 'Skateistan',
     city: 'string',
     picture: {
       fallback: true,
       links: [
         {
           rel: 'fill_100x100',
-          href: 'string',
+          href: 'carrier_pic_url',
         },
       ],
     },
     links: [
       {
         rel: 'self',
-        href: 'string',
+        href: 'carrier_self_url',
       },
     ],
   },
@@ -78,7 +78,7 @@ const project: Project = {
     links: [
       {
         rel: 'fill_960x500',
-        href: 'string',
+        href: 'profile_pic_url',
       },
     ],
   },
@@ -99,7 +99,7 @@ const project: Project = {
     links: [
       {
         rel: 'self',
-        href: 'string',
+        href: 'active_matching_fund_url',
       },
     ],
   },
@@ -108,14 +108,14 @@ const project: Project = {
     links: [
       {
         rel: 'call_to_action',
-        href: 'string',
+        href: 'closed_notice_url',
       },
     ],
   },
   links: [
     {
-      rel: 'self',
-      href: 'string',
+      rel: 'platform',
+      href: 'bp.org/p123',
     },
   ],
 }

@@ -33,7 +33,11 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
       className="donatable-teaser--factlist"
     >
       <div>
+        <span>
+          City
+        </span>
         , 
+        Country
       </div>
       <div>
         <span>
@@ -53,6 +57,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
     <img
       alt="Skateistan"
       className="donatable-teaser--carrier-logo"
+      src="carrier_pic_url"
     />
   </div>
   <div
@@ -62,7 +67,7 @@ exports[`ProjectTeaser does not render the description by default 1`] = `
       className="donatable-teaser--progress-bar"
       style={
         Object {
-          "width": "undefined%",
+          "width": "33%",
         }
       }
     />
@@ -111,7 +116,11 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
       className="donatable-teaser--factlist"
     >
       <div>
+        <span>
+          City
+        </span>
         , 
+        Country
       </div>
       <div>
         <span>
@@ -131,6 +140,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
     <img
       alt="Skateistan"
       className="donatable-teaser--carrier-logo"
+      src="carrier_pic_url"
     />
   </div>
   <div
@@ -140,7 +150,7 @@ exports[`ProjectTeaser does render the description if showDescription is true 1`
       className="donatable-teaser--progress-bar"
       style={
         Object {
-          "width": "undefined%",
+          "width": "33%",
         }
       }
     />
@@ -181,7 +191,11 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
       className="donatable-teaser--factlist"
     >
       <div>
+        <span>
+          City
+        </span>
         , 
+        Country
       </div>
       <div>
         <span>
@@ -201,6 +215,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
     <img
       alt="Skateistan"
       className="donatable-teaser--carrier-logo"
+      src="carrier_pic_url"
     />
   </div>
   <div
@@ -210,7 +225,7 @@ exports[`ProjectTeaser is possible to force the locale 1`] = `
       className="donatable-teaser--progress-bar"
       style={
         Object {
-          "width": "undefined%",
+          "width": "33%",
         }
       }
     />
@@ -251,7 +266,11 @@ exports[`ProjectTeaser renders 1`] = `
       className="donatable-teaser--factlist"
     >
       <div>
+        <span>
+          City
+        </span>
         , 
+        Country
       </div>
       <div>
         <span>
@@ -271,6 +290,7 @@ exports[`ProjectTeaser renders 1`] = `
     <img
       alt="Skateistan"
       className="donatable-teaser--carrier-logo"
+      src="carrier_pic_url"
     />
   </div>
   <div
@@ -280,7 +300,7 @@ exports[`ProjectTeaser renders 1`] = `
       className="donatable-teaser--progress-bar"
       style={
         Object {
-          "width": "undefined%",
+          "width": "33%",
         }
       }
     />
@@ -321,7 +341,11 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
       className="donatable-teaser--factlist"
     >
       <div>
+        <span>
+          City
+        </span>
         , 
+        Country
       </div>
       <div>
         <span>
@@ -341,6 +365,7 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
     <img
       alt="Skateistan"
       className="donatable-teaser--carrier-logo"
+      src="carrier_pic_url"
     />
   </div>
   <div
@@ -350,7 +375,7 @@ exports[`ProjectTeaser uses a custom href if given 1`] = `
       className="donatable-teaser--progress-bar"
       style={
         Object {
-          "width": "undefined%",
+          "width": "33%",
         }
       }
     />

@@ -11,6 +11,7 @@
     "test": "yarn lint && NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest",
     "testc": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --coverage",
     "testw": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --watch",
+    "tests": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --updateSnapshot",
     "lint": "tsc --noEmit && eslint .",
     "postinstall": "husky install",
     "pre-commit": "lint-staged",
