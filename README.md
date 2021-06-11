@@ -6,6 +6,10 @@
 
 # betterplace-react-components
 
+## Development
+
+For recommended vscode setup run `yarn setup-vscode` or `npm run setup-vscode`
+
 ## Installation
 
 With yarn:
