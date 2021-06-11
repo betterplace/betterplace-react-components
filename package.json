@@ -64,7 +64,6 @@
   },
   "homepage": "https://github.com/betterplace/betterplace-react-components",
   "peerDependencies": {
-    "prop-types": "^15.6.0",
     "react": ">=16"
   },
   "devDependencies": {
