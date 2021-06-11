@@ -17,7 +17,7 @@
     "pre-commit": "lint-staged",
     "lint:fix": "yarn run lint  --fix",
     "prepare": "husky install",
-    "setup-vscode": "mv ./.vscode/extensions.json.default ./.vscode/extensions.json && mv ./.vscode/settings.json.default ./.vscode/settings.json"
+    "setup-vscode": "cp -i ./.vscode/extensions.json.default ./.vscode/extensions.json && cp -i ./.vscode/settings.json.default ./.vscode/settings.json"
   },
   "files": [
     "dist",
