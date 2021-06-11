@@ -8,7 +8,7 @@
 
 ## Development
 
-For recommended vscode setup run `yarn setup-vscode` or `npm run setup-vscode`
+For recommended vscode setup run `yarn setup-vscode` or `npm run setup-vscode` & then install workspace `@recommended` extensions
 
 ## Installation
 
