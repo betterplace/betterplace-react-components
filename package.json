@@ -103,7 +103,7 @@
     "mini-css-extract-plugin": "^0.11.2",
     "npm": "^6.14.8",
     "pinst": "^2.1.6",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "source-map-loader": "^3.0.0",
