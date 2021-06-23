@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "stringham.move-ts",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-complete-tag",
+    "formulahendry.auto-rename-tag",
+    "ms-azuretools.vscode-azureappservice",
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer-2",
+    "streetsidesoftware.code-spell-checker",
+    "clinyong.vscode-css-modules",
+    "andrewleedham.vscode-css-modules",
+    "mgmcdermott.vscode-language-babel",
+    "msjsdiag.debugger-for-chrome",
+    "firefox-devtools.vscode-firefox-debug",
+    "stylelint.vscode-stylelint",
+    "graphql.vscode-graphql",
+    "ecmel.vscode-html-css",
+    "mrmlnc.vscode-scss",
+    "sibiraj-s.vscode-scss-formatter",
+    "syler.sass-indented",
+    "bradlc.vscode-tailwindcss",
+    "mikestead.dotenv",
+    "foxundermoon.shell-format"
+  ]
+}

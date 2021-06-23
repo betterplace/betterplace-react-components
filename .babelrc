@@ -1,12 +1,13 @@
 {
   "presets": [
+    "@babel/preset-typescript",
     [
       "@babel/preset-env",
       {
         "corejs": "3",
         "modules": "commonjs",
         "targets": {
-          "browsers": "> 1%",
+          "browsers": "> 1%"
         },
         "forceAllTransforms": true,
         "useBuiltIns": "entry"

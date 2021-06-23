@@ -3,7 +3,7 @@
 .donatable-teaser {
   cursor: pointer;
   background: white;
-  font-family: "Fira Sans", Arial, sans-serif;
+  font-family: 'Fira Sans', Arial, sans-serif;
   border: 1px solid #ccc;
   border-radius: 4px;
   display: flex;
@@ -19,7 +19,7 @@
 .donatable-teaser:hover,
 .donatable-teaser:focus {
   text-decoration: none;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   color: inherit;
 }
 
@@ -98,7 +98,7 @@
   right: 0;
   bottom: 0;
   height: 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .donatable-teaser--divider {
@@ -127,7 +127,7 @@
 }
 
 .donatable-teaser--progress {
-  background-color: #AECFD1;
+  background-color: #aecfd1;
   height: 15px;
   width: 100%;
   overflow: hidden;
@@ -136,7 +136,7 @@
 }
 
 .donatable-teaser--progress-bar {
-  background: #2B8475;
+  background: #2b8475;
   transition: width 0.2s linear;
   height: 100%;
   overflow: hidden;

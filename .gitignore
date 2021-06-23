@@ -19,4 +19,10 @@ dist
 npm-debug.log
 errors.lst
 tags
+.history
+.vscode/*
+!.vscode/settings.json.default
+!.vscode/tasks.json.default
+!.vscode/launch.json.default
+!.vscode/extensions.json.default
 .tool-versions

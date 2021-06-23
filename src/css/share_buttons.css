@@ -24,7 +24,7 @@
 
 .share-button--full-icon-wrapper {
   border-radius: 50%;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   height: 56px;
   width: 56px;
   display: flex;
@@ -77,10 +77,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   border-radius: 50%;
   border: none;
-  transition: background-color .1s ease;
+  transition: background-color 0.1s ease;
   cursor: pointer;
 }
 
@@ -100,7 +100,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent !important;
-  transition: border .1s ease;
+  transition: border 0.1s ease;
   cursor: pointer;
   border-style: solid;
   border-width: 1px;
@@ -109,9 +109,9 @@
 /* ---------------------------- network modifier ---------------------------- */
 
 .share-button--email {
-  color: #BAC5CC;
-  border-color: #BAC5CC;
-  background-color: #BAC5CC;
+  color: #bac5cc;
+  border-color: #bac5cc;
+  background-color: #bac5cc;
 }
 
 .share-button--email:hover,
@@ -128,9 +128,9 @@
 }
 
 .share-button--facebook {
-  color: #3F65A6;
-  border-color: #3F65A6;
-  background-color: #3F65A6;
+  color: #3f65a6;
+  border-color: #3f65a6;
+  background-color: #3f65a6;
 }
 
 .share-button--facebook:hover,
@@ -147,9 +147,9 @@
 }
 
 .share-button--facebook-messenger {
-  color: #0084FF;
-  border-color: #0084FF;
-  background-color: #0084FF;
+  color: #0084ff;
+  border-color: #0084ff;
+  background-color: #0084ff;
 }
 
 .share-button--facebook-messenger:hover,
@@ -166,9 +166,9 @@
 }
 
 .share-button--telegram {
-  color: #0087CB;
-  border-color: #0087CB;
-  background-color: #0087CB;
+  color: #0087cb;
+  border-color: #0087cb;
+  background-color: #0087cb;
 }
 
 .share-button--telegram:hover,
@@ -185,9 +185,9 @@
 }
 
 .share-button--twitter {
-  color: #48AAE5;
-  border-color: #48AAE5;
-  background-color: #48AAE5;
+  color: #48aae5;
+  border-color: #48aae5;
+  background-color: #48aae5;
 }
 
 .share-button--twitter:hover,
@@ -204,9 +204,9 @@
 }
 
 .share-button--whatsapp {
-  color: #01E677;
-  border-color: #01E677;
-  background-color: #01E677;
+  color: #01e677;
+  border-color: #01e677;
+  background-color: #01e677;
 }
 
 .share-button--whatsapp:hover,
@@ -223,9 +223,9 @@
 }
 
 .share-button--share-link {
-  color: #4E414B;
-  border-color: #4E414B;
-  background-color: #4E414B;
+  color: #4e414b;
+  border-color: #4e414b;
+  background-color: #4e414b;
 }
 
 .share-button--share-link:hover,
@@ -242,9 +242,9 @@
 }
 
 .share-button--instagram {
-  color: #E1306C;
-  border-color: #E1306C;
-  background-color: #E1306C;
+  color: #e1306c;
+  border-color: #e1306c;
+  background-color: #e1306c;
 }
 
 .share-button--instagram:hover,
@@ -269,7 +269,7 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px 0px, 0.2rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1) inset;
 }
 
-  /* position: relative
+/* position: relative
   border: 1px solid ${props => props.color}
   font-weight: normal
   padding: 0
