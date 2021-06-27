@@ -19,3 +19,5 @@ export const EmailButton = buildShareButtonComponent({
   className: 'share-button--email',
   icon: EmailIcon,
 })
+
+export type EmailButtonProps = Parameters<typeof EmailButton>['0']

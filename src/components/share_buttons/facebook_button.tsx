@@ -11,3 +11,5 @@ export const FacebookButton = buildShareButtonComponent({
   className: 'share-button--facebook',
   icon: FacebookIcon,
 })
+
+export type FacebookButtonProps = Parameters<typeof FacebookButton>['0']

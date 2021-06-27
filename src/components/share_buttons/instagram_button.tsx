@@ -12,3 +12,5 @@ export const InstagramButton = buildShareButtonComponent({
   className: 'share-button--instagram',
   icon: InstagramIcon,
 })
+
+export type InstagramButtonProps = Parameters<typeof InstagramButton>['0']

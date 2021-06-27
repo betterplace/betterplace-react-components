@@ -11,3 +11,5 @@ export const TwitterButton = buildShareButtonComponent({
   className: 'share-button--twitter',
   icon: TwitterIcon,
 })
+
+export type TwitterButtonProps = Parameters<typeof TwitterButton>['0']

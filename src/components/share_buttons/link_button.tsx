@@ -13,3 +13,5 @@ export const LinkButton = buildShareButtonComponent({
   className: 'share-button--share-link',
   icon: LinkIcon,
 })
+
+export type LinkButtonProps = Parameters<typeof LinkButton>['0']

@@ -24,7 +24,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -72,9 +72,9 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
           /** blog_posts_id */
-          blog_posts_id: number;
+          blog_posts_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -108,7 +108,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -329,7 +329,7 @@ export interface paths {
       parameters: {
         path: {
           /** users_id */
-          users_id: number;
+          users_id: string;
         };
         query: {
           /** User-id as an integer number. */
@@ -384,7 +384,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** The betterplace.org-internal client permalink. */
@@ -520,7 +520,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** The betterplace.org-internal client permalink. */
@@ -568,7 +568,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** donation_pledges_id */
-          donation_pledges_id: number;
+          donation_pledges_id: string;
         };
         query: {
           /** The donation is marked with the language you use in your URL. */
@@ -683,7 +683,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** The betterplace.org-internal client permalink. */
@@ -728,7 +728,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** forwarding_requests_id */
-          forwarding_requests_id: number;
+          forwarding_requests_id: string;
         };
         query: {
           /** The donation is marked with the language you use in your URL. */
@@ -768,7 +768,7 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number;
+          fundraising_events_id: string;
         };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
@@ -810,7 +810,7 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number;
+          fundraising_events_id: string;
         };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
@@ -986,7 +986,7 @@ export interface paths {
       parameters: {
         path: {
           /** fundraising_events_id */
-          fundraising_events_id: number;
+          fundraising_events_id: string;
         };
         query: {
           /** Fundraising Event id as an integer number ≥ 1. */
@@ -1035,7 +1035,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /**
@@ -1126,7 +1126,7 @@ export interface paths {
       parameters: {
         path: {
           /** matching_funds_id */
-          matching_funds_id: number;
+          matching_funds_id: string;
         };
         query: {
           /** matching-fund-id as an integer number ≥ 9. */
@@ -1164,7 +1164,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -1228,9 +1228,9 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
           /** needs_id */
-          needs_id: number;
+          needs_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -1321,7 +1321,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /**
@@ -1437,7 +1437,7 @@ export interface paths {
       parameters: {
         path: {
           /** organisations_id */
-          organisations_id: number;
+          organisations_id: string;
         };
         query: {
           /** Organisation-id as an integer number ≥ 14. */
@@ -1527,7 +1527,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -1574,9 +1574,9 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
           /** pictures_id */
-          pictures_id: number;
+          pictures_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -1652,7 +1652,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** The betterplace.org-internal client permalink */
@@ -1860,7 +1860,7 @@ export interface paths {
       parameters: {
         path: {
           /** projects_id */
-          projects_id: number;
+          projects_id: string;
         };
         query: {
           /** Project id as an integer number ≥ 14. */
@@ -2039,7 +2039,7 @@ export interface paths {
       parameters: {
         path: {
           /** volunteering_id */
-          volunteering_id: number;
+          volunteering_id: string;
         };
         query: {
           /** Volunteering-id as an integer number ≥ 1. */
@@ -2088,7 +2088,7 @@ export interface paths {
           /** clients_id */
           clients_id: string;
           /** volunteering_id */
-          volunteering_id: number;
+          volunteering_id: string;
         };
         query: {
           /** The betterplace.org-internal client permalink. */
@@ -2297,18 +2297,84 @@ export interface components {
       email: string;
     };
     CreatingADirectDepositDonationRequest: {
+      /** First name of the donor. */
       first_name: string;
+      /** Last name of the donor. */
       last_name: string;
-      company_name?: string;
+      /** Company name of the donor. */
+      company_name: string;
+      /**
+       * Email address of the donor.
+       * Only valid email addresses will be accepted.
+       */
       email: string;
-      message?: string;
+      /** A message from the donor to be shown on the project profile page. */
+      message: string;
+      /**
+       * The amount of cents that are donated.
+       * Must be a positive integer between
+       * 1
+       * and 1000000.
+       */
       amount_cents: number;
+      /**
+       * A unique identifier for this transaction.
+       * With this reference one can find the donation and its status later
+       * by using the client_reference-facet on the
+       * <a href="client_donations_list.md">donation list endpoint</a>.
+       * <br>
+       * Allowed characters are <code>a-zA-Z0-9_-</code>.
+       * <br>
+       * <em>Attention:</em> If you use a non-unique client reference,
+       * the donation pledge endpoint will still respond with success.
+       * However the pledge will <em>not be processed</em> into a donation but ignored.
+       * <br>
+       * This is to make sure that one transaction is only processed once.
+       */
       client_reference: string;
-      street?: string;
-      city?: string;
-      zip?: string;
-      country_alpha2?: string;
-      validate_address?: boolean;
+      /**
+       * The street of the donors address.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required by default, but optional with
+       * validate_address=false.
+       */
+      street: string;
+      /**
+       * The city of the donors address.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required default, but optional with validate_address=false.
+       */
+      city: string;
+      /**
+       * Zip code of the city or region the donor lives in.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required by default, but optional with validate_address=false.
+       */
+      zip: string;
+      /**
+       * ISO2 code of the country the donor lives in. A list of valid ISO2 codes
+       * can be found at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">
+       * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
+       * the donation is tax deductible.
+       *
+       * This field is required by default, but optional with validate_address=false.
+       */
+      country_alpha2: string;
+      /**
+       * Pass <code>false</code> to allow donations without a donor address.
+       * <br>
+       * <em>Attention:</em> Donation receipts can only be issued to donors who
+       * provide their full address details. Therefore a warning might be
+       * in order when using this option: Let donors know that they won't get a
+       * donation receipt, or that they will only get a receipt if they do enter
+       * their address.
+       * <br>
+       * True by default.
+       */
+      validate_address: boolean;
     };
     DirectDepositResult: {
       /**
@@ -2326,18 +2392,108 @@ export interface components {
       holder_name: string;
     };
     CreatingAClientDonationPledgeRequest: {
-      first_name?: string;
-      last_name?: string;
-      email?: string;
+      /**
+       * First name of the donor.
+       *
+       * This field is required by default, but optional with
+       * validate_address=false.
+       */
+      first_name: string;
+      /**
+       * Last name of the donor.
+       *
+       * This field is required by default, but optional with
+       * validate_address=false.
+       */
+      last_name: string;
+      /**
+       * Email address of the donor.
+       * Only valid email addresses will be accepted.
+       *
+       * This field is required by default, but optional with
+       * validate_address=false.
+       */
+      email: string;
+      /**
+       * The amount of cents that are donated.
+       * Must be a positive integer between
+       * 1
+       * and 1000000.
+       */
       amount_in_cents: number;
+      /**
+       * A unique identifier for this transaction.
+       * With this reference one can find the donation and its status later
+       * by using the client_reference-facet on the
+       * <a href="client_donations_list.md">donation list endpoint</a>.
+       * <br>
+       * Allowed characters are <code>a-zA-Z0-9_-</code>.
+       * <br>
+       * <em>Attention:</em> If you use a non-unique client reference,
+       * the donation pledge endpoint will still respond with success.
+       * However the pledge will <em>not be processed</em> into a donation but ignored.
+       * <br>
+       * This is to make sure that one transaction is only processed once.
+       */
       client_reference: string;
-      tracking_via?: string;
-      earmark?: number;
-      street?: string;
-      city?: string;
-      zip?: string;
-      country_code?: string;
-      validate_address?: boolean;
+      /**
+       * A tracking identifier for the current campaign, origin or similar
+       * information. Default is blank.
+       * <br>
+       * Allowed characters are <code>a-zA-Z0-9_-</code>.
+       */
+      tracking_via: string;
+      /**
+       * An "earmark" indicating which need this donation should go to.
+       * <em>Attention:</em> this parameter may be completely ignored by the API
+       * at any time. There is no guarantee that the earmark will have an effect
+       * on the donation, and support for the feature may be pulled in the
+       * future.
+       */
+      earmark: number;
+      /**
+       * The street of the donors address.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required by default, but optional with
+       * validate_address=false.
+       */
+      street: string;
+      /**
+       * The city of the donors address.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required default, but optional with validate_address=false.
+       */
+      city: string;
+      /**
+       * Zip code of the city or region the donor lives in.
+       * Used to issue a donation receipt if the donation is tax deductible.
+       *
+       * This field is required by default, but optional with validate_address=false.
+       */
+      zip: string;
+      /**
+       * ISO2 code of the country the donor lives in. A list of valid ISO2 codes
+       * can be found at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">
+       * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
+       * the donation is tax deductible.
+       *
+       * This field is required by default, but optional with validate_address=false.
+       */
+      country_code: string;
+      /**
+       * Pass <code>false</code> to allow donations without a donor address.
+       * <br>
+       * <em>Attention:</em> Donation receipts can only be issued to donors who
+       * provide their full address details. Therefore a warning might be
+       * in order when using this option: Let donors know that they won't get a
+       * donation receipt, or that they will only get a receipt if they do enter
+       * their address.
+       * <br>
+       * True by default.
+       */
+      validate_address: boolean;
     };
     SuccessResult: {
       /**
@@ -2361,9 +2517,9 @@ export interface components {
       /** DateTime (ISO8601 with Timezone) */
       updated_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      confirmed_at: { [key: string]: any };
+      confirmed_at: string;
       /** DateTime (ISO8601 with Timezone) */
-      failed_at: { [key: string]: any };
+      failed_at: string;
       /**
        * One of "pending", "confirmed" or "failed".
        * <ul>
@@ -2411,9 +2567,35 @@ export interface components {
       }[];
     };
     CreatingAClientForwardingRequestRequest: {
+      /**
+       * The amount of cents that are forwarded.
+       * Must be a positive integer between
+       * 1
+       * and 1000000.
+       */
       amount_in_cents: number;
+      /**
+       * A unique identifier for this transaction.
+       * With this reference one can find the donation and its status later
+       * by using the client_reference-facet on the
+       * <a href="client_donations_list.md">donation list endpoint</a>.
+       * <br>
+       * Allowed characters are <code>a-zA-Z0-9_-</code>.
+       * <br>
+       * <em>Attention:</em> If you use a non-unique client reference,
+       * the donation pledge endpoint will still respond with success.
+       * However the pledge will <em>not be processed</em> into a donation but ignored.
+       * <br>
+       * This is to make sure that one transaction is only processed once.
+       */
       client_reference: string;
-      tracking_via?: string;
+      /**
+       * A tracking identifier for the current campaign, origin or similar
+       * information. Default is blank.
+       * <br>
+       * Allowed characters are <code>a-zA-Z0-9_-</code>.
+       */
+      tracking_via: string;
     };
     ProjectResult: {
       /** An integer number ≥ 1 */
@@ -2790,9 +2972,13 @@ export interface components {
       }[];
     };
     ClientMailingSubscriptionsRequest: {
+      /** The email of the user */
       email: string;
+      /** The first name of the user */
       first_name: string;
+      /** The last name of the user */
       last_name: string;
+      /** State of the subscription: active/inactive */
       active: boolean;
     };
     NeedResult: {
@@ -2828,9 +3014,18 @@ export interface components {
       }[];
     };
     ClientNewsletterOptInsRequest: {
+      /** The email of the user */
       email: string;
+      /** The first name of the user */
       first_name: string;
+      /** The last name of the user */
       last_name: string;
+      /**
+       * The text that has been used to explain the subscription to the user.
+       * E.g. if you have a checkbox to subscribe, pass its label text.
+       *
+       * This text must be recorded due to GDPR requirements.
+       */
       wording: string;
     };
     DonationResult: {
@@ -3181,13 +3376,28 @@ export interface components {
       picture?: components["schemas"]["UserProfilePictureResult"];
     };
     VolunteeringInquiriesRequest: {
+      /** The first name of the user */
       first_name: string;
+      /** The last name of the user */
       last_name: string;
+      /** The email of the user */
       email: string;
-      phone?: string;
+      /** The phone number of the user */
+      phone: string;
+      /**
+       * Information about the user’s availability.
+       * How much time would he like to spend, what are his preferred dates,
+       * would he prefer a short-term or a long-term involvement, etc.
+       */
       availability: string;
-      profile?: string;
-      questions?: string;
+      /** Information about the user himself, his skills, etc. */
+      profile: string;
+      /** Any questions the user might have about the offer */
+      questions: string;
+      /**
+       * Confirmation that the user has accepted the privacy terms,
+       * e.g. via a checkbox.
+       */
       terms_of_use: boolean;
     };
   };

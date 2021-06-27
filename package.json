@@ -1,10 +1,10 @@
 {
   "name": "betterplace-react-components",
-  "version": "2.0.11",
+  "version": "3.0.0",
   "description": "betterplace React components",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist && babel src --out-dir dist --extensions '.ts,.tsx' && tsc --emitDeclarationOnly",
+    "build": "rm -rf dist && babel src --out-dir dist --extensions '.ts,.tsx' && tsc --project tsconfig.types.json --emitDeclarationOnly",
     "prepublish": "npm run build",
     "start": "webpack serve --config webpack.config.js",
     "test": "yarn lint && NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest",
@@ -12,7 +12,6 @@
     "testw": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --watch",
     "tests": "NODE_PATH='./node_modules:src' NODE_ICU_DATA=./node_modules/full-icu jest --updateSnapshot",
     "lint": "tsc --noEmit && eslint .",
-    "postinstall": "husky install",
     "pre-commit": "lint-staged",
     "lint:fix": "yarn run lint  --fix",
     "prepare": "husky install",

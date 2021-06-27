@@ -23,3 +23,5 @@ export const FacebookMessengerButton = buildShareButtonComponent({
   className: 'share-button--facebook-messenger',
   icon: FacebookMessengerIcon,
 })
+
+export type FacebookMessengerButtonProps = Parameters<typeof FacebookMessengerButton>['0']

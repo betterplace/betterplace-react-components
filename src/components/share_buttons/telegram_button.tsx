@@ -13,3 +13,5 @@ export const TelegramButton = buildShareButtonComponent({
   className: 'share-button--telegram',
   icon: TelegramIcon,
 })
+
+export type TelegramButtonProps = Parameters<typeof TelegramButton>['0']

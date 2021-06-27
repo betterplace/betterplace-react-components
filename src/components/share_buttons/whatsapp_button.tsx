@@ -16,3 +16,5 @@ export const WhatsappButton = buildShareButtonComponent({
   className: 'share-button--whatsapp',
   icon: WhatsappIcon,
 })
+
+export type WhatsappButtonProps = Parameters<typeof WhatsappButton>['0']

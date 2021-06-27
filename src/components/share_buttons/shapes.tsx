@@ -94,4 +94,4 @@ export const shapes = {
   round: ButtonRound,
   square: ButtonSquare,
   roundWithLabel: ButtonRoundWithLabel,
-}
+} as const
