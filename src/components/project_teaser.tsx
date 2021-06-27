@@ -2,7 +2,15 @@ import { components } from 'apiV4'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
-export type Project = components['schemas']['ProjectResult']
+export type Project =
+  | components['schemas']['ProjectResult']
+  | (components['schemas']['SearchResult'] &
+      {
+        [K in Exclude<
+          keyof components['schemas']['ProjectResult'],
+          keyof components['schemas']['SearchResult']
+        >]?: undefined
+      })
 export type ProjectTeaserProps = {
   locale?: string
   project: Project
@@ -64,7 +72,10 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = ({
       <h2 className="donatable-teaser--title" dangerouslySetInnerHTML={{ __html: project.title }} />
 
       {showDescription && (
-        <div className="donatable-teaser--description" dangerouslySetInnerHTML={{ __html: project.description }} />
+        <div
+          className="donatable-teaser--description"
+          dangerouslySetInnerHTML={{ __html: project.description ?? '' }}
+        />
       )}
 
       <div className="donatable-teaser--divider">

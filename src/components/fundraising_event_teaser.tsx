@@ -3,7 +3,9 @@ import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
 
-export type FundraisingEvent = components['schemas']['FundraisingEventResult']
+export type FundraisingEvent = components['schemas']['FundraisingEventResult'] | components['schemas']['SearchResult']
+export type Links = components['schemas']['FundraisingEventResult']['links'] &
+  components['schemas']['SearchResult']['links']
 export type FundraisingEventTeaserProps = {
   locale?: string
   href?: string
@@ -26,7 +28,7 @@ export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = ({
   openInTab,
   children,
 }) => {
-  const href = href_ || fundraisingEvent.links.find((link) => link.rel === 'platform')?.href
+  const href = href_ || (fundraisingEvent.links as Links).find((link) => link.rel === 'platform')?.href
   const fundraisingEventImageUrl = fundraisingEvent.profile_picture?.links.find(
     (link) => link.rel === 'fill_410x214'
   )?.href
