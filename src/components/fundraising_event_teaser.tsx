@@ -1,4 +1,4 @@
-import { components } from 'apiV4'
+import { components } from '../apiV4'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
