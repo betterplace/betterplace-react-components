@@ -1,5 +1,5 @@
 [![npm Version](https://badge.fury.io/js/betterplace-react-components.svg)](https://badge.fury.io/js/betterplace-react-components)
-[![Build Status](https://travis-ci.org/betterplace/betterplace-react-components.svg?branch=master)](https://travis-ci.org/betterplace/betterplace-react-components)
+[![Build Status](https://github.com/betterplace/betterplace-react-components/actions/workflows/ci.yml/badge.svg)](https://github.com/betterplace/betterplace-react-components/actions/workflows/ci.yml)
 [![peerDependencies Status](https://david-dm.org/betterplace/betterplace-react-components/peer-status.svg)](https://david-dm.org/betterplace/betterplace-react-components?type=peer)
 [![devDependencies Status](https://david-dm.org/betterplace/betterplace-react-components/dev-status.svg)](https://david-dm.org/betterplace/betterplace-react-components?type=dev)
 [![Dependency Status](https://david-dm.org/betterplace/betterplace-react-components.svg)](https://david-dm.org/betterplace/betterplace-react-components)
