@@ -57,6 +57,7 @@
     "url": "git+https://github.com/betterplace/betterplace-react-components.git"
   },
   "author": "developers@betterplace.org",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/betterplace/betterplace-react-components/issues"
   },

@@ -103,3 +103,7 @@ Run tests:
 Release a new version:
 
 `yarn publish`
+
+## License
+`betterplace-react-components` is released under the [Apache 2.0](LICENSE)
+license and Copyright 2018..2021 [gut.org gAG](https://gut.org).
