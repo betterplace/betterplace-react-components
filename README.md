@@ -34,7 +34,7 @@ import { FacebookButton } from 'betterplace-react-components'
 <FacebookButton shape='round' shareUrl='www.foo.bar' />
 ```
 
-ect. - run `yarn start` to get a preview of all components.
+etc. - run `yarn start` to get a preview of all components.
 
 #### Share buttons with utm_params
 
