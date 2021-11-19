@@ -81,7 +81,12 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = ({
       <div className="donatable-teaser--divider">
         <div className="donatable-teaser--factlist">
           <div>
-            {project.city && <span>{project.city}</span>}, {project.country}
+            {project.city && (
+              <>
+                <span>{project.city}</span>,{' '}
+              </>
+            )}
+            {project.country}
           </div>
           <div>
             {showCarrierName ? (
