@@ -905,12 +905,11 @@ export interface paths {
            * <br>
            * It is strongly recommended to <strong>specify facets</strong> with each request.
            * A recommended set of facets is
-           * <code>tax_deductible:true| closed:false| prohibit_donations:false</code>
+           * <code>closed:false| prohibit_donations:false</code>
            * (without the spaces) which only shows active fundraising events that can receive donations.
            * <br>
            * <em>Supported filters are:</em>
            * <ul>
-           * <li><code>tax_deductible:true/false</code>
            * <li><code>prohibit_donations:true/false</code>
            * <li><code>completed:true/false</code> –
            * is this fundraising event fully financed (100 %)? See <code>completed_at</code>
@@ -931,15 +930,13 @@ export interface paths {
            * The default order might change at any time without notice.
            * A recommended order is
            * <code> score:desc|closed:asc|completed:asc|rank:desc|last_donation_at:desc</code>
-           * (without the spaces). This is the order betterplace.org uses
-           * <a href="https://www.betterplace.org/en/projects/list?search_form%5Bfilters%5D%5Btype%5D=FundraisingEvent">for the fundraising event list</a>.
+           * (without the spaces).
            * <br>
            * <em>Supported orders are:</em>
            * <ul>
            * <li><code>score:ASC/DESC</code> – as provided by the search engine whenever a search term
            * is given.
            * <li><code>rank:ASC/DESC</code> – a betterplace.org-specific, platform-wide activity indicator
-           * <li><code>tax_deductible:ASC/DESC</code> – true (1) or false (0)
            * <li><code>last_donation_at:ASC/DESC</code>
            * <li><code>completed:ASC/DESC</code>
            * <li><code>closed:ASC/DESC</code>
@@ -1307,13 +1304,11 @@ export interface paths {
   };
   "/projects/{projects_id}/opinions.json": {
     /**
-     * A list of betterplace.org projects opinions (donate money).
-     * (There is no details view for opinions.)
+     * A list of betterplace.org projects or fundraising event opinions (donate money).
+     * There is no details view for opinions.
      *
-     * ```Rebol
-     * GET https://api.betterplace.org/de/api_v4/fundraising_events/19267/opinions.json?facets=has_message:true&order=confirmed_at:DESC
-     * ```
-     * A list of betterplace.org fundraising event opinions (donate money).
+     * * Example for project opinions `…/api_v4/projects/1114/opinions.json`
+     * * Example for fundraising event opinions `…/api_v4/fundraising_events/19267/opinions.json`
      *
      * Results are contained in a *data* attribute.
      */
@@ -1357,6 +1352,15 @@ export interface paths {
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
           order?: string;
+          /**
+           * Filter the result set.
+           * Documented and supported filters are:
+           * <ul>
+           *   <li><code>has_message:true/false</code> – did the donor add a message to her donation
+           * </ul>
+           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
+           */
+          facets?: string;
           page?: number;
           per_page?: number;
         };
@@ -1778,13 +1782,12 @@ export interface paths {
            * Filter the result set.
            * <br>
            * It is strongly recommended to <strong>specify facets</strong> with each request.
-           * A recommended set of facets is <code>tax_deductible:true| completed:false|
-           * closed:false| prohibit_donations:false</code> (without the spaces) which
+           * A recommended set of facets is <code>completed:false| closed:false|
+           * prohibit_donations:false</code> (without the spaces) which
            * only shows active projects that can receive donations.
            * <br>
            * <em>Supported filters are:</em>
            * <ul>
-           * <li><code>tax_deductible:true/false</code>
            * <li><code>completed:true/false</code> –
            * is this project fully financed (100 %)? See <code>completed_at</code>
            * <li><code>closed:true/false</code> –
@@ -1812,7 +1815,6 @@ export interface paths {
            * is given.
            * <li><code>rank:ASC/DESC</code> – a betterplace.org-specific, platform-wide activity indicator
            * <li><code>progress_percentage:ASC/DESC</code> – financing goal fulfillment given as 0 to 100
-           * <li><code>tax_deductible:ASC/DESC</code> – true (1) or false (0)
            * <li><code>completed:ASC/DESC</code> – true (1) or false (0)
            * <li><code>created_at:ASC/DESC</code> and <code>updated_at:ASC/DESC</code>
            * <li><code>last_donation_at:ASC/DESC</code>
@@ -2156,14 +2158,12 @@ export interface components {
        * ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
       body: string;
-      /**
-       * Display name of a betterplace.org user.
-       * Possible formats: "Till B.", "T. Behnke", "Till Behnke"
-       */
-      author: string;
+      /** The user that wrote the blog post. */
+      author: components["schemas"]["ContactResult"] | null;
       links: {
         rel: "self" | "platform" | "documentation";
         href: string;
+        templated?: boolean;
       }[];
     };
     ContactResult: {
@@ -2182,14 +2182,16 @@ export interface components {
       links: {
         rel: "platform" | "contact_data";
         href: string;
+        templated?: boolean;
       }[];
     };
     UserProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean;
+      fallback?: boolean;
       links: {
         rel: "fill_100x100" | "original";
         href: string;
+        templated?: boolean;
       }[];
     };
     CategoryResult: {
@@ -2206,6 +2208,7 @@ export interface components {
       links: {
         rel: "platform";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientDonationResult: {
@@ -2254,6 +2257,7 @@ export interface components {
       links: {
         rel: "receiver" | "self";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientTagResult: {
@@ -2272,6 +2276,7 @@ export interface components {
       links: {
         rel: "projects";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientResult: {
@@ -2286,6 +2291,7 @@ export interface components {
           | "project_statistics"
           | "fundraising_event_statistics";
         href: string;
+        templated?: boolean;
       }[];
     };
     ContactDataResult: {
@@ -2455,15 +2461,14 @@ export interface components {
        * The street of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with
-       * validate_address=false.
+       * This field is required by default, but optional with validate_address=false.
        */
       street: string;
       /**
        * The city of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required default, but optional with validate_address=false.
+       * This field is required by default, but optional with validate_address=false.
        */
       city: string;
       /**
@@ -2507,6 +2512,7 @@ export interface components {
       links: {
         rel: "location";
         href: string;
+        templated?: boolean;
       }[];
     };
     MandateProcessResult: {
@@ -2564,6 +2570,7 @@ export interface components {
       links: {
         rel: "donation";
         href: string;
+        templated?: boolean;
       }[];
     };
     CreatingAClientForwardingRequestRequest: {
@@ -2636,10 +2643,9 @@ export interface components {
       /** A short summary of the project.. */
       summary: string;
       /**
-       * True if the project marked as tax deductible.
-       * If so, Users can request a tax receipt that can be used
-       * with the German tax authorities.
-       * [More about this](http://www.betterplace.org/c/hilfe/projekt-steuerlich-absetzbar/).
+       * ⚠️ DEPRECATED!
+       *
+       * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
       /**
@@ -2659,7 +2665,7 @@ export interface components {
        * A completed project may still be active (as in not closed).
        * See `closed_at for details.
        */
-      completed_at: string;
+      completed_at: string | null;
       /**
        * DateTime (ISO8601 with Timezone) when the project was closed by the
        * project manager.
@@ -2667,7 +2673,7 @@ export interface components {
        * A closed project does not have to be fully funded.
        * See `completed_at` for details.
        */
-      closed_at: string;
+      closed_at: string | null;
       /** How many cents are needed to complete the project */
       open_amount_in_cents: number;
       /**
@@ -2721,7 +2727,7 @@ export interface components {
       comments_count: number;
       /**
        * ⚠️ DEPRECATED!
-       * This value is deprecated and will be removed after 2021-01-01.
+       * This value is deprecated and will be removed after 2021-12-31.
        * Please update your code to use the `donations_count`.
        *
        * Number of unique donors, based on the payment-email-address
@@ -2769,6 +2775,7 @@ export interface components {
           | "new_client_donation"
           | "new_donation";
         href: string;
+        templated?: boolean;
       }[];
     };
     CarrierResult: {
@@ -2783,11 +2790,12 @@ export interface components {
       links: {
         rel: "self";
         href: string;
+        templated?: boolean;
       }[];
     };
     ProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean;
+      fallback?: boolean;
       links: {
         rel:
           | "fill_960x500"
@@ -2797,6 +2805,7 @@ export interface components {
           | "fill_270x141"
           | "original";
         href: string;
+        templated?: boolean;
       }[];
     };
     MatchingFundResult: {
@@ -2829,6 +2838,7 @@ export interface components {
       links: {
         rel: "self" | "platform" | "projects" | "documentation";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClosedNoticeResult: {
@@ -2837,6 +2847,7 @@ export interface components {
       links: {
         rel: "call_to_action";
         href: string;
+        templated?: boolean;
       }[];
     };
     FundraisingEventForwardingResult: {
@@ -2849,6 +2860,7 @@ export interface components {
       links: {
         rel: "project" | "platform";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientStatisticFundraisingEventResult: {
@@ -2900,10 +2912,9 @@ export interface components {
        */
       description: string;
       /**
-       * True if the fundraising event is marked as tax deductible and
-       * can only support tax deductible projects.
-       * If so, users can request a tax receipt for their donation
-       * that can be used with the German tax authorities.
+       * ⚠️ DEPRECATED!
+       *
+       * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
       /**
@@ -2922,17 +2933,17 @@ export interface components {
        * DateTime (ISO8601 with Timezone) when the fundraising event was closed
        * by the manager.
        */
-      closed_at: string;
+      closed_at: string | null;
       /**
        * DateTime (ISO8601 with Timezone). Donations are prohibited until this
        * date and time is reached. Defaults to NULL.
        */
-      activate_donations_at: string;
+      activate_donations_at: string | null;
       /** Count of confirmed donations for this fundraising event */
       donations_count: number;
       /**
        * ⚠️ DEPRECATED!
-       * This value is deprecated and will be removed after 2021-01-01.
+       * This value is deprecated and will be removed after 2021-12-31.
        * Please update your code to use the `donations_count`.
        *
        * Number of unique donors, based on the payment-email-address
@@ -2944,14 +2955,14 @@ export interface components {
        * How many cents were requested to be raised with the fundraising event.
        * This value is optional! The manager decides if his event has a goal or not.
        */
-      requested_amount_in_cents: number;
+      requested_amount_in_cents: number | null;
       /** How many cents were already forwarded to a project. */
       forwarded_amount_in_cents: number;
       /**
        * % financed. This value is only present in case the manager
        * decided to add a <code>requested_amount_in_cents</code>.
        */
-      progress_percentage: number;
+      progress_percentage: number | null;
       /** The public face of the fundraising event / fundraising event manager */
       contact?: components["schemas"]["ContactResult"];
       /** TODO */
@@ -2969,6 +2980,7 @@ export interface components {
           | "header_picture"
           | "new_message";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientMailingSubscriptionsRequest: {
@@ -3011,6 +3023,7 @@ export interface components {
       links: {
         rel: "self" | "project" | "new_client_donation" | "new_donation";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientNewsletterOptInsRequest: {
@@ -3076,6 +3089,7 @@ export interface components {
       links: {
         rel: "project" | "fundraising_event" | "matching_fund";
         href: string;
+        templated?: boolean;
       }[];
     };
     OrganisationResult: {
@@ -3112,8 +3126,9 @@ export interface components {
        */
       description: string;
       /**
-       * True if the organisation is a tax-exempt charity.
-       * If so, Users can request a tax receipt for donations to that organisation.
+       * ⚠️ DEPRECATED!
+       *
+       * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
       /** The public contact person for this organisation. */
@@ -3123,14 +3138,16 @@ export interface components {
       links: {
         rel: "self" | "platform" | "projects" | "website";
         href: string;
+        templated?: boolean;
       }[];
     };
     SquareProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
-      fallback: boolean;
+      fallback?: boolean;
       links: {
         rel: "fill_100x100" | "fill_200x200" | "fill_400x400" | "original";
         href: string;
+        templated?: boolean;
       }[];
     };
     PoolResult: {
@@ -3147,6 +3164,7 @@ export interface components {
       links: {
         rel: "self";
         href: string;
+        templated?: boolean;
       }[];
     };
     ProjectImageResult: {
@@ -3161,6 +3179,7 @@ export interface components {
       links: {
         rel: "image" | "self" | "parent";
         href: string;
+        templated?: boolean;
       }[];
     };
     ClientStatisticProjectResult: {
@@ -3173,6 +3192,9 @@ export interface components {
        */
       donated_amount_in_cents: number;
       /**
+       * ⚠️ DEPRECATED!
+       * This value will be removed in the future.
+       *
        * How many cents are external donations, that means they were given directly
        * to the project on other, non-betterplace channels.
        */
@@ -3233,6 +3255,7 @@ export interface components {
       links: {
         rel: "platform" | "self" | "pictures";
         href: string;
+        templated?: boolean;
       }[];
     };
     JobDescriptionResult: {
@@ -3324,6 +3347,7 @@ export interface components {
       links: {
         rel: "self" | "platform" | "inquiries";
         href: string;
+        templated?: boolean;
       }[];
     };
     JobDescriptionCarrierResult: {
@@ -3346,6 +3370,7 @@ export interface components {
       links: {
         rel: "self";
         href: string;
+        templated?: boolean;
       }[];
     };
     JobDescriptionImageResult: {
@@ -3360,6 +3385,7 @@ export interface components {
           | "medium"
           | "regular";
         href: string;
+        templated?: boolean;
       }[];
     };
     JobDescriptionContactResult: {

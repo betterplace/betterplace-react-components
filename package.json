@@ -3,6 +3,10 @@
   "version": "3.0.5",
   "description": "betterplace React components",
   "main": "dist/index.js",
+
+  "resolutions": {
+    "@types/react": "17.0.14"
+  },
   "scripts": {
     "build": "rm -rf dist && babel src --out-dir dist --extensions '.ts,.tsx' && tsc --project tsconfig.types.json --emitDeclarationOnly",
     "prepublish": "npm run build",
@@ -78,7 +82,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
-    "@types/react": "*",
+    "@types/react": "17.0.14",
     "@types/react-dom": "*",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
