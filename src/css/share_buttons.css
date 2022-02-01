@@ -179,17 +179,17 @@
 }
 
 .share-button--whatsapp {
-  color: #01e677;
-  border-color: #01e677;
-  background-color: #01e677;
+  color: #128C7E;
+  border-color: #128C7E;
+  background-color: #128C7E;
 }
 
 .share-button--whatsapp:hover,
 .share-button--whatsapp:focus,
 .share-button--whatsapp:active {
-  color: #00d263;
-  border-color: #00d263;
-  background-color: #00d263;
+  color: #097C6F;
+  border-color: #097C6F;
+  background-color: #097C6F;
 }
 
 .share-button--share-link {
