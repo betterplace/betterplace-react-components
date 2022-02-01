@@ -109,41 +109,31 @@
 /* ---------------------------- network modifier ---------------------------- */
 
 .share-button--email {
-  color: #bac5cc;
-  border-color: #bac5cc;
-  background-color: #bac5cc;
+  color: #6D2C64;
+  border-color: #6D2C64;
+  background-color: #6D2C64;
 }
 
 .share-button--email:hover,
-.share-button--email:focus {
-  color: #a6b1b8;
-  border-color: #a6b1b8;
-  background-color: #a6b1b8;
-}
-
+.share-button--email:focus
 .share-button--email:active {
-  color: #929da4;
-  border-color: #929da4;
-  background-color: #929da4;
+  color: #612058;
+  border-color: #612058;
+  background-color: #612058;
 }
 
 .share-button--facebook {
-  color: #3f65a6;
-  border-color: #3f65a6;
-  background-color: #3f65a6;
+  color: #1877F2;
+  border-color: #1877F2;
+  background-color: #1877F2;
 }
 
 .share-button--facebook:hover,
-.share-button--facebook:focus {
-  color: #2b5192;
-  border-color: #2b5192;
-  background-color: #2b5192;
-}
-
+.share-button--facebook:focus,
 .share-button--facebook:active {
-  color: #173d7e;
-  border-color: #173d7e;
-  background-color: #173d7e;
+  color: #0E69E0;
+  border-color: #0E69E0;
+  background-color: #0E69E0;
 }
 
 .share-button--facebook-messenger {
@@ -153,16 +143,11 @@
 }
 
 .share-button--facebook-messenger:hover,
-.share-button--facebook-messenger:focus {
+.share-button--facebook-messenger:focus,
+.share-button--facebook-messenger:active {
   color: #0070eb;
   border-color: #0070eb;
   background-color: #0070eb;
-}
-
-.share-button--facebook-messenger:active {
-  color: #005cd7;
-  border-color: #005cd7;
-  background-color: #005cd7;
 }
 
 .share-button--telegram {
@@ -172,16 +157,11 @@
 }
 
 .share-button--telegram:hover,
-.share-button--telegram:focus {
+.share-button--telegram:focus,
+.share-button--telegram:active {
   color: #0073b7;
   border-color: #0073b7;
   background-color: #0073b7;
-}
-
-.share-button--telegram:active {
-  color: #005fa3;
-  border-color: #005fa3;
-  background-color: #005fa3;
 }
 
 .share-button--twitter {
@@ -191,16 +171,11 @@
 }
 
 .share-button--twitter:hover,
-.share-button--twitter:focus {
+.share-button--twitter:focus,
+.share-button--twitter:active {
   color: #3496d1;
   border-color: #3496d1;
   background-color: #3496d1;
-}
-
-.share-button--twitter:active {
-  color: #2082bd;
-  border-color: #2082bd;
-  background-color: #2082bd;
 }
 
 .share-button--whatsapp {
@@ -210,16 +185,11 @@
 }
 
 .share-button--whatsapp:hover,
-.share-button--whatsapp:focus {
+.share-button--whatsapp:focus,
+.share-button--whatsapp:active {
   color: #00d263;
   border-color: #00d263;
   background-color: #00d263;
-}
-
-.share-button--whatsapp:active {
-  color: #00be4f;
-  border-color: #00be4f;
-  background-color: #00be4f;
 }
 
 .share-button--share-link {
@@ -229,16 +199,11 @@
 }
 
 .share-button--share-link:hover,
-.share-button--share-link:focus {
+.share-button--share-link:focus,
+.share-button--share-link:active {
   color: #3a2d37;
   border-color: #3a2d37;
   background-color: #3a2d37;
-}
-
-.share-button--share-link:active {
-  color: #261923;
-  border-color: #261923;
-  background-color: #261923;
 }
 
 .share-button--instagram {
@@ -248,16 +213,11 @@
 }
 
 .share-button--instagram:hover,
-.share-button--instagram:focus {
+.share-button--instagram:focus,
+.share-button--instagram:active {
   color: #cd1c58;
   border-color: #cd1c58;
   background-color: #cd1c58;
-}
-
-.share-button--instagram:active {
-  color: #b90844;
-  border-color: #b90844;
-  background-color: #b90844;
 }
 
 .share-button--box-shadowed {
