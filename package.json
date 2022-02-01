@@ -1,6 +1,6 @@
 {
   "name": "betterplace-react-components",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "betterplace React components",
   "main": "dist/index.js",
   "resolutions": {
