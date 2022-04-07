@@ -55,7 +55,8 @@
 /* -------------------------------- elements -------------------------------- */
 
 .donatable-teaser--profile-picture {
-  height: 150px;
+  overflow: hidden;
+  padding-top: 51.22%;
   background-size: cover;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
