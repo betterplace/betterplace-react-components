@@ -10,7 +10,7 @@
   flex-direction: column;
   color: #000000;
   font-weight: 300;
-  height: 324px;
+  min-height: 324px;
   box-sizing: border-box;
   transition: 0.15s box-shadow ease-out;
   text-decoration: none;
@@ -55,7 +55,8 @@
 /* -------------------------------- elements -------------------------------- */
 
 .donatable-teaser--profile-picture {
-  height: 150px;
+  overflow: hidden;
+  padding-top: 51.22%;
   background-size: cover;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
