@@ -1925,202 +1925,6 @@ export interface paths {
       };
     };
   };
-  "/volunteering.json": {
-    /**
-     * A list of betterplace.org volunteering offers (donate time).
-     * Results are contained in a *data* attribute.
-     *
-     * **For [betterplace.org clients](../README.md#client-api):**
-     * This resource is not available at the moment.
-     */
-    get: {
-      parameters: {
-        query: {
-          /**
-           * Use the scope to specify how the search query <code>q</code> should behave:
-           * <ul>
-           * <li>"no scope" (default) performs a full text search
-           * <li><code>human_name</code> searches only on the manager-fullname and carrier-fullname.
-           *   Use this to get all entities by "Unicef" or by "Till Behnke".
-           * <li><code>location</code> does a reverse geocoding lookup.
-           *   This lookup returns a bounding box. We transform this bounding box to a
-           *   rectangle that is large enough to encapsulate the whole bounding box.
-           *   We then return all entities that are within this rectangle.
-           * </ul>
-           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
-           */
-          scope?: string;
-          /**
-           * Order the results by the distance to the given location from near to far.
-           * <br>
-           * Location can be provided as …
-           * <br>
-           * <em>… Lat/Lng:</em> <code>52.50,13.45</code>
-           * <br>
-           * <em>… ZIP:</em> <code>10997 Berlin, Germany</code>.
-           * We use the centre of the ZIP code area as center for the search.
-           * Please add enough context information (like the Country name)
-           * so google knows what place you are looking for.
-           * <br>
-           * <em>… any location search:</em> All queries other than a float tuple
-           * are sent to the google location service. For the provided response we
-           * take a fitting lat/lng value as center of the search. So in theory,
-           * you can use any search that works for google maps.
-           * <br>
-           * Check the <code>around_location</code> to see what latitude/longitude
-           * values have been used for the query.
-           */
-          around?: string;
-          /**
-           * In combination with the <code>around</code> parameter the search will be
-           * limited to results whose location is closer than the given value to the
-           * location provided through the <code>around</code> parameter. Possible
-           * values are all integer values followed by <code>m</code> for meters or
-           * <code>km</code> for kilometers, e.g. <code>1000m</code>, <code>1km</code>.
-           * <br>
-           * When <code>around_distance</code> is given without <code>around</code> it
-           * will be ignored.
-           */
-          around_distance?: string;
-          /** For geographic bound filterning: The northeast corner's latitude. */
-          nelat?: number;
-          /** For geographic bound filterning: The northeast corner's longitude. */
-          nelng?: number;
-          /** For geographic bound filterning: The southwest corner's latitude. */
-          swlat?: number;
-          /** For geographic bound filterning: The southwest corner's longitude. */
-          swlng?: number;
-          /** Search query. The searches behaviour is based on the scope. */
-          q?: string;
-          /**
-           * Order the result by <code>has_image</code> (default),
-           * <code>content_updated_at</code> (second default). Use the optional
-           * <code>ASC</code> (default) or <code>DESC</code>.
-           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
-           * <br>
-           * The default order is the same as for the
-           * <a href="http://www.betterplace.org/en/discover-volunteering">betterplace.org volunteering list</a>:
-           * <code>has_image:desc| carrier_has_image:desc| content_updated_at:desc</code>
-           */
-          order?: string;
-          page?: number;
-          per_page?: number;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          content: {
-            "application/json": {
-              total_entries: number;
-              offset: number;
-              total_pages: number;
-              current_page: number;
-              per_page: number;
-              data: components["schemas"]["JobDescriptionResult"][];
-            };
-          };
-        };
-        /** Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-    };
-  };
-  "/volunteering/{volunteering_id}.json": {
-    /**
-     * The details of a betterplace.org volunteering offer (donate time).
-     *
-     * **For [betterplace.org clients](../README.md#client-api):**
-     * This resource is not available at the moment.
-     */
-    get: {
-      parameters: {
-        path: {
-          /** volunteering_id */
-          volunteering_id: string;
-        };
-        query: {
-          /** Volunteering-id as an integer number ≥ 1. */
-          id: number;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          content: {
-            "application/json": components["schemas"]["JobDescriptionResult"];
-          };
-        };
-        /** Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-    };
-  };
-  "/clients/{clients_id}/volunteering/{volunteering_id}/inquiries.json": {
-    /**
-     * Submit a volunteering inquiry into the system. It will be sent as
-     * email to the manager of the volunteering. A copy of the inquiry will
-     * be sent to the inquiring user. The request has to be a POST request
-     * with a JSON body.
-     *
-     *
-     * **:lock: Only available if authenticated as a client and only
-     * if this client has permissions to use this feature.**
-     * See [betterplace.org clients](../README.md#client-api).
-     *
-     *
-     * **Response and error codes:**
-     *
-     * A successful request will return HTTP status 201 (created).
-     *
-     * If an error occurs the HTTP return code will be 422 (unprocessable
-     * entity). [More error codes](../README.md#http-status-codes).
-     */
-    post: {
-      parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** volunteering_id */
-          volunteering_id: string;
-        };
-        query: {
-          /** The betterplace.org-internal client permalink. */
-          client_id: string;
-          /** volunteering/job description id as an integer number. */
-          volunteering_id: number;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          content: {
-            "application/json": components["schemas"]["SuccessResult"];
-          };
-        };
-        /** Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-      /** Volunteering Inquiries Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["VolunteeringInquiriesRequest"];
-        };
-      };
-    };
-  };
 }
 
 export interface components {
@@ -2283,7 +2087,6 @@ export interface components {
       links: {
         rel:
           | "projects"
-          | "volunteering"
           | "client_donations"
           | "client_project_tags"
           | "client_fundraising_events"
@@ -2749,7 +2552,9 @@ export interface components {
       /** The organisation that carries this project */
       carrier: components["schemas"]["CarrierResult"] | null;
       /** TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
+      profile_picture:
+        | components["schemas"]["ProjectProfilePictureResult"]
+        | null;
       /**
        * **DEPRECATED** Do not use this data. We will remove the nested
        * matching fund data in the future.
@@ -2785,6 +2590,8 @@ export interface components {
       name: string;
       /** The city in which the carrier resides */
       city: string;
+      /** The country in which the carrier resides */
+      country: string;
       /** The organisation logo, user profile picture or a fallback image */
       picture?: components["schemas"]["UserProfilePictureResult"];
       links: {
@@ -2793,7 +2600,7 @@ export interface components {
         templated?: boolean;
       }[];
     };
-    ProfilePictureResult: {
+    ProjectProfilePictureResult: {
       /** Specifies whether a fallback image is given or not */
       fallback?: boolean;
       links: {
@@ -2803,7 +2610,9 @@ export interface components {
           | "fill_618x322"
           | "fill_410x214"
           | "fill_270x141"
-          | "original";
+          | "original"
+          | "limit_1240x646"
+          | "limit_450x235";
         href: string;
         templated?: boolean;
       }[];
@@ -2983,6 +2792,21 @@ export interface components {
         templated?: boolean;
       }[];
     };
+    ProfilePictureResult: {
+      /** Specifies whether a fallback image is given or not */
+      fallback?: boolean;
+      links: {
+        rel:
+          | "fill_960x500"
+          | "fill_730x380"
+          | "fill_618x322"
+          | "fill_410x214"
+          | "fill_270x141"
+          | "original";
+        href: string;
+        templated?: boolean;
+      }[];
+    };
     ClientMailingSubscriptionsRequest: {
       /** The email of the user */
       email: string;
@@ -3073,10 +2897,16 @@ export interface components {
        * It's false otherwise.
        */
       matched: boolean;
+      /** Indicates if the sender of the donation was a company. */
+      company_donation: boolean;
+      /** Name of the related client, if available. */
+      client_name?: string;
       /** DEPRECATED 2017-06-16 - Always returns "positive" */
       score: string;
       /** Donor information, if available. */
       author: components["schemas"]["ContactResult"] | null;
+      /** Information about the fundraising event through which the donation came in, if available. */
+      backed_by_fundraising_event?: components["schemas"]["FundraisingEventSenderResult"];
       /**
        * An optional message by users.
        *
@@ -3091,6 +2921,16 @@ export interface components {
         href: string;
         templated?: boolean;
       }[];
+    };
+    FundraisingEventSenderResult: {
+      /** An integer number ≥ 1 */
+      id: number;
+      /** URL of the fundraising event */
+      url: string;
+      /** Title of the fundraising event */
+      title: string;
+      /** Number of donors who donated to the fundraising event */
+      donor_count: number;
     };
     OrganisationResult: {
       /** An integer number ≥ 1 */
@@ -3177,7 +3017,14 @@ export interface components {
       /** Description of the picture */
       description: string;
       links: {
-        rel: "image" | "self" | "parent";
+        rel:
+          | "image"
+          | "limit_620x323"
+          | "limit_620x323_2x"
+          | "limit_450x235"
+          | "limit_450x235_2x"
+          | "self"
+          | "parent";
         href: string;
         templated?: boolean;
       }[];
@@ -3257,174 +3104,6 @@ export interface components {
         href: string;
         templated?: boolean;
       }[];
-    };
-    JobDescriptionResult: {
-      /** An integer number ≥ 1 */
-      id: number;
-      /** DateTime (ISO8601 with Timezone) */
-      created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
-      updated_at: string;
-      /** Decimal degrees based on user input */
-      latitude: number;
-      /** Decimal degrees based on user input */
-      longitude: number;
-      /** Street address */
-      street: string | null;
-      /** ZIP code */
-      zip: string | null;
-      /** Name of the city */
-      city: string | null;
-      /** Name of the country */
-      country: string | null;
-      /** DateTime (ISO8601 with Timezone) */
-      content_updated_at: string;
-      /** Max 100 character */
-      title: string;
-      /**
-       * A description of the offer. This may contain any of the following
-       * HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
-       */
-      description: string;
-      /** The organisation that carrier this volunteering */
-      carrier?: components["schemas"]["JobDescriptionCarrierResult"];
-      /** The number of volunteers that are needed, provided by the manager */
-      vacancies: number;
-      /** Each volunteering has one optional image / DEPRECATED, will be removed after 5/2015 */
-      image: components["schemas"]["JobDescriptionImageResult"] | null;
-      /** Contact person, contact data and contact address */
-      contact?: components["schemas"]["JobDescriptionContactResult"];
-      /**
-       * Specifies whether the volunteering offer is limited to a certain location or if it may be
-       * executed remotely.
-       */
-      location_fixed: boolean;
-      /**
-       * Working time selection, specifies if this is a one-time event or if
-       * this volunteering can takes place regulary.
-       */
-      working_time_selection: string;
-      /**
-       * Up to three working time preferences. They specify when this volunteering
-       * should take place on weekends.
-       */
-      working_time_weekends: string[];
-      /**
-       * Up to three working time preferences. They specify when this volunteering
-       * should take place on weekdays.
-       */
-      working_time_weekdays: string[];
-      /** DateTime (ISO8601 with Timezone) */
-      begins_at: string;
-      /** DateTime (ISO8601 with Timezone) */
-      ends_at: string;
-      /**
-       * Up to 4 categories that describe, what for which causes you need volunteers.
-       * Results are translated to the requested language.
-       * Possible results: "Animal & environment protection", "Culture & sports",
-       * "Children & youth", "Development cooperation ", "DisabledEducation", "Elderly people",
-       * "Human rights", "Refugees & immigrants", "Invalid", "Local help", "Socially deprived"
-       */
-      topics: string[];
-      /**
-       * Up to 4 categories that describe, what for which causes you need volunteers.
-       * Results are translated to the requested language.
-       * Possible results: "consulting/coaching", "crafting/gardening", "doing sports",
-       * "doing the chores", "group care", "nursing/parenting", "office work",
-       * "organising/managing", "painting/designing", "tutoring/reading",
-       * "visiting/accompanying", "writing/translating"
-       */
-      activities: string[] | null;
-      /** Where Betterplace imports volunteering from. */
-      imported_from: string | null;
-      /**
-       * Meta data concerning the import of this volunteering offer, if it
-       * was indeed imported.
-       */
-      import_information: { [key: string]: any };
-      /** TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
-      links: {
-        rel: "self" | "platform" | "inquiries";
-        href: string;
-        templated?: boolean;
-      }[];
-    };
-    JobDescriptionCarrierResult: {
-      /** Decimal degrees based on user input */
-      latitude: number;
-      /** Decimal degrees based on user input */
-      longitude: number;
-      /** An organisation name, Users will be added later */
-      name: string;
-      /** Contact data for the organisation */
-      street: string;
-      /** Contact data for the organisation */
-      city: string;
-      /** Contact data for the organisation */
-      zip: string;
-      /** Contact data for the organisation */
-      country: string;
-      /** TODO */
-      picture: components["schemas"]["SquareProfilePictureResult"] | null;
-      links: {
-        rel: "self";
-        href: string;
-        templated?: boolean;
-      }[];
-    };
-    JobDescriptionImageResult: {
-      /** Image description */
-      description: string;
-      links: {
-        rel:
-          | "fill_618x322"
-          | "fill_270x141"
-          | "original"
-          | "thumb"
-          | "medium"
-          | "regular";
-        href: string;
-        templated?: boolean;
-      }[];
-    };
-    JobDescriptionContactResult: {
-      /** Fullname of the contact person. */
-      name: string;
-      /**
-       * Phone number for direct contact.
-       * No validations on input apply.
-       */
-      phone: string;
-      /** Plain text email-address for direct contact */
-      email: string;
-      /** User profile picture or a fallback image */
-      picture?: components["schemas"]["UserProfilePictureResult"];
-    };
-    VolunteeringInquiriesRequest: {
-      /** The first name of the user */
-      first_name: string;
-      /** The last name of the user */
-      last_name: string;
-      /** The email of the user */
-      email: string;
-      /** The phone number of the user */
-      phone: string;
-      /**
-       * Information about the user’s availability.
-       * How much time would he like to spend, what are his preferred dates,
-       * would he prefer a short-term or a long-term involvement, etc.
-       */
-      availability: string;
-      /** Information about the user himself, his skills, etc. */
-      profile: string;
-      /** Any questions the user might have about the offer */
-      questions: string;
-      /**
-       * Confirmation that the user has accepted the privacy terms,
-       * e.g. via a checkbox.
-       */
-      terms_of_use: boolean;
     };
   };
 }
