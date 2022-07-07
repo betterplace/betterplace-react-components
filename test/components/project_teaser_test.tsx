@@ -57,6 +57,7 @@ const project: Project = {
     id: 0,
     name: 'Skateistan',
     city: 'string',
+    country: 'string',
     picture: {
       fallback: true,
       links: [
