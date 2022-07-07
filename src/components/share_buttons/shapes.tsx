@@ -31,7 +31,15 @@ const ButtonFull: React.FC<ButtonProps> = ({
   )
 }
 
-const ButtonMinimal: React.FC<ButtonProps> = ({ icon, content, className = '', buttonClassName = '', ...props }) => {
+const ButtonMinimal: React.FC<ButtonProps> = ({
+  icon,
+  content,
+  className = '',
+  buttonClassName = '',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  boxShadow,
+  ...props
+}) => {
   const Icon = icon
 
   return (
@@ -55,7 +63,14 @@ const ButtonRound: React.FC<ButtonProps> = ({ icon, className = '', boxShadow, b
   )
 }
 
-const ButtonSquare: React.FC<ButtonProps> = ({ icon, className = '', buttonClassName = '', ...props }) => {
+const ButtonSquare: React.FC<ButtonProps> = ({
+  icon,
+  className = '',
+  buttonClassName = '',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  boxShadow,
+  ...props
+}) => {
   const Icon = icon
 
   return (
