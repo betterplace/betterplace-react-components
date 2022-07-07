@@ -106,4 +106,4 @@ Release a new version:
 
 ## License
 `betterplace-react-components` is released under the [Apache 2.0](LICENSE)
-license and Copyright 2018..2021 [gut.org gAG](https://gut.org).
+license and Copyright 2018..2022 [gut.org gAG](https://gut.org).
