@@ -30,7 +30,7 @@ module.exports = {
     'react/prop-types': 0,
     'no-empty': ['error', { allowEmptyCatch: true }],
     '@typescript-eslint/explicit-module-boundary-types': 0,
-    'no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
         vars: 'all',

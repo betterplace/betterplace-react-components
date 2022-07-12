@@ -31,7 +31,14 @@ const ButtonFull: React.FC<ButtonProps> = ({
   )
 }
 
-const ButtonMinimal: React.FC<ButtonProps> = ({ icon, content, className = '', buttonClassName = '', ...props }) => {
+const ButtonMinimal: React.FC<ButtonProps> = ({
+  icon,
+  content,
+  className = '',
+  buttonClassName = '',
+  boxShadow: _,
+  ...props
+}) => {
   const Icon = icon
 
   return (
@@ -55,7 +62,13 @@ const ButtonRound: React.FC<ButtonProps> = ({ icon, className = '', boxShadow, b
   )
 }
 
-const ButtonSquare: React.FC<ButtonProps> = ({ icon, className = '', buttonClassName = '', ...props }) => {
+const ButtonSquare: React.FC<ButtonProps> = ({
+  icon,
+  className = '',
+  buttonClassName = '',
+  boxShadow: _,
+  ...props
+}) => {
   const Icon = icon
 
   return (
