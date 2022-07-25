@@ -10,7 +10,7 @@ export const emailShareAction = ({
 }: BaseShareActionArgs & { subject?: string | null }) => {
   const encodedSubject = encodeURIComponent(subject || teaser)
   const encodedBody = encodedShareURL(`${teaser} ${shareUrl}`, utmParams)
-  return window.open(`mailto:?subject=${encodedSubject}&body=${encodedBody}`)
+  return window.open(`mailto:?subject=${encodedSubject}&body=${encodedBody}`, '_self')
 }
 
 export const EmailButton = buildShareButtonComponent({
