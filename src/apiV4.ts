@@ -2897,8 +2897,6 @@ export interface components {
        * It's false otherwise.
        */
       matched: boolean;
-      /** Indicates if the sender of the donation was a company. */
-      company_donation: boolean;
       /** Name of the related client, if available. */
       client_name?: string;
       /** DEPRECATED 2017-06-16 - Always returns "positive" */
@@ -2931,6 +2929,13 @@ export interface components {
       title: string;
       /** Number of donors who donated to the fundraising event */
       donor_count: number;
+      /** Company name if it is a sponsored fundraising event */
+      sponsoring_name: string;
+      links: {
+        rel: "sponsoring_logo";
+        href: string;
+        templated?: boolean;
+      }[];
     };
     OrganisationResult: {
       /** An integer number ≥ 1 */
