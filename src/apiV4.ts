@@ -2504,7 +2504,7 @@ export interface components {
       /** @description DateTime (ISO8601 with Timezone) */
       content_updated_at: string;
       /** @description Data on matching events including this resource */
-      matching_events: components["schemas"]["DedicatedMatchingEvent"][] | never[];
+      matching_events: components["schemas"]["DedicatedMatchingEvent"][];
       /**
        * @description DateTime (ISO8601 with Timezone) when the project was activated
        * by us, otherwise it is null.
@@ -2617,7 +2617,7 @@ export interface components {
       /** @description The public face of the project / project manager */
       contact?: components["schemas"]["ContactResult"];
       /** @description The organisation that carries this project */
-      carrier: components["schemas"]["CarrierResult"] | null;
+      carrier: components["schemas"]["CarrierResult"];
       /** @description TODO */
       profile_picture: components["schemas"]["ProjectProfilePictureResult"];
       /**
@@ -2628,26 +2628,14 @@ export interface components {
        * To get this data follow the active_matching_fund link and retrieve
        * the data from the appropriate endpoint.
        */
-      active_matching_fund: components["schemas"]["MatchingFundResult"] | null;
+      active_matching_fund: components["schemas"]["MatchingFundResult"];
       /** @description **This is an experimental feature and is still under heavy development. Please use it with caution.** */
-      closed_notice: components["schemas"]["ClosedNoticeResult"] | null;
+      closed_notice: components["schemas"]["ClosedNoticeResult"];
       /** @description Distance to around location in meters */
       around_distance: number;
       links: ({
           /** @enum {string} */
-          rel:
-            | "self"
-            | "platform"
-            | "opinions"
-            | "pictures"
-            | "needs"
-            | "blog_posts"
-            | "active_matching_fund"
-            | "video"
-            | "matching_funds"
-            | "categories"
-            | "new_client_donation"
-            | "new_donation";
+          rel: "self" | "platform" | "opinions" | "pictures" | "needs" | "blog_posts" | "active_matching_fund" | "video" | "matching_funds" | "categories" | "new_client_donation" | "new_donation";
           href: string;
           templated?: boolean;
         })[];
@@ -2655,11 +2643,11 @@ export interface components {
     DedicatedMatchingEvent: {
       /** @description An integer number ≥ 1 */
       id: number;
-      /** @description A number between 0.01 and 100.0 */
+      /** @description A number greater than 0.01 */
       matching_percentage: number;
-      /** @description The CSS string representation of a color */
+      /** @description The HEX representation of the banner's background color */
       banner_background_color: string;
-      /** @description The CSS string representation of a color */
+      /** @description The HEX representation of the banner's color */
       banner_text_color: string;
     };
     CarrierResult: {
@@ -2972,7 +2960,7 @@ export interface components {
        */
       score: string;
       /** @description Donor information, if available. */
-      author: components["schemas"]["ContactResult"] | null;
+      author: components["schemas"]["ContactResult"];
       /** @description Information about the fundraising event through which the donation came in, if available. */
       backed_by_fundraising_event?: components["schemas"]["FundraisingEventSenderResult"];
       /**
@@ -3153,7 +3141,7 @@ export interface components {
       /** @description Decimal degrees based on user input */
       longitude: number;
       /** @description Data on matching events including this resource */
-      matching_events: components["schemas"]["DedicatedMatchingEvent"][] | never[];
+      matching_events: components["schemas"]["DedicatedMatchingEvent"][];
       /** @description Name of the entity */
       title: string;
       /** @description Type of the entity, either Project or FundraisingEvent */
