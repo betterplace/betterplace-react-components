@@ -113,6 +113,8 @@ const project: Project = {
       },
     ],
   },
+  matching_events: [],
+  around_distance: 42,
   links: [
     {
       rel: 'platform',
