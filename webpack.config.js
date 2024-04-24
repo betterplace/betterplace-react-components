@@ -6,6 +6,7 @@ const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+/** @type {import('webpack').Configuration} */
 module.exports = {
   entry: {
     preview: './preview/preview.tsx',
@@ -51,7 +52,9 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './tmp',
+    static: {
+      directory: path.resolve(__dirname, 'tmp'),
+    },
     open: true,
   },
 }

@@ -81,9 +81,10 @@
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.6.1",
+    "@types/node": "^20.10.3",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
+    "@types/sanitize-html": "^2.11.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "babel-loader": "^8.1.0",
@@ -113,12 +114,13 @@
     "source-map-loader": "^3.0.0",
     "ts-loader": "^9.2.2",
     "typescript": "^4.7",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "sanitize-html": "^2.13.0"
   },
   "browserslist": {
     "production": [
