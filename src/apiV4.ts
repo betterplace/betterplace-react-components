@@ -2619,7 +2619,7 @@ export interface components {
       /** @description The organisation that carries this project */
       carrier: components["schemas"]["CarrierResult"] | null;
       /** @description TODO */
-      profile_picture: components["schemas"]["ProjectProfilePictureResult"];// | null;
+      profile_picture: components["schemas"]["ProjectProfilePictureResult"];
       /**
        * @deprecated
        * @description **DEPRECATED** Do not use this data. We will remove the nested
@@ -2629,8 +2629,6 @@ export interface components {
        * the data from the appropriate endpoint.
        */
       active_matching_fund: components["schemas"]["MatchingFundResult"] | null;
-      /** @description **This is an experimental feature and is still under heavy development. Please use it with caution.** */
-      closed_notice: components["schemas"]["ClosedNoticeResult"] | null;
       /** @description Distance to around location in meters */
       around_distance: number;
       links: ({
@@ -2711,16 +2709,6 @@ export interface components {
           href: string;
           templated?: boolean;
         })[];
-    };
-    ClosedNoticeResult: {
-      /** @description A close notice from the project manager */
-      text: string | null;
-      links: {
-          /** @enum {string} */
-          rel: "call_to_action";
-          href: string;
-          templated?: boolean;
-        }[];
     };
     FundraisingEventForwardingResult: {
       /** @description The amount in cents the fundraising event has forwarded to this project. */
@@ -2841,7 +2829,7 @@ export interface components {
       /** @description The public face of the fundraising event / fundraising event manager */
       contact?: components["schemas"]["ContactResult"];
       /** @description TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"];// | null;
+      profile_picture: components["schemas"]["ProfilePictureResult"];
       /** @description Distance to around location in meters */
       around_distance: number;
       links: ({
@@ -3151,7 +3139,7 @@ export interface components {
       /** @description % financed. */
       progress_percentage: number;
       /** @description TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"];// | null;
+      profile_picture: components["schemas"]["ProfilePictureResult"];
       /** @description How many cents were already raised with the fundraising event */
       donated_amount_in_cents: number;
       /** @description Name where this entity is located */
@@ -3159,7 +3147,7 @@ export interface components {
       /** @description Name where this entity is located */
       city: string | null;
       /** @description The organisation that carries this project */
-      carrier: components["schemas"]["CarrierResult"];// | null;
+      carrier: components["schemas"]["CarrierResult"];
       /** @description Count of confirmed donations for this entity */
       donations_count: number;
       /** @description How many cents are needed to complete the project */

@@ -104,15 +104,6 @@ const project: Project = {
       },
     ],
   },
-  closed_notice: {
-    text: 'string',
-    links: [
-      {
-        rel: 'call_to_action',
-        href: 'closed_notice_url',
-      },
-    ],
-  },
   matching_events: [],
   around_distance: 42,
   links: [
