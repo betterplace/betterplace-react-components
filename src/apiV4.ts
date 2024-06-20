@@ -2216,21 +2216,21 @@ export interface components {
        * Used to issue a donation receipt if the donation is tax deductible.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       street: string;
       /**
        * @description The city of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required default, but optional with validate_address=false.
+       * This field is required default, but optional with receipt_desired=false.
        */
       city: string;
       /**
        * @description Zip code of the city or region the donor lives in.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       zip: string;
       /**
@@ -2239,7 +2239,7 @@ export interface components {
        * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
        * the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       country_alpha2: string;
       /**
@@ -2253,7 +2253,7 @@ export interface components {
        * <br>
        * True by default.
        */
-      validate_address: boolean;
+      receipt_desired: boolean;
     };
     DirectDepositResult: {
       /**
@@ -2275,14 +2275,14 @@ export interface components {
        * @description First name of the donor.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       first_name: string;
       /**
        * @description Last name of the donor.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       last_name: string;
       /**
@@ -2290,7 +2290,7 @@ export interface components {
        * Only valid email addresses will be accepted.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       email: string;
       /**
@@ -2334,21 +2334,21 @@ export interface components {
        * @description The street of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       street: string;
       /**
        * @description The city of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       city: string;
       /**
        * @description Zip code of the city or region the donor lives in.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       zip: string;
       /**
@@ -2357,7 +2357,7 @@ export interface components {
        * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
        * the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       country_code: string;
       /**
@@ -2371,7 +2371,7 @@ export interface components {
        * <br>
        * True by default.
        */
-      validate_address: boolean;
+      receipt_desired: boolean;
     };
     SuccessResult: {
       /**
