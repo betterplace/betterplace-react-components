@@ -83,27 +83,6 @@ const project: Project = {
       },
     ],
   },
-  active_matching_fund: {
-    id: 0,
-    created_at: 'string',
-    updated_at: 'string',
-    activated_at: 'string',
-    title: 'string',
-    description: 'string',
-    company_name: 'string',
-    client_id: 'string',
-    provided_amount_in_cents: 0,
-    donated_amount_in_cents: 0,
-    state: 'string',
-    logo_url: 'string',
-    maximum_matching_amount_in_cents: 0,
-    links: [
-      {
-        rel: 'self',
-        href: 'active_matching_fund_url',
-      },
-    ],
-  },
   matching_events: [],
   around_distance: 42,
   links: [
