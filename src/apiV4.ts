@@ -1096,86 +1096,6 @@ export interface paths {
       };
     };
   };
-  "/matching_funds.json": {
-    /**
-     * Matching Funds List
-     * @description A list of betterplace.org matching funds.
-     */
-    get: {
-      parameters: {
-        query?: {
-          /**
-           * @description Optional project id as an integer number.
-           * Allows to filter the list of matching funds.
-           * This way one can show a list of matching funds where
-           * the given project is part of the matching fund projects list.
-           */
-          project_id?: number;
-          /**
-           * @description Filter the result set by <code>state</code> (activated|closed)
-           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
-           */
-          facets?: string;
-          page?: number;
-          per_page?: number;
-        };
-      };
-      responses: {
-        /** @description OK */
-        200: {
-          content: {
-            "application/json": {
-              total_entries: number;
-              offset: number;
-              total_pages: number;
-              current_page: number;
-              per_page: number;
-              data: components["schemas"]["MatchingFundResult"][];
-            };
-          };
-        };
-        /** @description Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-    };
-  };
-  "/matching_funds/{matching_funds_id}.json": {
-    /**
-     * Matching Fund Details
-     * @description The details of a betterplace.org matching fund.
-     * The details and list view show the same data.
-     */
-    get: {
-      parameters: {
-        query: {
-          /** @description matching-fund-id as an integer number. */
-          id: number;
-        };
-        path: {
-          /** @description matching_funds_id */
-          matching_funds_id: string;
-        };
-      };
-      responses: {
-        /** @description OK */
-        200: {
-          content: {
-            "application/json": components["schemas"]["MatchingFundResult"];
-          };
-        };
-        /** @description Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-    };
-  };
   "/projects/{projects_id}/needs.json": {
     /**
      * Project Needs List
@@ -2620,20 +2540,11 @@ export interface components {
       carrier: components["schemas"]["CarrierResult"] | null;
       /** @description TODO */
       profile_picture: components["schemas"]["ProjectProfilePictureResult"];
-      /**
-       * @deprecated
-       * @description **DEPRECATED** Do not use this data. We will remove the nested
-       * matching fund data in the future.
-       *
-       * To get this data follow the active_matching_fund link and retrieve
-       * the data from the appropriate endpoint.
-       */
-      active_matching_fund: components["schemas"]["MatchingFundResult"] | null;
       /** @description Distance to around location in meters */
       around_distance: number;
       links: ({
           /** @enum {string} */
-          rel: "self" | "platform" | "opinions" | "pictures" | "needs" | "blog_posts" | "active_matching_fund" | "video" | "matching_funds" | "categories" | "new_client_donation" | "new_donation";
+          rel: "self" | "platform" | "opinions" | "pictures" | "needs" | "blog_posts" | "video" | "categories" | "new_client_donation" | "new_donation";
           href: string;
           templated?: boolean;
         })[];
@@ -2672,40 +2583,6 @@ export interface components {
       links: ({
           /** @enum {string} */
           rel: "fill_960x500" | "fill_730x380" | "fill_618x322" | "fill_410x214" | "fill_270x141" | "original" | "limit_1240x646" | "limit_450x235";
-          href: string;
-          templated?: boolean;
-        })[];
-    };
-    MatchingFundResult: {
-      /** @description An integer number ≥ 1 */
-      id: number;
-      /** @description DateTime (ISO8601 with Timezone) */
-      created_at: string;
-      /** @description DateTime (ISO8601 with Timezone) */
-      updated_at: string;
-      /** @description DateTime (ISO8601 with Timezone) */
-      activated_at: string | null;
-      /** @description Our matching fund's name */
-      title: string;
-      /** @description The description of the matching fund */
-      description: string;
-      /** @description The company that supports it */
-      company_name: string;
-      /** @description The client to which the matching fund belongs */
-      client_id: string;
-      /** @description The amount in cents the company provided to be matched */
-      provided_amount_in_cents: number;
-      /** @description The amount in cents the company already donated */
-      donated_amount_in_cents: number;
-      /** @description Current state of this matching fund: either activated or closed */
-      state: string;
-      /** @description The URL of the logo image. */
-      logo_url: string;
-      /** @description Up to this amount donations get matched by the matching fund */
-      maximum_matching_amount_in_cents: number;
-      links: ({
-          /** @enum {string} */
-          rel: "self" | "platform" | "projects" | "documentation";
           href: string;
           templated?: boolean;
         })[];
@@ -2925,21 +2802,6 @@ export interface components {
        * this field is always empty, which is wrong.
        */
       donated_amount_in_cents?: number;
-      /**
-       * @description If a matching fund was active during the donation then the amount
-       * donated by a user might was matched with another donation.
-       *
-       * This amount is normally as high as the actual donation amount, with some
-       * restrictions, e.g. when the matching fund is depleted or the donation
-       * was higher than the maximum matching threshold.
-       */
-      matched_amount_in_cents?: number;
-      /**
-       * @description The matched field is true if this is a donor opinion for a donation that
-       * was matched by a <a href="matching_fund_details.md">matching fund</a>.
-       * It's false otherwise.
-       */
-      matched: boolean;
       /** @description Name of the related client, if available. */
       client_name?: string;
       /**
@@ -2961,7 +2823,7 @@ export interface components {
       confirmed_at: string;
       links: ({
           /** @enum {string} */
-          rel: "project" | "fundraising_event" | "matching_fund";
+          rel: "project" | "fundraising_event";
           href: string;
           templated?: boolean;
         })[];
@@ -3109,11 +2971,6 @@ export interface components {
       requested_amount_in_cents: number;
       /** @description The number of <a href="projects_list.md">projects</a> of this client. */
       projects_count: number;
-      /**
-       * @description How many cents are donated through the client's donation page and forwarded
-       * from the clients donation pool or matching funds of this client.
-       */
-      client_donated_amount_in_cents: number;
       /** @description The number of <a href="client_donations_list.md">client donations</a> for this client. */
       client_donations_count: number;
     };
