@@ -1,9 +1,15 @@
 import { LinkIcon } from '../../assets/icons'
-import { copyToClipboard, toQuery } from '../../helpers/sharing_helper'
+import { addParamsToUrl, copyToClipboard } from '../../helpers/sharing_helper'
 import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
 export const linkAction = ({ shareUrl, utmParams }: BaseShareActionArgs) => {
-  copyToClipboard(`${shareUrl}${toQuery(utmParams || {})}`)
+  // if shareUrl
+  // const urlWithParams = new URL(shareUrl)
+  // for (const key in utmParams) {
+  //   urlWithParams.searchParams.append(key, utmParams[key])
+  // }
+  // copyToClipboard(`${shareUrl}${toQuery(utmParams || {})}`)
+  copyToClipboard(addParamsToUrl(shareUrl, utmParams || {}))
 }
 
 export const LinkButton = buildShareButtonComponent({
