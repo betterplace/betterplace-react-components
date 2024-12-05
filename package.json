@@ -81,7 +81,7 @@
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.23",
-    "@types/node": "^20.10.3",
+    "@types/node": "^15.14.1",
     "@types/react": "^17.0.50",
     "@types/react-dom": "^17.0.17",
     "@types/sanitize-html": "^2.11.0",
