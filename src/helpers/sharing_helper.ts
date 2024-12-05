@@ -9,6 +9,14 @@ export const toQuery = (object: Record<string, any>) => {
   return searchParams ? `?${searchParams}` : ''
 }
 
+export const addParamsToUrl = (oldUrl: string, params: Record<string, any>) => {
+  const newUrl = new URL(oldUrl)
+  for (const [key, value] of params.entries()) {
+    newUrl.searchParams.append(key, value)
+  }
+  return newUrl.href
+}
+
 export const encodedShareURL = (url: string, utmParams?: Record<string, any>) =>
   encodeURIComponent(url + toQuery(utmParams || {}))
 
