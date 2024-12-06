@@ -11,7 +11,7 @@ export const toQuery = (object: Record<string, any>) => {
 
 export const addParamsToUrl = (oldUrl: string, params: Record<string, any>) => {
   const newUrl = new URL(oldUrl)
-  for (const [key, value] of params.entries()) {
+  for (const [key, value] of Object.entries(params)) {
     newUrl.searchParams.append(key, value)
   }
   return newUrl.href
