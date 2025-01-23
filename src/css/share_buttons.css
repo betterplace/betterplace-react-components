@@ -164,20 +164,6 @@
   background-color: #0073b7;
 }
 
-.share-button--twitter {
-  color: #48aae5;
-  border-color: #48aae5;
-  background-color: #48aae5;
-}
-
-.share-button--twitter:hover,
-.share-button--twitter:focus,
-.share-button--twitter:active {
-  color: #3496d1;
-  border-color: #3496d1;
-  background-color: #3496d1;
-}
-
 .share-button--whatsapp {
   color: #128C7E;
   border-color: #128C7E;

@@ -54,7 +54,6 @@ etc. - run `yarn start` to get a preview of all components.
 |__All__|__`shareUrl`__ URL of the shared page (string)<br><br>__`shape`__<br> `round` Render a round sharing button without content(string)<br><br>`square` Render a square sharing button without content (string)<br><br>`minimal` Render a rectangle share button with icon and `content`<br><br>`full` Render a rounded share button with icon and `content`|__`boxShadow`__ Add a bottom box shadow to the icon (boolean) - only for `full` and `round` shapes so far<br><br>__`utmParams`__: Representation of the utmParams to be attached to the `shareUrl` (object)<br><br>__`beforeOnClick`__: Add additional behaviour to the click action (function)<br><br>__`content`__: Button content to that needs to be set with `minimal` button option (string)<br><br>__`title`__: title attribute for the `<button>` element (string)<br><br>__`color`__: Color that overrides the default button color|
 |FacebookButton|-|-|
 |FacebookMessengerButton|__`facebookAppId`__: Facebook App ID of your platform (string)|-|
-|TwitterButton|-|-|
 |TelegramButton|-|__`teaser`__: Intro text for the sharing message (string)|
 |WhatsappButton|-|__`teaser`__: Intro text for the sharing message (string)|
 |EmailButton|-|__`subject`__: Subject of the email(string)<br><br>__`teaser`__: Intro text for the sharing message (string)|

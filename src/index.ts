@@ -21,9 +21,6 @@ export type { FacebookMessengerButtonProps } from './components/share_buttons/fa
 export { telegramShareAction, TelegramButton } from './components/share_buttons/telegram_button'
 export type { TelegramButtonProps } from './components/share_buttons/telegram_button'
 
-export { twitterShareAction, TwitterButton } from './components/share_buttons/twitter_button'
-export type { TwitterButtonProps } from './components/share_buttons/twitter_button'
-
 export { whatsappShareAction, WhatsappButton } from './components/share_buttons/whatsapp_button'
 export type { WhatsappButtonProps } from './components/share_buttons/whatsapp_button'
 
