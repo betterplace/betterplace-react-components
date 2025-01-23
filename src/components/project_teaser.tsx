@@ -2,6 +2,7 @@ import { components } from '../apiV4'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
+import { TrustedHtml } from './trusted_html'
 export type Project =
   | components['schemas']['ProjectResult']
   | (components['schemas']['SearchResult'] &
@@ -69,13 +70,10 @@ export const ProjectTeaser: React.FC<ProjectTeaserProps> = ({
         title={project.title}
       />
 
-      <h2 className="donatable-teaser--title" dangerouslySetInnerHTML={{ __html: project.title }} />
+      <TrustedHtml as="h2" className="donatable-teaser--title" value={project.title} />
 
       {showDescription && (
-        <div
-          className="donatable-teaser--description"
-          dangerouslySetInnerHTML={{ __html: project.description ?? '' }}
-        />
+        <TrustedHtml className="donatable-teaser--description" as="div" value={project.description} />
       )}
 
       <div className="donatable-teaser--divider">

@@ -3,10 +3,12 @@
  * Do not make direct changes to the file.
  */
 
+
 export interface paths {
   "/projects/{projects_id}/blog_posts.json": {
     /**
-     * A list of the blog posts of a betterplace.org project or fundraising event.
+     * Blog Posts List
+     * @description A list of the blog posts of a betterplace.org project or fundraising event.
      * Results are contained in a *data* attribute.
      *
      * Recommended order is `&order=published_at:desc`.
@@ -22,21 +24,21 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
-        query: {
-          /** Project id as an integer number ≥ 14. */
+        query?: {
+          /** @description Project id as an integer number. */
           project_id?: number;
-          /** Fundraising Event id as an integer number ≥ 1. */
+          /** @description Fundraising Event id as an integer number. */
           fundraising_event_id?: number;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -49,7 +51,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -60,7 +62,8 @@ export interface paths {
   };
   "/projects/{projects_id}/blog_posts/{blog_posts_id}.json": {
     /**
-     * The details of a blog post of a betterplace.org project.
+     * Project Blog Post Details
+     * @description The details of a blog post of a betterplace.org project.
      * The details and list view show the same data.
      *
      * **For [betterplace.org clients](../README.md#client-api):**
@@ -70,27 +73,27 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-          /** blog_posts_id */
-          blog_posts_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
-          /** Blogpost id as an integer number ≥ 9. */
+          /** @description Blogpost id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+          /** @description blog_posts_id */
+          blog_posts_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["BlogResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -101,24 +104,25 @@ export interface paths {
   };
   "/projects/{projects_id}/categories.json": {
     /**
-     * A list of betterplace.org project categories.
+     * Project Categories List
+     * @description A list of betterplace.org project categories.
      * Results are contained in a *data* attribute.
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -131,7 +135,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -142,7 +146,8 @@ export interface paths {
   };
   "/clients/{clients_id}/client_donations.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Donations List
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * This API returns all donations to all client projects that where made using
      * the client donation form (but none of the other donation-sources).
@@ -151,15 +156,11 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
           /**
-           * You can search for a specific client_reference: <code>?facets=client_reference:54</code>
+           * @description You can search for a specific client_reference: <code>?facets=client_reference:54</code>
            *
            * <br>
            * Example:
@@ -176,9 +177,13 @@ export interface paths {
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -191,7 +196,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -202,37 +207,38 @@ export interface paths {
   };
   "/clients/{clients_id}/client_donations/{client_donations_id}.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Donation Details
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * The details of a betterplace.org client donation.
      * The details and list view show the same data.
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** client_donations_id */
-          client_donations_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
           /**
-           * The donation token that the client donation form passed to the
+           * @description The donation token that the client donation form passed to the
            * callback url or the client_reference that was provided by the client.
            */
           id: string;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+          /** @description client_donations_id */
+          client_donations_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ClientDonationResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -243,7 +249,8 @@ export interface paths {
   };
   "/clients/{clients_id}/tags.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client tags list
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * This API returns all tags defined for a client.
      *
@@ -251,19 +258,19 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client id */
+          /** @description The betterplace.org-internal client id */
           client_id: string;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -276,7 +283,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -286,26 +293,29 @@ export interface paths {
     };
   };
   "/clients/{clients_id}.json": {
-    /** This API endpoint returns links to more specific information about this client. */
+    /**
+     * Client Details
+     * @description This API endpoint returns links to more specific information about this client.
+     */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink */
+          /** @description The betterplace.org-internal client permalink */
           id: string;
+        };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ClientResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -316,7 +326,8 @@ export interface paths {
   };
   "/users/{users_id}/contact_data.json": {
     /**
-     * Name and email for the given user.
+     * User Contact Data Details
+     * @description Name and email for the given user.
      *
      * Used by api clients to access data about
      * the managers of projects that belog to this
@@ -327,23 +338,23 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** users_id */
-          users_id: string;
-        };
         query: {
-          /** User-id as an integer number. */
+          /** @description User-id as an integer number. */
           user_id: number;
+        };
+        path: {
+          /** @description users_id */
+          users_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ContactDataResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -354,7 +365,8 @@ export interface paths {
   };
   "/clients/{clients_id}/projects/{projects_id}/direct_deposits.json": {
     /**
-     * Create an unconfirmed direct deposit donation to a project.
+     * Creating a Direct Deposit Donation
+     * @description Create an unconfirmed direct deposit donation to a project.
      * The donation is confirmed when the money arrives on the betterplace
      * bank account.
      *
@@ -380,44 +392,45 @@ export interface paths {
      */
     post: {
       parameters: {
+        query: {
+          /** @description The betterplace.org-internal client permalink. */
+          client_id: string;
+          /** @description Project id as an integer number. */
+          project_id: number;
+        };
         path: {
-          /** clients_id */
+          /** @description clients_id */
           clients_id: string;
-          /** projects_id */
+          /** @description projects_id */
           projects_id: string;
         };
-        query: {
-          /** The betterplace.org-internal client permalink. */
-          client_id: string;
-          /** Project id as an integer number ≥ 14. */
-          project_id: number;
+      };
+      /** @description Creating a Direct Deposit Donation  Request */
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["CreatingADirectDepositDonationRequest"];
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["DirectDepositResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
           };
         };
       };
-      /** Creating a Direct Deposit Donation  Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["CreatingADirectDepositDonationRequest"];
-        };
-      };
     };
   };
   "/clients/{clients_id}/projects/{projects_id}/donation_pledges.json": {
     /**
-     * Submit a donation pledge into the system. This will be transformed into
+     * Creating a Client Donation Pledge
+     * @description Submit a donation pledge into the system. This will be transformed into
      * a donation to the receiver. The request has to be a POST request with a
      * JSON body.
      *
@@ -516,44 +529,45 @@ export interface paths {
      */
     post: {
       parameters: {
+        query: {
+          /** @description The betterplace.org-internal client permalink. */
+          client_id: string;
+          /** @description Project id as an integer number. */
+          project_id: number;
+        };
         path: {
-          /** clients_id */
+          /** @description clients_id */
           clients_id: string;
-          /** projects_id */
+          /** @description projects_id */
           projects_id: string;
         };
-        query: {
-          /** The betterplace.org-internal client permalink. */
-          client_id: string;
-          /** Project id as an integer number ≥ 14. */
-          project_id: number;
+      };
+      /** @description Creating a Client Donation Pledge  Request */
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["CreatingAClientDonationPledgeRequest"];
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["SuccessResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
           };
         };
       };
-      /** Creating a Client Donation Pledge  Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["CreatingAClientDonationPledgeRequest"];
-        };
-      };
     };
   };
   "/clients/{clients_id}/donation_pledges/{donation_pledges_id}.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Donation Pledges Status
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * After submitting a donation pledge, you should check the status of the asynchronous
      * pledge job. It returns a JSON response, containing information about its status,
@@ -564,34 +578,34 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** donation_pledges_id */
-          donation_pledges_id: string;
-        };
         query: {
-          /** The donation is marked with the language you use in your URL. */
+          /** @description The donation is marked with the language you use in your URL. */
           language: string;
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
           /**
-           * The ID of the donation pledge.
+           * @description The ID of the donation pledge.
            *
            * TODO: In the future this will be returned within the
            * response of a successful donation pledge POST.
            */
           id: number;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+          /** @description donation_pledges_id */
+          donation_pledges_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["MandateProcessResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -602,7 +616,8 @@ export interface paths {
   };
   "/clients/{clients_id}/projects/{projects_id}/forwarding_requests.json": {
     /**
-     * Transfer money from a client donation pool to a Project.
+     * Creating a Client Forwarding Request
+     * @description Transfer money from a client donation pool to a Project.
      * The request has to be a POST request with a JSON body.
      *
      * **:lock: Only available if authenticated as a client.**
@@ -679,44 +694,45 @@ export interface paths {
      */
     post: {
       parameters: {
+        query: {
+          /** @description The betterplace.org-internal client permalink. */
+          client_id: string;
+          /** @description Project id as an integer number. */
+          project_id: number;
+        };
         path: {
-          /** clients_id */
+          /** @description clients_id */
           clients_id: string;
-          /** projects_id */
+          /** @description projects_id */
           projects_id: string;
         };
-        query: {
-          /** The betterplace.org-internal client permalink. */
-          client_id: string;
-          /** Project id as an integer number ≥ 14. */
-          project_id: number;
+      };
+      /** @description Creating a Client Forwarding Request  Request */
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["CreatingAClientForwardingRequestRequest"];
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["SuccessResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
           };
         };
       };
-      /** Creating a Client Forwarding Request  Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["CreatingAClientForwardingRequestRequest"];
-        };
-      };
     };
   };
   "/clients/{clients_id}/forwarding_requests/{forwarding_requests_id}.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Forwarding Request Status
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * After submitting a forwarding request, you should check the status of the asynchronous
      * forwarding job. It returns a JSON response, containing information about its status,
@@ -724,32 +740,32 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** forwarding_requests_id */
-          forwarding_requests_id: string;
-        };
         query: {
-          /** The donation is marked with the language you use in your URL. */
+          /** @description The donation is marked with the language you use in your URL. */
           language: string;
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
           /**
-           * The ID of the forwarding request, returned within the
+           * @description The ID of the forwarding request, returned within the
            * response of a successful forwarding request POST.
            */
           id: number;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+          /** @description forwarding_requests_id */
+          forwarding_requests_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["MandateProcessResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -760,25 +776,26 @@ export interface paths {
   };
   "/fundraising_events/{fundraising_events_id}/featured_projects.json": {
     /**
-     * A list of projects that are currently supported by the fundraising event.
+     * Fundraising Event Featured Projects List
+     * @description A list of projects that are currently supported by the fundraising event.
      *
      * **This is an experimental feature and is still under heavy development. Please use it with caution.**
      */
     get: {
       parameters: {
-        path: {
-          /** fundraising_events_id */
-          fundraising_events_id: string;
-        };
         query: {
-          /** Fundraising Event id as an integer number ≥ 1. */
+          /** @description Fundraising Event id as an integer number. */
           fundraising_event_id: number;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description fundraising_events_id */
+          fundraising_events_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -791,7 +808,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -802,25 +819,26 @@ export interface paths {
   };
   "/fundraising_events/{fundraising_events_id}/forwardings.json": {
     /**
-     * A list of forwarings from the fundraising event to its projects.
+     * Fundraising Event Forwardings List
+     * @description A list of forwarings from the fundraising event to its projects.
      *
      * **This is an experimental feature and is still under heavy development. Please use it with caution.**
      */
     get: {
       parameters: {
-        path: {
-          /** fundraising_events_id */
-          fundraising_events_id: string;
-        };
         query: {
-          /** Fundraising Event id as an integer number ≥ 1. */
+          /** @description Fundraising Event id as an integer number. */
           fundraising_event_id: number;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description fundraising_events_id */
+          fundraising_events_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -833,7 +851,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -844,28 +862,29 @@ export interface paths {
   };
   "/clients/{clients_id}/fundraising_event_statistics.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Fundraising Event Statistics
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      * Some client-statistics for a betterplace.org client. All results are cached for 20 minutes.
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink */
+          /** @description The betterplace.org-internal client permalink */
           client_id: string;
+        };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ClientStatisticFundraisingEventResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -876,7 +895,8 @@ export interface paths {
   };
   "/fundraising_events.json": {
     /**
-     * A list of betterplace.org fundraising events (donate money).
+     * Fundraising Event List
+     * @description A list of betterplace.org fundraising events (donate money).
      * Results are contained in a *data* attribute.
      *
      * **For [betterplace.org clients](../README.md#client-api):**
@@ -887,25 +907,29 @@ export interface paths {
      */
     get: {
       parameters: {
-        query: {
+        query?: {
           /**
-           * Use the scope to specify how the search-query <code>q</code> should behave:
+           * @description Use the scope to specify how the search query <code>q</code> should behave:
            * <ul>
            * <li>"no scope" (default) performs a full text search
            * <li><code>human_name</code> searches only on the manager-fullname and carrier-fullname.
            *   Use this to get all entities by "Unicef" or by "Till Behnke".
+           * <li><code>location</code> does a reverse geocoding lookup.
+           *   This lookup returns a bounding box. We transform this bounding box to a
+           *   rectangle that is large enough to encapsulate the whole bounding box.
+           *   We then return all entities that are within this rectangle.
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
           scope?: string;
-          /** Search query. The searches behaviour is based on the scope. */
+          /** @description Search query. The searches behaviour is based on the scope. */
           q?: string;
           /**
-           * Filter the result set.
+           * @description Filter the result set.
            * <br>
            * It is strongly recommended to <strong>specify facets</strong> with each request.
            * A recommended set of facets is
-           * <code>closed:false| prohibit_donations:false</code>
+           * <code>closed:false|prohibit_donations:false</code>
            * (without the spaces) which only shows active fundraising events that can receive donations.
            * <br>
            * <em>Supported filters are:</em>
@@ -924,7 +948,7 @@ export interface paths {
            */
           facets?: string;
           /**
-           * Order the result set.
+           * @description Order the result set.
            * <br>
            * It is strongly recommended to <strong>specify an order</strong> with each request.
            * The default order might change at any time without notice.
@@ -950,7 +974,7 @@ export interface paths {
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -963,7 +987,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -974,30 +998,31 @@ export interface paths {
   };
   "/fundraising_events/{fundraising_events_id}.json": {
     /**
-     * The details of a betterplace.org fundraising events (donate money).
+     * Fundraising Event Details
+     * @description The details of a betterplace.org fundraising events (donate money).
      *
      * **For [betterplace.org clients](../README.md#client-api):**
      * Use this resource as follows: `/clients/PERMALINK/fundraising-events/ID.json`
      */
     get: {
       parameters: {
-        path: {
-          /** fundraising_events_id */
-          fundraising_events_id: string;
-        };
         query: {
-          /** Fundraising Event id as an integer number ≥ 1. */
+          /** @description Fundraising Event id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description fundraising_events_id */
+          fundraising_events_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["FundraisingEventResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1008,7 +1033,8 @@ export interface paths {
   };
   "/clients/{clients_id}/projects/{projects_id}/mailing_subscriptions.json": {
     /**
-     * Create or update a mailing subscriptions for a project.
+     * Client Mailing Subscriptions
+     * @description Create or update a mailing subscriptions for a project.
      *
      * **:lock: Only available if authenticated as a client.**
      * See [betterplace.org clients](../README.md#client-api).
@@ -1028,116 +1054,40 @@ export interface paths {
      */
     post: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
           /**
-           * The subscription is marked with the language you use in your URL.
+           * @description The subscription is marked with the language you use in your URL.
            * Newsletter authors write their content in a specific lang which you can
            * target with the subscription lang. To target a lang see
            * <a href="../README.md#addressing-the-locale-of-a-resource">api setting lang</a>.
            */
           language: string;
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
+        };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+          /** @description projects_id */
+          projects_id: string;
+        };
+      };
+      /** @description Client Mailing Subscriptions Request */
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["ClientMailingSubscriptionsRequest"];
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["SuccessResult"];
           };
         };
-        /** Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-      /** Client Mailing Subscriptions Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["ClientMailingSubscriptionsRequest"];
-        };
-      };
-    };
-  };
-  "/matching_funds.json": {
-    /** A list of betterplace.org matching funds. */
-    get: {
-      parameters: {
-        query: {
-          /**
-           * Optional project id as an integer number ≥ 14.
-           * Allows to filter the list of matching funds.
-           * This way one can show a list of matching funds where
-           * the given project is part of the matching fund projects list.
-           */
-          project_id?: number;
-          /**
-           * Filter the result set by <code>state</code> (activated|closed)
-           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
-           */
-          facets?: string;
-          page?: number;
-          per_page?: number;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          content: {
-            "application/json": {
-              total_entries: number;
-              offset: number;
-              total_pages: number;
-              current_page: number;
-              per_page: number;
-              data: components["schemas"]["MatchingFundResult"][];
-            };
-          };
-        };
-        /** Error */
-        default: {
-          content: {
-            "application/json": components["schemas"]["ErrorEnvelope"];
-          };
-        };
-      };
-    };
-  };
-  "/matching_funds/{matching_funds_id}.json": {
-    /**
-     * The details of a betterplace.org matching fund.
-     * The details and list view show the same data.
-     */
-    get: {
-      parameters: {
-        path: {
-          /** matching_funds_id */
-          matching_funds_id: string;
-        };
-        query: {
-          /** matching-fund-id as an integer number ≥ 9. */
-          id: number;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          content: {
-            "application/json": components["schemas"]["MatchingFundResult"];
-          };
-        };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1148,7 +1098,8 @@ export interface paths {
   };
   "/projects/{projects_id}/needs.json": {
     /**
-     * A list of betterplace.org projects needs (donate money).
+     * Project Needs List
+     * @description A list of betterplace.org projects needs (donate money).
      * Results are contained in a *data* attribute.
      * The details and list view show the same data per project need.
      *
@@ -1159,15 +1110,11 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
           /**
-           * Filter the result set.
+           * @description Filter the result set.
            * Documented and supported filters are:
            * <ul>
            *   <li><code>completed:true/false</code> – is this need fully funded?
@@ -1176,7 +1123,7 @@ export interface paths {
            */
           facets?: string;
           /**
-           * Order the result set. Documented and supported orders are:
+           * @description Order the result set. Documented and supported orders are:
            * <ul>
            *   <li><code>created_at:asc/desc</code> – DESC: Latest needs first.
            *   <li><code>position:asc/desc</code> – Priority of the need defined by the project manager
@@ -1187,9 +1134,13 @@ export interface paths {
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1202,7 +1153,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1213,7 +1164,8 @@ export interface paths {
   };
   "/projects/{projects_id}/needs/{needs_id}.json": {
     /**
-     * The details of a betterplace.org project need (donate money).
+     * Project Need Details
+     * @description The details of a betterplace.org project need (donate money).
      * The details and list view show the same data per project need.
      *
      * **For [betterplace.org clients](../README.md#client-api):**
@@ -1223,27 +1175,27 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-          /** needs_id */
-          needs_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
-          /** Need-id as an integer number ≥ 29. */
+          /** @description Need-id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+          /** @description needs_id */
+          needs_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["NeedResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1254,7 +1206,8 @@ export interface paths {
   };
   "/clients/{clients_id}/newsletter_opt_ins.json": {
     /**
-     * Start the opt-in process to subscribe an email address to the
+     * Client Newsletter OptIns
+     * @description Start the opt-in process to subscribe an email address to the
      * betterplace platform newsletter.
      *
      * **:lock: Only available if authenticated as a client.**
@@ -1269,42 +1222,43 @@ export interface paths {
      */
     post: {
       parameters: {
+        query: {
+          /** @description The betterplace.org-internal client permalink. */
+          client_id: string;
+          /** @description The language preference of the subscriber. */
+          language: string;
+        };
         path: {
-          /** clients_id */
+          /** @description clients_id */
           clients_id: string;
         };
-        query: {
-          /** The betterplace.org-internal client permalink. */
-          client_id: string;
-          /** The language preference of the subscriber. */
-          language: string;
+      };
+      /** @description Client Newsletter OptIns Request */
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["ClientNewsletterOptInsRequest"];
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["SuccessResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
           };
         };
       };
-      /** Client Newsletter OptIns Request */
-      requestBody: {
-        content: {
-          "application/json": components["schemas"]["ClientNewsletterOptInsRequest"];
-        };
-      };
     };
   };
   "/projects/{projects_id}/opinions.json": {
     /**
-     * A list of betterplace.org projects or fundraising event opinions (donate money).
+     * Opinions List
+     * @description A list of betterplace.org projects or fundraising event opinions (donate money).
      * There is no details view for opinions.
      *
      * * Example for project opinions `…/api_v4/projects/1114/opinions.json`
@@ -1314,25 +1268,21 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
-        query: {
+        query?: {
           /**
-           * Project id as an integer number ≥ 14.
+           * @description Project id as an integer number.
            * This parameter is required in case you want to show project opinions.
            * Also check the URL example in the introduction.
            */
           project_id?: number;
           /**
-           * Fundraising Event id as an integer number ≥ 1.
+           * @description Fundraising Event id as an integer number.
            * This parameter is required in case you want to show fundraising event opinions.
            * Also check the URL example in the introduction.
            */
           fundraising_event_id?: number;
           /**
-           * Order the result set.
+           * @description Order the result set.
            * <br>
            * It is strongly recommended to <strong>specify an order</strong> with each request.
            * The default order might change at any time without notice.
@@ -1353,10 +1303,13 @@ export interface paths {
            */
           order?: string;
           /**
-           * Filter the result set.
+           * @description Filter the result set.
            * Documented and supported filters are:
            * <ul>
            *   <li><code>has_message:true/false</code> – did the donor add a message to her donation
+           *   <li><code>company_donation:true/false</code> – is the donor a company
+           *   <li><code>has_author_or_amount:true/false</code> – exclude anonymous donations with no amount shown
+           *   <li><code>since:datetime</code> – filter for donations that are newer than a certain datetime
            * </ul>
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
@@ -1364,9 +1317,13 @@ export interface paths {
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1379,7 +1336,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1390,7 +1347,8 @@ export interface paths {
   };
   "/organisations.json": {
     /**
-     * A list of betterplace.org organisations.
+     * Organisations List
+     * @description A list of betterplace.org organisations.
      * Results are contained in a *data* attribute.
      * The details and list view show the same data per organisation.
      *
@@ -1399,13 +1357,13 @@ export interface paths {
      */
     get: {
       parameters: {
-        query: {
+        query?: {
           page?: number;
           per_page?: number;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1418,7 +1376,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1429,7 +1387,8 @@ export interface paths {
   };
   "/organisations/{organisations_id}.json": {
     /**
-     * The details of a betterplace.org organisation.
+     * Organisation Details
+     * @description The details of a betterplace.org organisation.
      * The details and list view show the same data per organisation.
      *
      * **For [betterplace.org clients](../README.md#client-api):**
@@ -1439,23 +1398,23 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** organisations_id */
-          organisations_id: string;
-        };
         query: {
-          /** Organisation-id as an integer number ≥ 14. */
+          /** @description Organisation-id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description organisations_id */
+          organisations_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["OrganisationResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1466,7 +1425,8 @@ export interface paths {
   };
   "/clients/{clients_id}/pool.json": {
     /**
-     * The details of a betterplace.org client pool.
+     * Pool Details
+     * @description The details of a betterplace.org client pool.
      *
      * The result is cached for 5 minutes.
      *
@@ -1478,23 +1438,23 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink. */
+          /** @description The betterplace.org-internal client permalink. */
           client_id: string;
+        };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["PoolResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1505,7 +1465,8 @@ export interface paths {
   };
   "/projects/{projects_id}/pictures.json": {
     /**
-     * A list of pictures of a betterplace.org project (donate money).
+     * Project Pictures List
+     * @description A list of pictures of a betterplace.org project (donate money).
      * Results are contained in a *data* attribute.
      *
      * *Custom picture-sizes:* This API will only deliver the orginal image.
@@ -1529,19 +1490,19 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1554,7 +1515,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1565,7 +1526,8 @@ export interface paths {
   };
   "/projects/{projects_id}/pictures/{pictures_id}.json": {
     /**
-     * The details of a betterplace.org project picture.
+     * Project Picture Details
+     * @description The details of a betterplace.org project picture.
      * The details and list view show the same data.
      *
      * *Custom picture-sizes:* [Please read more!](project_picture_list.md)
@@ -1576,27 +1538,27 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-          /** pictures_id */
-          pictures_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
-          /** Picture-id as an integer number ≥ 1. */
+          /** @description Picture-id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
+          /** @description pictures_id */
+          pictures_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ProjectImageResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1607,28 +1569,29 @@ export interface paths {
   };
   "/clients/{clients_id}/project_statistics.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client Project Statistics
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      * Some client statistics for a betterplace.org client. All results are cached for 20 minutes.
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink */
+          /** @description The betterplace.org-internal client permalink */
           client_id: string;
+        };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ClientStatisticProjectResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1639,7 +1602,8 @@ export interface paths {
   };
   "/clients/{clients_id}/projects/{projects_id}/tags.json": {
     /**
-     * **For [betterplace.org clients](../README.md#client-api) only:**
+     * Client
+     * @description **For [betterplace.org clients](../README.md#client-api) only:**
      *
      * This API returns all tags assigned by this client for this project.
      * Client project tags are a custom client feature and andministered
@@ -1652,19 +1616,13 @@ export interface paths {
      */
     get: {
       parameters: {
-        path: {
-          /** clients_id */
-          clients_id: string;
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
-          /** The betterplace.org-internal client permalink */
+          /** @description The betterplace.org-internal client permalink */
           client_id: string;
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           project_id: number;
           /**
-           * Order the result set.
+           * @description Order the result set.
            * <br>
            * It is strongly recommended to <strong>specify an order</strong> with each request.
            * The default order might change at any time without notice.
@@ -1676,16 +1634,22 @@ export interface paths {
            * <li><code>slug:ASC/DESC</code> – tag name
            * <li><code>projects_count:ASC/DESC</code> - how many projects are using that client?
            * </ul>
-           * It is possible to set multiple facet filters.
+           * It is possible to set multiple order filters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
           order?: string;
           page?: number;
           per_page?: number;
         };
+        path: {
+          /** @description clients_id */
+          clients_id: string;
+          /** @description projects_id */
+          projects_id: string;
+        };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1698,7 +1662,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1709,7 +1673,8 @@ export interface paths {
   };
   "/projects.json": {
     /**
-     * A list of betterplace.org projects (donate money).
+     * Projects List
+     * @description A list of betterplace.org projects (donate money).
      * Results are contained in a *data* attribute.
      *
      * **For [betterplace.org clients](../README.md#client-api):**
@@ -1721,9 +1686,9 @@ export interface paths {
      */
     get: {
       parameters: {
-        query: {
+        query?: {
           /**
-           * Use the scope to specify how the search query <code>q</code> should behave:
+           * @description Use the scope to specify how the search query <code>q</code> should behave:
            * <ul>
            * <li>"no scope" (default) performs a full text search
            * <li><code>human_name</code> searches only on the manager-fullname and carrier-fullname.
@@ -1736,8 +1701,16 @@ export interface paths {
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
           scope?: string;
+          /** @description For geographic bound filterning: The northeast corner's latitude. */
+          nelat?: number;
+          /** @description For geographic bound filterning: The northeast corner's longitude. */
+          nelng?: number;
+          /** @description For geographic bound filterning: The southwest corner's latitude. */
+          swlat?: number;
+          /** @description For geographic bound filterning: The southwest corner's longitude. */
+          swlng?: number;
           /**
-           * Order the results by the distance to the given location from near to far.
+           * @description Order the results by the distance to the given location from near to far.
            * <br>
            * Location can be provided as …
            * <br>
@@ -1758,7 +1731,7 @@ export interface paths {
            */
           around?: string;
           /**
-           * In combination with the <code>around</code> parameter the search will be
+           * @description In combination with the <code>around</code> parameter the search will be
            * limited to results whose location is closer than the given value to the
            * location provided through the <code>around</code> parameter. Possible
            * values are all integer values followed by <code>m</code> for meters or
@@ -1768,18 +1741,10 @@ export interface paths {
            * will be ignored.
            */
           around_distance?: string;
-          /** For geographic bound filterning: The northeast corner's latitude. */
-          nelat?: number;
-          /** For geographic bound filterning: The northeast corner's longitude. */
-          nelng?: number;
-          /** For geographic bound filterning: The southwest corner's latitude. */
-          swlat?: number;
-          /** For geographic bound filterning: The southwest corner's longitude. */
-          swlng?: number;
-          /** Search query. The searches behaviour is based on the scope. */
+          /** @description Search query. The searches behaviour is based on the scope. */
           q?: string;
           /**
-           * Filter the result set.
+           * @description Filter the result set.
            * <br>
            * It is strongly recommended to <strong>specify facets</strong> with each request.
            * A recommended set of facets is <code>completed:false| closed:false|
@@ -1795,13 +1760,15 @@ export interface paths {
            * <li><code>prohibit_donations:true/false</code> –
            * are donations to this project forbidden at the moment? Closed and blocked projects
            * will always return true, for example.
+           * <li><code>category_ids:44</code> – does the project belong to this category?
+           * <li><code>category_ids[,]:44,16</code> – does the project belong to any of these categories?
            * </ul>
            * It is possible to set multiple facet filters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
            */
           facets?: string;
           /**
-           * Order the result set.
+           * @description Order the result set.
            * <br>
            * It is strongly recommended to <strong>specify an order</strong> with each request.
            * The default order might change at any time without notice.
@@ -1819,6 +1786,7 @@ export interface paths {
            * <li><code>created_at:ASC/DESC</code> and <code>updated_at:ASC/DESC</code>
            * <li><code>last_donation_at:ASC/DESC</code>
            * <li><code>id:ASC/DESC</code>
+           * <li><code>closed:ASC/DESC</code>
            * </ul>
            * It is possible to set multiple order parameters.
            * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
@@ -1829,7 +1797,7 @@ export interface paths {
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1842,7 +1810,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1853,30 +1821,31 @@ export interface paths {
   };
   "/projects/{projects_id}.json": {
     /**
-     * The details of a betterplace.org project (donate money).
+     * Project Details
+     * @description The details of a betterplace.org project (donate money).
      *
      * **For [betterplace.org clients](../README.md#client-api):**
      * Use this resource as follows: `/clients/PERMALINK/projects/ID.json`
      */
     get: {
       parameters: {
-        path: {
-          /** projects_id */
-          projects_id: string;
-        };
         query: {
-          /** Project id as an integer number ≥ 14. */
+          /** @description Project id as an integer number. */
           id: number;
+        };
+        path: {
+          /** @description projects_id */
+          projects_id: string;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": components["schemas"]["ProjectResult"];
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1886,24 +1855,45 @@ export interface paths {
     };
   };
   "/search.json": {
-    /** TODO */
+    /**
+     * Searching entities to donate to
+     * @description TODO
+     */
     get: {
       parameters: {
-        query: {
-          /** Fulltext search query. */
+        query?: {
+          /** @description Fulltext search query. */
           q?: string;
           /**
-           * A string of four comma-seperated floating point geo coordinates in
+           * @description A string of four comma-seperated floating point geo coordinates in
            * range of -180…180 for <code>sw_lat,sw_lng,ne_lat,ne_lng</code>
            * describing a bounding box around the search results' geo coordinates.
            */
           bounds?: string;
+          /**
+           * @description Filter the result set.
+           * <br>
+           * It is strongly recommended to <strong>specify facets</strong> with each request.
+           * A recommended set of facets is <code>state:activated| min_activity_threshold_reached:true|
+           * hidden_from_platform:false</code> (without the spaces) which
+           * only shows active projects and fundraising events that can receive donations.
+           * <br>
+           * <em>Supported filters are:</em>
+           * <ul>
+           * <li><code>state:activated</code> –For active projects and fundraising events
+           * <li><code>min_activity_threshold_reached:true/false</code> Project has received some attention and donations
+           * <li><code>hidden_from_platform:true/false</code> – Incomplete or blocked projects
+           * </ul>
+           * It is possible to set multiple facet filters.
+           * <a href="../README.md#request-parameter-format">Learn how to format the parameter</a>.
+           */
+          facets?: string;
           page?: number;
           per_page?: number;
         };
       };
       responses: {
-        /** OK */
+        /** @description OK */
         200: {
           content: {
             "application/json": {
@@ -1916,7 +1906,7 @@ export interface paths {
             };
           };
         };
-        /** Error */
+        /** @description Error */
         default: {
           content: {
             "application/json": components["schemas"]["ErrorEnvelope"];
@@ -1927,6 +1917,8 @@ export interface paths {
   };
 }
 
+export type webhooks = Record<string, never>;
+
 export interface components {
   schemas: {
     ErrorEnvelope: {
@@ -1936,90 +1928,94 @@ export interface components {
       reason: string;
       backtrace: string[];
       message: string;
-      errors?: { [key: string]: any };
+      errors?: Record<string, never>;
       links: string[];
     };
     BlogResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Blog posts have only one language at the moment */
+      /** @description Blog posts have only one language at the moment */
       lang: string;
       /**
-       * Blogposts are always created by a user, and this
+       * @description Blogposts are always created by a user, and this
        * field always has the value <code>BlogPost</code>.
        */
       type: string;
       title: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       published_at: string;
       /**
-       * The body may contain html such as links, embedded videos, and picture or
+       * @description The body may contain html such as links, embedded videos, and picture or
        * any of the following HTML tags:
        * ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
       body: string;
-      /** The user that wrote the blog post. */
+      /** @description The user that wrote the blog post. */
       author: components["schemas"]["ContactResult"] | null;
-      links: {
-        rel: "self" | "platform" | "documentation";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "self" | "platform" | "documentation";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ContactResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
       /**
-       * Display name of a betterplace.org user.
+       * @description Display name of a betterplace.org user.
        * Possible formats: "Till B.", "T. Behnke", "Till Behnke".
        *
        * In the case of donation-opinions the name might also be
        * empty/null for anonymous donations for anonymous donations.
        */
       name: string | null;
-      /** User profile picture or a fallback image */
+      /** @description User profile picture or a fallback image */
       picture?: components["schemas"]["UserProfilePictureResult"];
-      links: {
-        rel: "platform" | "contact_data";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "platform" | "contact_data";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     UserProfilePictureResult: {
-      /** Specifies whether a fallback image is given or not */
+      /** @description Specifies whether a fallback image is given or not */
       fallback?: boolean;
-      links: {
-        rel: "fill_100x100" | "original";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "fill_100x100" | "original";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     CategoryResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Name to be displayed for this category */
+      /** @description Name to be displayed for this category */
       name: string;
-      /** Slug for this category */
+      /** @description Slug for this category */
       slug: string;
       links: {
-        rel: "platform";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "platform";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     ClientDonationResult: {
-      /** Donated amount in cents */
+      /** @description Donated amount in cents */
       amount_in_cents: number;
       /**
-       * At the moment, all donations that are returned by the API are "confirmed".
+       * @description At the moment, all donations that are returned by the API are "confirmed".
        * Unconfirmed donations do not show up at all or disappear after they were revoked.
        * Revocations usually take place during the first 14 days – but there are no guarantees.
        *
@@ -2027,107 +2023,101 @@ export interface components {
        * we might add a "revoked" state in the future.
        */
       state: string;
-      /** Donor information, if available. */
+      /** @description Donor information, if available. */
       donor: components["schemas"]["ContactResult"] | null;
       /**
-       * An optional message by users.
+       * @description An optional message by users.
        *
-       * The body may contain html with any of the following HTML tags:
-       * ```b, br, em, i, li, ol, p, strong, ul```.
+       * The body is plain text potentially containing line-breaks.
        */
       message: string | null;
-      /** A token uniquely identifies a donation on the platform. */
+      /** @description A token uniquely identifies a donation on the platform. */
       token: string;
       /**
-       * Client Donations can be identified via a custom client reference token.
+       * @description Client Donations can be identified via a custom client reference token.
        *
        * This <code>client_reference</code> can be provided by users of our
        * <a href="../donation_form/third_party_app_donation_form.md">
        * ThirdPartyApp custom donation form for organisations</a>, for example.
        */
       client_reference: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
       /**
-       * Client donations may go to a <code>Project</code>,
-       * a Project's <code>Element</code>, a <code>FundraisingEvent</code>,
-       * a <code>Pool</code>.
+       * @description Client donations may go to a <code>Project</code>,
+       * a <code>FundraisingEvent</code>, a <code>Pool</code>.
        */
       receiver_type: string;
-      /** The id of the project, project element or fundraising event. */
+      /** @description The id of the project, project element or fundraising event. */
       receiver_id: number;
-      /** The title of the project, project element or fundraising event. */
+      /** @description The title of the project, project element or fundraising event. */
       receiver_title: string;
-      links: {
-        rel: "receiver" | "self";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "receiver" | "self";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ClientTagResult: {
-      /** The name of the tag. It is unique per client. */
+      /** @description The name of the tag. It is unique per client. */
       tag: string;
       /**
-       * The slug of the tag. It is unique per client and used to build urls.
+       * @description The slug of the tag. It is unique per client and used to build urls.
        * It must not contain any non url-safe characters.
        */
       slug: string;
       /**
-       * The number of <a href="projects_list.md">projects</a>
+       * @description The number of <a href="projects_list.md">projects</a>
        * that were tagged with this tag.
        */
       projects_count: number;
       links: {
-        rel: "projects";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "projects";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     ClientResult: {
-      links: {
-        rel:
-          | "projects"
-          | "client_donations"
-          | "client_project_tags"
-          | "client_fundraising_events"
-          | "project_mailing_subscriptions"
-          | "project_statistics"
-          | "fundraising_event_statistics";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "projects" | "client_donations" | "client_project_tags" | "client_fundraising_events" | "project_mailing_subscriptions" | "project_statistics" | "fundraising_event_statistics";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ContactDataResult: {
-      /** The first name of the user or donor. */
+      /** @description The first name of the user or donor. */
       first_name: string;
-      /** The last name of the user or donor. */
+      /** @description The last name of the user or donor. */
       last_name: string;
-      /** The email address of the user or donor. */
+      /** @description The email address of the user or donor. */
       email: string;
     };
     CreatingADirectDepositDonationRequest: {
-      /** First name of the donor. */
+      /** @description First name of the donor. */
       first_name: string;
-      /** Last name of the donor. */
+      /** @description Last name of the donor. */
       last_name: string;
-      /** Company name of the donor. */
+      /** @description Company name of the donor. */
       company_name: string;
       /**
-       * Email address of the donor.
+       * @description Email address of the donor.
        * Only valid email addresses will be accepted.
        */
       email: string;
-      /** A message from the donor to be shown on the project profile page. */
+      /** @description A message from the donor to be shown on the project profile page. */
       message: string;
       /**
-       * The amount of cents that are donated.
+       * @description The amount of cents that are donated.
        * Must be a positive integer between
        * 1
        * and 1000000.
        */
       amount_cents: number;
       /**
-       * A unique identifier for this transaction.
+       * @description A unique identifier for this transaction.
        * With this reference one can find the donation and its status later
        * by using the client_reference-facet on the
        * <a href="client_donations_list.md">donation list endpoint</a>.
@@ -2142,38 +2132,38 @@ export interface components {
        */
       client_reference: string;
       /**
-       * The street of the donors address.
+       * @description The street of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       street: string;
       /**
-       * The city of the donors address.
+       * @description The city of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required default, but optional with validate_address=false.
+       * This field is required default, but optional with receipt_desired=false.
        */
       city: string;
       /**
-       * Zip code of the city or region the donor lives in.
+       * @description Zip code of the city or region the donor lives in.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       zip: string;
       /**
-       * ISO2 code of the country the donor lives in. A list of valid ISO2 codes
+       * @description ISO2 code of the country the donor lives in. A list of valid ISO2 codes
        * can be found at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">
        * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
        * the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       country_alpha2: string;
       /**
-       * Pass <code>false</code> to allow donations without a donor address.
+       * @description Pass <code>false</code> to allow donations without a donor address.
        * <br>
        * <em>Attention:</em> Donation receipts can only be issued to donors who
        * provide their full address details. Therefore a warning might be
@@ -2183,55 +2173,55 @@ export interface components {
        * <br>
        * True by default.
        */
-      validate_address: boolean;
+      receipt_desired: boolean;
     };
     DirectDepositResult: {
       /**
-       * The reference for the pending debit donation. Use it within
+       * @description The reference for the pending debit donation. Use it within
        * the transaction to ensure it gets matched with the donation.
        */
       reference_id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** The IBAN for the SEPA transaction. */
+      /** @description The IBAN for the SEPA transaction. */
       iban: string;
-      /** The holder name for the SEPA transaction. */
+      /** @description The holder name for the SEPA transaction. */
       holder_name: string;
     };
     CreatingAClientDonationPledgeRequest: {
       /**
-       * First name of the donor.
+       * @description First name of the donor.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       first_name: string;
       /**
-       * Last name of the donor.
+       * @description Last name of the donor.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       last_name: string;
       /**
-       * Email address of the donor.
+       * @description Email address of the donor.
        * Only valid email addresses will be accepted.
        *
        * This field is required by default, but optional with
-       * validate_address=false.
+       * receipt_desired=false.
        */
       email: string;
       /**
-       * The amount of cents that are donated.
+       * @description The amount of cents that are donated.
        * Must be a positive integer between
        * 1
        * and 1000000.
        */
       amount_in_cents: number;
       /**
-       * A unique identifier for this transaction.
+       * @description A unique identifier for this transaction.
        * With this reference one can find the donation and its status later
        * by using the client_reference-facet on the
        * <a href="client_donations_list.md">donation list endpoint</a>.
@@ -2246,14 +2236,14 @@ export interface components {
        */
       client_reference: string;
       /**
-       * A tracking identifier for the current campaign, origin or similar
+       * @description A tracking identifier for the current campaign, origin or similar
        * information. Default is blank.
        * <br>
        * Allowed characters are <code>a-zA-Z0-9_-</code>.
        */
       tracking_via: string;
       /**
-       * An "earmark" indicating which need this donation should go to.
+       * @description An "earmark" indicating which need this donation should go to.
        * <em>Attention:</em> this parameter may be completely ignored by the API
        * at any time. There is no guarantee that the earmark will have an effect
        * on the donation, and support for the feature may be pulled in the
@@ -2261,37 +2251,37 @@ export interface components {
        */
       earmark: number;
       /**
-       * The street of the donors address.
+       * @description The street of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       street: string;
       /**
-       * The city of the donors address.
+       * @description The city of the donors address.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       city: string;
       /**
-       * Zip code of the city or region the donor lives in.
+       * @description Zip code of the city or region the donor lives in.
        * Used to issue a donation receipt if the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       zip: string;
       /**
-       * ISO2 code of the country the donor lives in. A list of valid ISO2 codes
+       * @description ISO2 code of the country the donor lives in. A list of valid ISO2 codes
        * can be found at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">
        * Wikipedia ISO_3166-1_alpha-2</a>. Used to issue a donation receipt if
        * the donation is tax deductible.
        *
-       * This field is required by default, but optional with validate_address=false.
+       * This field is required by default, but optional with receipt_desired=false.
        */
       country_code: string;
       /**
-       * Pass <code>false</code> to allow donations without a donor address.
+       * @description Pass <code>false</code> to allow donations without a donor address.
        * <br>
        * <em>Attention:</em> Donation receipts can only be issued to donors who
        * provide their full address details. Therefore a warning might be
@@ -2301,36 +2291,37 @@ export interface components {
        * <br>
        * True by default.
        */
-      validate_address: boolean;
+      receipt_desired: boolean;
     };
     SuccessResult: {
       /**
-       * HTTP status code as a descriptive string.
+       * @description HTTP status code as a descriptive string.
        * For a list of codes, <a href="http://httpstatus.es/">see httpstatus.es</a>.
        * Example: "accepted" for code 202
        */
       status: string;
-      /** HTTP status code as an integer number, e.g. 202. */
+      /** @description HTTP status code as an integer number, e.g. 202. */
       status_code: number;
       links: {
-        rel: "location";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "location";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     MandateProcessResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       confirmed_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       failed_at: string;
       /**
-       * One of "pending", "confirmed" or "failed".
+       * @description One of "pending", "confirmed" or "failed".
        * <ul>
        * <li><code>pending</code>
        * The system is still processing this donation.
@@ -2344,7 +2335,7 @@ export interface components {
        */
       state: string;
       /**
-       * A set of failure codes.<br>
+       * @description A set of failure codes.<br>
        * You could use this to choose follow up actions in
        * your application. More details about each error are
        * part of the <code>failure_reason</code>.
@@ -2362,7 +2353,7 @@ export interface components {
        */
       failure_code: string;
       /**
-       * A more detailed description of the failure.<br>
+       * @description A more detailed description of the failure.<br>
        * This message is meant to be interpreted by a
        * developer, not by a customer/user.
        * The message might change at any time, don't
@@ -2371,21 +2362,22 @@ export interface components {
        */
       failure_reason: string;
       links: {
-        rel: "donation";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "donation";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     CreatingAClientForwardingRequestRequest: {
       /**
-       * The amount of cents that are forwarded.
+       * @description The amount of cents that are forwarded.
        * Must be a positive integer between
        * 1
        * and 1000000.
        */
       amount_in_cents: number;
       /**
-       * A unique identifier for this transaction.
+       * @description A unique identifier for this transaction.
        * With this reference one can find the donation and its status later
        * by using the client_reference-facet on the
        * <a href="client_donations_list.md">donation list endpoint</a>.
@@ -2400,7 +2392,7 @@ export interface components {
        */
       client_reference: string;
       /**
-       * A tracking identifier for the current campaign, origin or similar
+       * @description A tracking identifier for the current campaign, origin or similar
        * information. Default is blank.
        * <br>
        * Allowed characters are <code>a-zA-Z0-9_-</code>.
@@ -2408,51 +2400,54 @@ export interface components {
       tracking_via: string;
     };
     ProjectResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
       /**
-       * DateTime (ISO8601 with Timezone) when the project was created by the
+       * @description DateTime (ISO8601 with Timezone) when the project was created by the
        * project manager.
        */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       latitude: number;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       longitude: number;
-      /** Street address */
+      /** @description Street address */
       street: string | null;
-      /** ZIP code */
+      /** @description ZIP code */
       zip: string | null;
-      /** Name of the city */
+      /** @description Name of the city */
       city: string | null;
-      /** Name of the country */
+      /** @description Name of the country */
       country: string | null;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       content_updated_at: string;
+      /** @description Data on matching events including this resource */
+      matching_events: components["schemas"]["DedicatedMatchingEvent"][];
       /**
-       * DateTime (ISO8601 with Timezone) when the project was activated
+       * @description DateTime (ISO8601 with Timezone) when the project was activated
        * by us, otherwise it is null.
        */
       activated_at: string | null;
-      /** Max 50 character */
+      /** @description Max 50 character */
       title: string;
       /**
-       * A description of the project. This may contain any of the following
+       * @description A description of the project. This may contain any of the following
        * HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        */
       description: string;
-      /** A short summary of the project.. */
+      /** @description A short summary of the project.. */
       summary: string;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        *
        * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
       /**
-       * True if the project must not receive donations. This might happen, for example,
+       * @description True if the project must not receive donations. This might happen, for example,
        * if a tax receipt of German tax authorities ran out.
        *
        * Please check this flag whenever you display a donation button.
@@ -2462,7 +2457,7 @@ export interface components {
        */
       donations_prohibited: boolean;
       /**
-       * DateTime (ISO8601 with Timezone) of the moment the project was fully
+       * @description DateTime (ISO8601 with Timezone) of the moment the project was fully
        * funded (100% `progress_percentage`).
        *
        * A completed project may still be active (as in not closed).
@@ -2470,17 +2465,17 @@ export interface components {
        */
       completed_at: string | null;
       /**
-       * DateTime (ISO8601 with Timezone) when the project was closed by the
+       * @description DateTime (ISO8601 with Timezone) when the project was closed by the
        * project manager.
        *
        * A closed project does not have to be fully funded.
        * See `completed_at` for details.
        */
       closed_at: string | null;
-      /** How many cents are needed to complete the project */
+      /** @description How many cents are needed to complete the project */
       open_amount_in_cents: number;
       /**
-       * How many cents are donated already.
+       * @description How many cents are donated already.
        * This includes:
        * - sum of all donations
        * - sum of all forwardings to the project
@@ -2491,31 +2486,24 @@ export interface components {
        */
       donated_amount_in_cents: number;
       /**
-       * Number of positive opinions that are given to a project without a donation.
-       * Those are plain opinions as well as visitor opinions.
+       * @deprecated
+       * @description DEPRECATED 2017-06-23
        *
-       * DEPRECATED 2017-06-23
-       *
-       * Use `donations_count` and `comments_count` instead. There is no distinction
-       * between positive and negative comments any more, all opinions were converted
-       * into comments.
+       * Use `donations_count` instead. There are no opinions and comments outside
+       * of donations anymore.
        */
       positive_opinions_count: number;
       /**
-       * Number of *negative* opinions (usually 0) that are given to a project without a donation.
-       * Those are plain opinions as well as visitor opinions.
-       * Critical opinions are part of the betterplace.org
-       * ["Web of trust"](http://www.betterplace.org/c/hilfe/woran-erkenne-ich-dass-ein-projekt-vertrauenswurdig-ist/).
-       *
-       * DEPRECATED 2017-06-23
+       * @deprecated
+       * @description DEPRECATED 2017-06-23
        *
        * Always returns 0. Don't use this field any more.
        */
       negative_opinions_count: number;
-      /** Count of confirmed donations for this project */
+      /** @description Count of confirmed donations for this project */
       donations_count: number;
       /**
-       * Count of active newsletter subscriptions for this project.
+       * @description Count of active newsletter subscriptions for this project.
        *
        * EXPERIMENTAL 2019-02-21
        *
@@ -2523,158 +2511,99 @@ export interface components {
        */
       newsletter_subscriptions_count: number;
       /**
-       * Count of all comments for this project. This contains positive and negative
-       * reviews of the project, questions and answers by the project manager, as
-       * well as comments from users.
+       * @deprecated
+       * @description DEPRECATED 2022-10-24
+       *
+       * Always returns 0. Don't use this field any more.
        */
       comments_count: number;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        * This value is deprecated and will be removed after 2021-12-31.
        * Please update your code to use the `donations_count`.
        *
        * Number of unique donors, based on the payment-email-address
        */
       donor_count: number;
-      /**
-       * % financed. Note: We have legacy projects with substantial
-       * donation needs (pre ~2014). This percentage includes those needs.
-       */
+      /** @description % financed */
       progress_percentage: number;
-      /** Number of needs that still need donations */
+      /** @description Number of needs that still need donations */
       incomplete_need_count: number;
-      /** Number of completed needs */
+      /** @description Number of completed needs */
       completed_need_count: number;
-      /** Number of blogposts (all types) */
+      /** @description Number of blogposts (all types) */
       blog_post_count: number;
-      /** The public face of the project / project manager */
+      /** @description The public face of the project / project manager */
       contact?: components["schemas"]["ContactResult"];
-      /** The organisation that carries this project */
+      /** @description The organisation that carries this project */
       carrier: components["schemas"]["CarrierResult"] | null;
-      /** TODO */
-      profile_picture:
-        | components["schemas"]["ProjectProfilePictureResult"]
-        | null;
-      /**
-       * **DEPRECATED** Do not use this data. We will remove the nested
-       * matching fund data in the future.
-       *
-       * To get this data follow the active_matching_fund link and retrieve
-       * the data from the appropriate endpoint.
-       */
-      active_matching_fund: components["schemas"]["MatchingFundResult"] | null;
-      /** **This is an experimental feature and is still under heavy development. Please use it with caution.** */
-      closed_notice: components["schemas"]["ClosedNoticeResult"] | null;
-      links: {
-        rel:
-          | "self"
-          | "platform"
-          | "opinions"
-          | "pictures"
-          | "needs"
-          | "blog_posts"
-          | "active_matching_fund"
-          | "video"
-          | "matching_funds"
-          | "categories"
-          | "new_client_donation"
-          | "new_donation";
-        href: string;
-        templated?: boolean;
-      }[];
+      /** @description TODO */
+      profile_picture: components["schemas"]["ProjectProfilePictureResult"];
+      /** @description Distance to around location in meters */
+      around_distance: number;
+      links: ({
+          /** @enum {string} */
+          rel: "self" | "platform" | "opinions" | "pictures" | "needs" | "blog_posts" | "video" | "categories" | "new_client_donation" | "new_donation";
+          href: string;
+          templated?: boolean;
+        })[];
+    };
+    DedicatedMatchingEvent: {
+      /** @description An integer number ≥ 1 */
+      id: number;
+      /** @description A number greater than 0.01 */
+      matching_percentage: number;
+      /** @description The HEX representation of the banner's background color */
+      banner_background_color: string;
+      /** @description The HEX representation of the banner's color */
+      banner_text_color: string;
     };
     CarrierResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** The carrier can be an organisation or user. */
+      /** @description The carrier can be an organisation or user. */
       name: string;
-      /** The city in which the carrier resides */
+      /** @description The city in which the carrier resides */
       city: string;
-      /** The country in which the carrier resides */
+      /** @description The country in which the carrier resides */
       country: string;
-      /** The organisation logo, user profile picture or a fallback image */
+      /** @description The organisation logo, user profile picture or a fallback image */
       picture?: components["schemas"]["UserProfilePictureResult"];
       links: {
-        rel: "self";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "self";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     ProjectProfilePictureResult: {
-      /** Specifies whether a fallback image is given or not */
+      /** @description Specifies whether a fallback image is given or not */
       fallback?: boolean;
-      links: {
-        rel:
-          | "fill_960x500"
-          | "fill_730x380"
-          | "fill_618x322"
-          | "fill_410x214"
-          | "fill_270x141"
-          | "original"
-          | "limit_1240x646"
-          | "limit_450x235";
-        href: string;
-        templated?: boolean;
-      }[];
-    };
-    MatchingFundResult: {
-      /** An integer number ≥ 1 */
-      id: number;
-      /** DateTime (ISO8601 with Timezone) */
-      created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
-      updated_at: string;
-      /** DateTime (ISO8601 with Timezone) */
-      activated_at: string | null;
-      /** Our matching fund's name */
-      title: string;
-      /** The description of the matching fund */
-      description: string;
-      /** The company that supports it */
-      company_name: string;
-      /** The client to which the matching fund belongs */
-      client_id: string;
-      /** The amount in cents the company provided to be matched */
-      provided_amount_in_cents: number;
-      /** The amount in cents the company already donated */
-      donated_amount_in_cents: number;
-      /** Current state of this matching fund: either activated or closed */
-      state: string;
-      /** The URL of the logo image. */
-      logo_url: string;
-      /** Up to this amount donations get matched by the matching fund */
-      maximum_matching_amount_in_cents: number;
-      links: {
-        rel: "self" | "platform" | "projects" | "documentation";
-        href: string;
-        templated?: boolean;
-      }[];
-    };
-    ClosedNoticeResult: {
-      /** A close notice from the project manager */
-      text: string | null;
-      links: {
-        rel: "call_to_action";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "fill_960x500" | "fill_730x380" | "fill_618x322" | "fill_410x214" | "fill_270x141" | "original" | "limit_1240x646" | "limit_450x235";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     FundraisingEventForwardingResult: {
-      /** The amount in cents the fundraising event has forwarded to this project. */
+      /** @description The amount in cents the fundraising event has forwarded to this project. */
       forwarded_amount_in_cents: number;
-      /** The name of the receiving project */
+      /** @description The name of the receiving project */
       title: string;
-      /** The ID of the receiving project */
+      /** @description The ID of the receiving project */
       project_id: number;
-      links: {
-        rel: "project" | "platform";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "project" | "platform";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ClientStatisticFundraisingEventResult: {
       /**
-       * How many cents are donated already to all fundraising events of this client.
+       * @description How many cents are donated already to all fundraising events of this client.
        *
        * It does not include the money of the client-pool-fundraising-event.
        *
@@ -2683,20 +2612,20 @@ export interface components {
        */
       donated_amount_in_cents: number;
       /**
-       * The number of <a href="fundraising_events_list.md">fundraising events</a> of this client.
+       * @description The number of <a href="fundraising_events_list.md">fundraising events</a> of this client.
        *
        * Blocked fundraising events are excluded from this count and from the API in general.
        */
       fundraising_events_count: number;
       /**
-       * How many cents are donated through the clients donation page to
+       * @description How many cents are donated through the clients donation page to
        * all fundraising events (those that are active, closed, blocked and so on).
        *
        * The client-pool-fundraising-event is ignored.
        */
       client_donated_amount_in_cents: number;
       /**
-       * The number of <a href="client_donations_list.md">client donations</a> for this client to
+       * @description The number of <a href="client_donations_list.md">client donations</a> for this client to
        * all fundraising events (those that are active, closed, blocked and so on).
        *
        * The client-pool-fundraising-event is ignored.
@@ -2704,30 +2633,31 @@ export interface components {
       client_donations_count: number;
     };
     FundraisingEventResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       content_updated_at: string;
-      /** Max 50 character */
+      /** @description Max 50 character */
       title: string;
       /**
-       * A description of the fundraising event. This may contain any of the
+       * @description A description of the fundraising event. This may contain any of the
        * following HTML tags: ```a, b, br, div, em, i, iframe, img, li, ol, p, strong, ul```.
        * Max 25.000 characters.
        */
       description: string;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        *
        * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
       /**
-       * True if the fundraising event must not and cannot receive donations.
+       * @description True if the fundraising event must not and cannot receive donations.
        * This might happen if the event was closed by the manager,
        * blocked by a platform administrator or the donation activation
        * time is in the future.
@@ -2739,100 +2669,89 @@ export interface components {
        */
       donations_prohibited: boolean;
       /**
-       * DateTime (ISO8601 with Timezone) when the fundraising event was closed
+       * @description DateTime (ISO8601 with Timezone) when the fundraising event was closed
        * by the manager.
        */
       closed_at: string | null;
       /**
-       * DateTime (ISO8601 with Timezone). Donations are prohibited until this
+       * @description DateTime (ISO8601 with Timezone). Donations are prohibited until this
        * date and time is reached. Defaults to NULL.
        */
       activate_donations_at: string | null;
-      /** Count of confirmed donations for this fundraising event */
+      /** @description Count of confirmed donations for this fundraising event */
       donations_count: number;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        * This value is deprecated and will be removed after 2021-12-31.
        * Please update your code to use the `donations_count`.
        *
        * Number of unique donors, based on the payment-email-address
        */
       donor_count: number;
-      /** How many cents were already raised with the fundraising event */
+      /** @description How many cents were already raised with the fundraising event */
       donated_amount_in_cents: number;
       /**
-       * How many cents were requested to be raised with the fundraising event.
+       * @description How many cents were requested to be raised with the fundraising event.
        * This value is optional! The manager decides if his event has a goal or not.
        */
       requested_amount_in_cents: number | null;
-      /** How many cents were already forwarded to a project. */
+      /** @description How many cents were already forwarded to a project. */
       forwarded_amount_in_cents: number;
       /**
-       * % financed. This value is only present in case the manager
+       * @description % financed. This value is only present in case the manager
        * decided to add a <code>requested_amount_in_cents</code>.
        */
       progress_percentage: number | null;
-      /** The public face of the fundraising event / fundraising event manager */
+      /** @description The public face of the fundraising event / fundraising event manager */
       contact?: components["schemas"]["ContactResult"];
-      /** TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
-      links: {
-        rel:
-          | "self"
-          | "featured_projects"
-          | "blog_posts"
-          | "forwardings"
-          | "platform"
-          | "opinions"
-          | "new_client_donation"
-          | "new_donation"
-          | "header_picture"
-          | "new_message";
-        href: string;
-        templated?: boolean;
-      }[];
+      /** @description TODO */
+      profile_picture: components["schemas"]["ProfilePictureResult"];
+      /** @description Distance to around location in meters */
+      around_distance: number;
+      links: ({
+          /** @enum {string} */
+          rel: "self" | "featured_projects" | "blog_posts" | "forwardings" | "platform" | "opinions" | "new_client_donation" | "new_donation" | "header_picture" | "new_message";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ProfilePictureResult: {
-      /** Specifies whether a fallback image is given or not */
+      /** @description Specifies whether a fallback image is given or not */
       fallback?: boolean;
-      links: {
-        rel:
-          | "fill_960x500"
-          | "fill_730x380"
-          | "fill_618x322"
-          | "fill_410x214"
-          | "fill_270x141"
-          | "original";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "fill_960x500" | "fill_730x380" | "fill_618x322" | "fill_410x214" | "fill_270x141" | "original";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ClientMailingSubscriptionsRequest: {
-      /** The email of the user */
+      /** @description The email of the user */
       email: string;
-      /** The first name of the user */
+      /** @description The first name of the user */
       first_name: string;
-      /** The last name of the user */
+      /** @description The last name of the user */
       last_name: string;
-      /** State of the subscription: active/inactive */
+      /** @description State of the subscription: active/inactive */
       active: boolean;
     };
     NeedResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Max 50 character */
+      /** @description Max 50 character */
       title: string;
       description: string;
-      /** True if the need is 100 % financed */
+      /** @description True if the need is 100 % financed */
       completed: boolean;
-      /** % financed */
+      /** @description % financed */
       progress_percentage: number;
       /**
-       * How many cents are donated already.
+       * @description How many cents are donated already.
        * This includes all donations that can be given to a need
        * (direct donation, forwarding of project donation,
        * forwarding of organisation donation,
@@ -2840,25 +2759,26 @@ export interface components {
        * offline donations and also(!) external donations)
        */
       donated_amount_in_cents: number;
-      /** How many cents are still needed to complete the need */
+      /** @description How many cents are still needed to complete the need */
       open_amount_in_cents: number;
-      /** How much money is needed in total */
+      /** @description How much money is needed in total */
       requested_amount_in_cents: number;
-      links: {
-        rel: "self" | "project" | "new_client_donation" | "new_donation";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "self" | "project" | "new_client_donation" | "new_donation";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ClientNewsletterOptInsRequest: {
-      /** The email of the user */
+      /** @description The email of the user */
       email: string;
-      /** The first name of the user */
+      /** @description The first name of the user */
       first_name: string;
-      /** The last name of the user */
+      /** @description The last name of the user */
       last_name: string;
       /**
-       * The text that has been used to explain the subscription to the user.
+       * @description The text that has been used to explain the subscription to the user.
        * E.g. if you have a checkbox to subscribe, pass its label text.
        *
        * This text must be recorded due to GDPR requirements.
@@ -2866,14 +2786,14 @@ export interface components {
       wording: string;
     };
     DonationResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
       /**
-       * The amount donated, but only if the user allowed the amount to be
+       * @description The amount donated, but only if the user allowed the amount to be
        * visible. Most donation forms allow the donor to specify if they
        * want their amount to be visible. As a default, the donated amount
        * is visible.
@@ -2881,162 +2801,149 @@ export interface components {
        * Known issue: For forwarding donations (money that is forwarded from a fundraising event to a project)
        * this field is always empty, which is wrong.
        */
-      donated_amount_in_cents: number;
-      /**
-       * If a matching fund was active during the donation then the amount
-       * donated by a user might was matched with another donation.
-       *
-       * This amount is normally as high as the actual donation amount, with some
-       * restrictions, e.g. when the matching fund is depleted or the donation
-       * was higher than the maximum matching threshold.
-       */
-      matched_amount_in_cents: number;
-      /**
-       * The matched field is true if this is a donor opinion for a donation that
-       * was matched by a <a href="matching_fund_details.md">matching fund</a>.
-       * It's false otherwise.
-       */
-      matched: boolean;
-      /** Name of the related client, if available. */
+      donated_amount_in_cents?: number;
+      /** @description Name of the related client, if available. */
       client_name?: string;
-      /** DEPRECATED 2017-06-16 - Always returns "positive" */
+      /**
+       * @deprecated
+       * @description DEPRECATED 2017-06-16 - Always returns "positive"
+       */
       score: string;
-      /** Donor information, if available. */
+      /** @description Donor information, if available. */
       author: components["schemas"]["ContactResult"] | null;
-      /** Information about the fundraising event through which the donation came in, if available. */
+      /** @description Information about the fundraising event through which the donation came in, if available. */
       backed_by_fundraising_event?: components["schemas"]["FundraisingEventSenderResult"];
       /**
-       * An optional message by users.
+       * @description An optional message by users.
        *
-       * The body may contain html with any of the following HTML tags:
-       * ```b, br, em, i, li, ol, p, strong, ul```.
+       * The body is plain text potentially containing line-breaks.
        */
       message: string | null;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       confirmed_at: string;
-      links: {
-        rel: "project" | "fundraising_event" | "matching_fund";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "project" | "fundraising_event";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     FundraisingEventSenderResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** URL of the fundraising event */
+      /** @description URL of the fundraising event */
       url: string;
-      /** Title of the fundraising event */
+      /** @description Title of the fundraising event */
       title: string;
-      /** Number of donors who donated to the fundraising event */
+      /** @description Number of donors who donated to the fundraising event */
       donor_count: number;
-      /** Company name if it is a sponsored fundraising event */
+      /** @description Company name if it is a sponsored fundraising event */
       sponsoring_name: string;
       links: {
-        rel: "sponsoring_logo";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "sponsoring_logo";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     OrganisationResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       latitude: number;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       longitude: number;
-      /** Street address */
+      /** @description Street address */
       street: string | null;
-      /** ZIP code */
+      /** @description ZIP code */
       zip: string | null;
-      /** Name of the city */
+      /** @description Name of the city */
       city: string | null;
-      /** Name of the country */
+      /** @description Name of the country */
       country: string | null;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       content_updated_at: string;
       /**
-       * <a href="http://en.wikipedia.org/wiki/Clean_URL#Slug">URL slug</a>
+       * @description <a href="http://en.wikipedia.org/wiki/Clean_URL#Slug">URL slug</a>
        * for the permalink
        */
       slug: string;
-      /** Name of the organisation */
+      /** @description Name of the organisation */
       name: string;
       /**
-       * A description of the organisation.
+       * @description A description of the organisation.
        * This may contain <code>br</code> tags.
        */
       description: string;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        *
        * This value is deprecated and will be removed.
        */
       tax_deductible: boolean;
-      /** The public contact person for this organisation. */
+      /** @description The public contact person for this organisation. */
       contact?: components["schemas"]["ContactResult"];
-      /** TODO */
+      /** @description TODO */
       picture: components["schemas"]["SquareProfilePictureResult"] | null;
-      links: {
-        rel: "self" | "platform" | "projects" | "website";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "self" | "platform" | "projects" | "website";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     SquareProfilePictureResult: {
-      /** Specifies whether a fallback image is given or not */
+      /** @description Specifies whether a fallback image is given or not */
       fallback?: boolean;
-      links: {
-        rel: "fill_100x100" | "fill_200x200" | "fill_400x400" | "original";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "fill_100x100" | "fill_200x200" | "fill_400x400" | "original";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     PoolResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** The amount in cents this pool has received */
+      /** @description The amount in cents this pool has received */
       donated_amount_in_cents: number;
-      /** The amount in cents the pool has forwarded to projects. */
+      /** @description The amount in cents the pool has forwarded to projects. */
       forwarded_amount_in_cents: number;
       links: {
-        rel: "self";
-        href: string;
-        templated?: boolean;
-      }[];
+          /** @enum {string} */
+          rel: "self";
+          href: string;
+          templated?: boolean;
+        }[];
     };
     ProjectImageResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Description of the picture */
+      /** @description Description of the picture */
       description: string;
-      links: {
-        rel:
-          | "image"
-          | "limit_620x323"
-          | "limit_620x323_2x"
-          | "limit_450x235"
-          | "limit_450x235_2x"
-          | "self"
-          | "parent";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "image" | "limit_620x323" | "limit_620x323_2x" | "limit_450x235" | "limit_450x235_2x" | "self" | "parent";
+          href: string;
+          templated?: boolean;
+        })[];
     };
     ClientStatisticProjectResult: {
       /**
-       * How many cents are donated already through user donations or forwardings
+       * @description How many cents are donated already through user donations or forwardings
        * to all client projects.
        *
        * Remember: This includes all donations to projects of this client even those
@@ -3044,7 +2951,8 @@ export interface components {
        */
       donated_amount_in_cents: number;
       /**
-       * ⚠️ DEPRECATED!
+       * @deprecated
+       * @description ⚠️ DEPRECATED!
        * This value will be removed in the future.
        *
        * How many cents are external donations, that means they were given directly
@@ -3052,7 +2960,7 @@ export interface components {
        */
       external_donated_amount_in_cents: number;
       /**
-       * How many cents were requested by all client projects in total.
+       * @description How many cents were requested by all client projects in total.
        * This calculation is based on the sum of all
        * <a href="need_details.md">needs (requested_amount_in_cents)</a>.
        *
@@ -3061,56 +2969,61 @@ export interface components {
        *   `requested_amount_in_cents - donated_amount_in_cents - external_donated_amount_in_cents`
        */
       requested_amount_in_cents: number;
-      /** The number of <a href="projects_list.md">projects</a> of this client. */
+      /** @description The number of <a href="projects_list.md">projects</a> of this client. */
       projects_count: number;
-      /**
-       * How many cents are donated through the client's donation page and forwarded
-       * from the clients donation pool or matching funds of this client.
-       */
-      client_donated_amount_in_cents: number;
-      /** The number of <a href="client_donations_list.md">client donations</a> for this client. */
+      /** @description The number of <a href="client_donations_list.md">client donations</a> for this client. */
       client_donations_count: number;
     };
     SearchResult: {
-      /** An integer number ≥ 1 */
+      /** @description An integer number ≥ 1 */
       id: number;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       created_at: string;
-      /** DateTime (ISO8601 with Timezone) */
+      /** @description DateTime (ISO8601 with Timezone) */
       updated_at: string;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       latitude: number;
-      /** Decimal degrees based on user input */
+      /** @description Decimal degrees based on user input */
       longitude: number;
-      /** Name of the entity */
+      /** @description Data on matching events including this resource */
+      matching_events: components["schemas"]["DedicatedMatchingEvent"][];
+      /** @description Name of the entity */
       title: string;
-      /** Type of the entity, either Project or FundraisingEvent */
+      /** @description Type of the entity, either Project or FundraisingEvent */
       type: string;
-      /** The public face of this entity */
+      /** @description The public face of this entity */
       contact?: components["schemas"]["ContactResult"];
-      /** % financed. */
+      /** @description % financed. */
       progress_percentage: number;
-      /** TODO */
-      profile_picture: components["schemas"]["ProfilePictureResult"] | null;
-      /** How many cents were already raised with the fundraising event */
+      /** @description TODO */
+      profile_picture: components["schemas"]["ProfilePictureResult"];
+      /** @description How many cents were already raised with the fundraising event */
       donated_amount_in_cents: number;
-      /** Name where this entity is located */
+      /** @description Name where this entity is located */
       country: string | null;
-      /** Name where this entity is located */
+      /** @description Name where this entity is located */
       city: string | null;
-      /** The organisation that carries this project */
-      carrier: components["schemas"]["CarrierResult"] | null;
-      /** Count of confirmed donations for this entity */
+      /** @description The organisation that carries this project */
+      carrier: components["schemas"]["CarrierResult"];
+      /** @description Count of confirmed donations for this entity */
       donations_count: number;
-      /** How many cents are needed to complete the project */
+      /** @description How many cents are needed to complete the project */
       open_amount_in_cents: number;
-      links: {
-        rel: "platform" | "self" | "pictures";
-        href: string;
-        templated?: boolean;
-      }[];
+      links: ({
+          /** @enum {string} */
+          rel: "platform" | "self" | "pictures";
+          href: string;
+          templated?: boolean;
+        })[];
     };
   };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 
-export interface operations {}
+export type external = Record<string, never>;
+
+export type operations = Record<string, never>;

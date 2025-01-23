@@ -2,6 +2,7 @@ import { components } from '../apiV4'
 import React from 'react'
 
 import { formatAmount } from '../helpers/format_amount'
+import { TrustedHtml } from './trusted_html'
 
 export type FundraisingEvent = components['schemas']['FundraisingEventResult'] | components['schemas']['SearchResult']
 export type Links = components['schemas']['FundraisingEventResult']['links'] &
@@ -56,13 +57,12 @@ export const FundraisingEventTeaser: React.FC<FundraisingEventTeaserProps> = ({
         style={{ backgroundImage: `url(${fundraisingEventImageUrl})` }}
         title={fundraisingEvent.title}
       />
-
-      <h2 className="donatable-teaser--title" dangerouslySetInnerHTML={{ __html: fundraisingEvent.title }} />
+      <TrustedHtml as="h2" className="donatable-teaser--title" value={fundraisingEvent.title} />
 
       <div className="donatable-teaser--divider">
         <div className="donatable-teaser--factlist">
           <div>
-            <span dangerouslySetInnerHTML={{ __html: fundraisingEvent.contact?.name ?? '' }} />
+            <TrustedHtml as="span" value={fundraisingEvent.contact?.name} />
           </div>
           <div>
             <span>{fundraisingEvent.donations_count}</span> {donationsTxt}
