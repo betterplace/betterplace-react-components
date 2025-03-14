@@ -13,7 +13,6 @@ import {
   LinkButton,
   ProjectTeaser,
   TelegramButton,
-  TwitterButton,
   WhatsappButton,
 } from '../src'
 import { ShareButtonProps } from '../src/components/share_buttons/base'
@@ -59,7 +58,6 @@ for (const [shape, boxShadow] of [
     FacebookButton,
     FacebookMessengerButton,
     TelegramButton,
-    TwitterButton,
     WhatsappButton,
     LinkButton,
     InstagramButton,
