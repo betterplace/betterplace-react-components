@@ -1,9 +1,9 @@
 import { InstagramIcon } from '../../assets/icons'
-import { copyToClipboard } from '../../helpers/sharing_helper'
+import { copyToClipboard, toQuery } from '../../helpers/sharing_helper'
 import { BaseShareActionArgs, buildShareButtonComponent } from './base'
 
-export const instagramAction = ({ shareUrl }: BaseShareActionArgs) => {
-  copyToClipboard(shareUrl)
+export const instagramAction = ({ shareUrl, utmParams }: BaseShareActionArgs) => {
+  copyToClipboard(`${shareUrl}${toQuery(utmParams || {})}`)
 }
 
 export const InstagramButton = buildShareButtonComponent({
